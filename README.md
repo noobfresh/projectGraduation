@@ -26,3 +26,11 @@ Personal 毕设相关资料
 
 //数据处理框架，知识预备
 https://www.cnblogs.com/misswangxing/p/7903595.html
+
+
+转换处理思路：
+将csv数据（5g）导入mysql，通过sql语句进行匹配计算，生成匹配好的OD数据(这个方法太慢了目前)
+
+原始数据表结构：如下
+ticker_id   txn_date    txn_time   txn_station    ticket_type   trans_code   txn_amt
+卡编号       刷卡日期    刷卡时间    刷卡站点        卡类型         进出站       
