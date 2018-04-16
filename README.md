@@ -30,6 +30,11 @@ https://www.cnblogs.com/misswangxing/p/7903595.html
 
 转换处理思路：
 将csv数据（5g）导入mysql，通过sql语句进行匹配计算，生成匹配好的OD数据(这个方法太慢了目前)
+索引：id_time_transcode_station
+
+sql 生成OD 语句：
+select tableA.TICKET_ID as ticketId, tableA.TXN_DATE as txnDate,tableA.TXN_TIME as startTime, tableB.TXN_TIME as endTime,tableA.TXN_STATION_ID as startStation, tableB.TXN_STATION_ID as endStation from graduationproject.`20170930` as tableA inner join graduationproject.`20170930` as tableB on tableA.TICKET_ID = tableB.TICKET_ID and tableA.TXN_TIME < tableB.TXN_TIME and tableA.TRANS_CODE = '21' and tableB.TRANS_CODE = '22'
+目前还有点慢
 
 原始数据表结构：如下
 ticker_id   txn_date    txn_time   txn_station    ticket_type   trans_code   txn_amt
