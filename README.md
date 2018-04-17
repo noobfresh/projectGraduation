@@ -33,9 +33,20 @@ https://www.cnblogs.com/misswangxing/p/7903595.html
 索引：id_time_transcode_station
 
 sql 生成OD 语句：
-select tableA.TICKET_ID as ticketId, tableA.TXN_DATE as txnDate,tableA.TXN_TIME as startTime, tableB.TXN_TIME as endTime,tableA.TXN_STATION_ID as startStation, tableB.TXN_STATION_ID as endStation from graduationproject.`20170930` as tableA inner join graduationproject.`20170930` as tableB on tableA.TICKET_ID = tableB.TICKET_ID and tableA.TXN_TIME < tableB.TXN_TIME and tableA.TRANS_CODE = '21' and tableB.TRANS_CODE = '22'
+select tableA.TICKET_ID as ticketId, tableA.TXN_DATE as txnDate,tableA.TXN_TIME as startTime, tableB.TXN_TIME as endTime,tableA.TXN_STATION_ID as startStation, tableB.TXN_STATION_ID as endStation from graduationproject.`20170930` as tableA inner join graduationproject.`20170930` as tableB on tableA.TICKET_ID = tableB.TICKET_ID and tableA.TXN_TIME < tableB.TXN_TIME and tableA.TRANS_CODE = '21' and tableB.TRANS_CODE = '22' and tableA.txn_station_id <> tableB.txn_station_id
 目前还有点慢
+
+更换存储引擎，查询速度爆表，但还是挺久的。还有加速方法，再细分表，使表的粒度更小
 
 原始数据表结构：如下
 ticker_id   txn_date    txn_time   txn_station    ticket_type   trans_code   txn_amt
 卡编号       刷卡日期    刷卡时间    刷卡站点        卡类型         进出站       
+
+
+当前情况，已经按天，计算出OD数据，但暂且不保证脏数据是否存在。
+
+next，
+计算出我想要的站点间数据，设计算法。
+
+其实根本没必要将过滤数据导出到csv再重新导入数据库，中间过程有点浪费时间
+
