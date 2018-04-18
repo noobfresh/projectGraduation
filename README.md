@@ -35,6 +35,9 @@ https://www.cnblogs.com/misswangxing/p/7903595.html
 sql 生成OD 语句：
 select tableA.TICKET_ID as ticketId, tableA.TXN_DATE as txnDate,tableA.TXN_TIME as startTime, tableB.TXN_TIME as endTime,tableA.TXN_STATION_ID as startStation, tableB.TXN_STATION_ID as endStation from graduationproject.`20170930` as tableA inner join graduationproject.`20170930` as tableB on tableA.TICKET_ID = tableB.TICKET_ID and tableA.TXN_TIME < tableB.TXN_TIME and tableA.TRANS_CODE = '21' and tableB.TRANS_CODE = '22' and tableA.txn_station_id <> tableB.txn_station_id
 目前还有点慢
+上述查询出了个问题，由于字段类型都是varchar，那第二个条件就是去了意义，
+该sql并没有去找离他最近的记录。哎
+连接表时，并没有按最近距离原则匹配OD，导致过滤出错误数据，
 
 更换存储引擎，查询速度爆表，但还是挺久的。还有加速方法，再细分表，使表的粒度更小
 
