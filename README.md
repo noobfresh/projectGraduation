@@ -45,6 +45,8 @@ select tableA.TICKET_ID as ticketId, tableA.TXN_DATE as txnDate,tableA.TXN_TIME 
 ticker_id   txn_date    txn_time   txn_station    ticket_type   trans_code   txn_amt
 卡编号       刷卡日期    刷卡时间    刷卡站点        卡类型         进出站       
 
+（ps.应该自己加个自增主键的
+
 
 当前情况，已经按天，计算出OD数据，但暂且不保证脏数据是否存在。
 
