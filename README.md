@@ -38,6 +38,7 @@ select tableA.TICKET_ID as ticketId, tableA.TXN_DATE as txnDate,tableA.TXN_TIME 
 上述查询出了个问题，由于字段类型都是varchar，那第二个条件就是去了意义，
 该sql并没有去找离他最近的记录。哎
 连接表时，并没有按最近距离原则匹配OD，导致过滤出错误数据，
+少判断了一个OD票的类型，发现存在不同类型的票，但是存在相同的id（这算小部分了）
 
 更换存储引擎，查询速度爆表，但还是挺久的。还有加速方法，再细分表，使表的粒度更小
 
