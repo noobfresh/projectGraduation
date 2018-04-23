@@ -1,0 +1,8 @@
+CREATE TABLE `OD20170901`(  
+`TICKET_ID` varchar(100),  
+`TXN_DATE` varchar(100) ,  
+`START_TIME` varchar(100) ,  
+`END_TIME` varchar(100) ,  
+`START_STATION` varchar(100) ,  
+`END_STATION` varchar(100) ,  
+PRIMARY KEY (TICKET_ID, START_TIME, START_STATION)) ENGINE=MyISAM CHARSET=utf8;
