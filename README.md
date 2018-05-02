@@ -132,3 +132,5 @@ com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Application was streami
 最终做法，删除前百分之1和后百分之1的数据
 
 
+----
+上传了这些操作数据库和过滤的代码，原始JDBC写，提取有用部分为后来服务端代码使用，写的很挫= =
