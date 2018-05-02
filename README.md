@@ -130,3 +130,5 @@ com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Application was streami
 74535 = 
 87 + 171 + 321 + 3085 + 9329 + 12811 + 12581 + 10396 + 7480 + 4783 + 3126 + 2203 + 1687 + 1305 + 
 最终做法，删除前百分之1和后百分之1的数据
+
+
