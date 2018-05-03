@@ -27,8 +27,9 @@ public class TravelRecordToInsertData {
             String tableName = null;
             String startTime = "0600";
             while (!startTime.equals("0000")){
-                String endTime = CreateTablesTenMinsAvgTime.timeIncrement(startTime);
-                tableName = "avgTime" + startTime + endTime;
+                //
+                String endTime = CreateTables30MinsAvgTime.timeIncrement(startTime);
+                tableName = "avgtime" + startTime + endTime;
                 int intStartTime = Integer.valueOf(startTime) * 100;
                 int intEndTime = Integer.valueOf(endTime) * 100;
                 //特殊处理下
@@ -96,7 +97,8 @@ public class TravelRecordToInsertData {
                 startTime = endTime;
             }
 
-            //大错误！！ 更新时候还是必须取出原有数据进行一个求均，不对，不用，每一次循环都是插入一张新的表
+            //大错误！！ 更新时候还是必须取出原有数据进行一个求均，不对，不用，每一次循环都是插入一张新的表 vc
+
 
             connection.close();
         }catch (ClassNotFoundException|SQLException e){

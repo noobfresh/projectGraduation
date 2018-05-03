@@ -33,7 +33,8 @@ public class InsertTenMinsTablesData {
 
             String startTime = "0600";
             while (!startTime.equals("0000")){
-                String endTime = CreateTablesTenMinsAvgTime.timeIncrement(startTime);
+                //
+                String endTime = CreateTables30MinsAvgTime.timeIncrement(startTime);
                 tableName = "avgTime" + startTime + endTime;
 
                 InsertRecord(tableName, connection, keyList);

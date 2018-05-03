@@ -66,20 +66,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="InsertDataToAvgTimeTables.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/InsertDataToAvgTimeTables.java">
+      <file leaf-file-name="CreateTablesTenMinsAvgTime.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CreateTablesTenMinsAvgTime.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="97" column="29" lean-forward="true" selection-start-line="97" selection-start-column="29" selection-end-line="97" selection-end-column="29" />
+            <state relative-caret-position="1100">
+              <caret line="47" column="9" selection-start-line="8" selection-start-column="8" selection-end-line="47" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CaculateAllAvgTime.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CaculateAllAvgTime.java">
+      <file leaf-file-name="CreateTables30MinsAvgTime.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CreateTables30MinsAvgTime.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="71" column="108" lean-forward="true" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="108" />
+            <state relative-caret-position="1175">
+              <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -90,11 +93,29 @@
       <file leaf-file-name="TravelRecordToInsertData.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/TravelRecordToInsertData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="98" column="61" selection-start-line="98" selection-start-column="61" selection-end-line="98" selection-end-column="61" />
+            <state relative-caret-position="1309">
+              <caret line="70" column="27" lean-forward="true" selection-start-line="70" selection-start-column="27" selection-end-line="70" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InsertTenMinsTablesData.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/InsertTenMinsTablesData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SelectCompareEvery10MinsCounts.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/SelectCompareEvery10MinsCounts.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -302,12 +323,12 @@
       <map>
         <entry key="C:/Source/code/edu-portal/cqu/portal/trunk" value="2987915780257" />
         <entry key="C:/Source/code/innovation" value="8951264976771" />
-        <entry key="$PROJECT_DIR$" value="6095125969214" />
+        <entry key="F:/ProjectSourceCode/kehui-web" value="4506802830783" />
+        <entry key="$PROJECT_DIR$" value="6096621846852" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
         <entry key="$PROJECT_DIR$/build.gradle" value="2084464759" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="1741342742" />
         <entry key="$PROJECT_DIR$/settings.gradle" value="3024445029" />
-        <entry key="F:/ProjectSourceCode/kehui-web" value="4506802830783" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -443,11 +464,13 @@
         <option value="$PROJECT_DIR$/src/main/java/DealTransStationPro.java" />
         <option value="$PROJECT_DIR$/src/main/java/CountEveryODRecords.java" />
         <option value="$PROJECT_DIR$/src/main/java/TenMinsAvgTime.java" />
-        <option value="$PROJECT_DIR$/src/main/java/InsertTenMinsTablesData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/CreateTablesTenMinsAvgTime.java" />
         <option value="$PROJECT_DIR$/src/main/java/avg/TravelRecordToInsertData.java" />
         <option value="$PROJECT_DIR$/src/main/java/OnlyForTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CreateTablesTenMinsAvgTime.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CreateTables30MinsAvgTime.java" />
+        <option value="$PROJECT_DIR$/src/main/java/SelectCompareEvery10MinsCounts.java" />
         <option value="$PROJECT_DIR$/src/main/java/TravelRecordToInsertData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/InsertTenMinsTablesData.java" />
       </list>
     </option>
   </component>
@@ -476,7 +499,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -506,8 +530,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -544,13 +567,8 @@
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
-    <configuration name="CountEveryODRecords" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="CountEveryODRecords" />
-      <module name="DataIntoSQLTest_main" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-    </configuration>
-    <configuration name="CreateTablesTenMinsAvgTime" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="CreateTablesTenMinsAvgTime" />
+    <configuration name="CreateTables30MinsAvgTime" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CreateTables30MinsAvgTime" />
       <module name="DataIntoSQLTest_main" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -561,6 +579,11 @@
     </configuration>
     <configuration name="OnlyForTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="OnlyForTest" />
+      <module name="DataIntoSQLTest_main" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="SelectCompareEvery10MinsCounts" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SelectCompareEvery10MinsCounts" />
       <module name="DataIntoSQLTest_main" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -631,19 +654,19 @@
       <method />
     </configuration>
     <list>
-      <item itemvalue="Application.CountEveryODRecords" />
-      <item itemvalue="Application.CreateTablesTenMinsAvgTime" />
       <item itemvalue="Application.InsertTenMinsTablesData" />
       <item itemvalue="Application.TravelRecordToInsertData" />
       <item itemvalue="Application.OnlyForTest" />
+      <item itemvalue="Application.SelectCompareEvery10MinsCounts" />
+      <item itemvalue="Application.CreateTables30MinsAvgTime" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.TravelRecordToInsertData" />
-        <item itemvalue="Application.OnlyForTest" />
         <item itemvalue="Application.InsertTenMinsTablesData" />
-        <item itemvalue="Application.CreateTablesTenMinsAvgTime" />
-        <item itemvalue="Application.CountEveryODRecords" />
+        <item itemvalue="Application.SelectCompareEvery10MinsCounts" />
+        <item itemvalue="Application.CreateTables30MinsAvgTime" />
+        <item itemvalue="Application.OnlyForTest" />
       </list>
     </recent_temporary>
   </component>
@@ -675,11 +698,14 @@
       <workItem from="1524798659873" duration="13998000" />
       <workItem from="1524990240558" duration="11164000" />
       <workItem from="1525238299385" duration="14094000" />
+      <workItem from="1525275762626" duration="472000" />
+      <workItem from="1525329021868" duration="5129000" />
+      <workItem from="1525342083006" duration="3071000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="161946000" />
+    <option name="totallyTimeSpent" value="170618000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -704,11 +730,11 @@
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.32980332" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="0" weight="0.81353134" />
+      <window_info anchor="bottom" id="Run" order="0" weight="0.8712871" />
       <window_info anchor="bottom" id="Terminal" order="4" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="1" />
-      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.30257186" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.3161876" />
       <window_info anchor="right" id="Database" order="5" weight="0.32980332" />
       <window_info anchor="right" id="Gradle" order="2" weight="0.32980332" />
       <window_info id="Structure" order="0" side_tool="true" weight="0.32980332" />
@@ -771,20 +797,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/MainTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1825">
-          <caret line="73" column="24" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.opencsv/opencsv/4.1/3651eee22f4df5a73f5a75e992f662be400d1ef9/opencsv-4.1-sources.jar!/com/opencsv/bean/CsvToBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8575">
-          <caret line="343" column="19" selection-start-line="343" selection-start-column="19" selection-end-line="343" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/OData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="950">
@@ -971,10 +983,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="775">
           <caret line="40" column="28" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
-          <folding>
-            <element signature="e#1072#1073#0" expanded="true" />
-            <element signature="e#1112#1113#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1081,8 +1089,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/InsertDataToAvgTimeTables.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="97" column="29" lean-forward="true" selection-start-line="97" selection-start-column="29" selection-end-line="97" selection-end-column="29" />
+        <state relative-caret-position="2225">
+          <caret line="97" column="29" selection-start-line="97" selection-start-column="29" selection-end-line="97" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -1090,36 +1098,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3">
           <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/InsertTenMinsTablesData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="35" column="59" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CreateTablesTenMinsAvgTime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CaculateAllAvgTime.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="71" column="108" lean-forward="true" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="108" />
+        <state relative-caret-position="1725">
+          <caret line="71" column="108" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="108" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1140,10 +1125,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CreateTablesTenMinsAvgTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1100">
+          <caret line="47" column="9" selection-start-line="8" selection-start-column="8" selection-end-line="47" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SelectCompareEvery10MinsCounts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CreateTables30MinsAvgTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1175">
+          <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/InsertTenMinsTablesData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/TravelRecordToInsertData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="98" column="61" selection-start-line="98" selection-start-column="61" selection-end-line="98" selection-end-column="61" />
+        <state relative-caret-position="1309">
+          <caret line="70" column="27" lean-forward="true" selection-start-line="70" selection-start-column="27" selection-end-line="70" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

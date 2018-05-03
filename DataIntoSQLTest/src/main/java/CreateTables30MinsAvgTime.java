@@ -3,7 +3,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class CreateTablesTenMinsAvgTime {
+public class CreateTables30MinsAvgTime {
 
     public static void main(String[] args){
         Connection connection;
@@ -48,17 +48,12 @@ public class CreateTablesTenMinsAvgTime {
         }
     }
 
-    /**
-     *
-     * @param time "0630", 以10为单位
-     * @return
-     */
     public static String timeIncrement(String time){
 
         int hour = Integer.valueOf(time.substring(0, 2));
         int min = Integer.valueOf(time.substring(2));
 
-        if(min == 50){
+        if(min == 30){
             min = 0;
             if(hour == 23){
                 hour = 0;
@@ -66,15 +61,8 @@ public class CreateTablesTenMinsAvgTime {
                 hour++;
             }
         } else {
-            min += 10;
+            min += 30;
         }
-        return convertLess10Num(hour) + convertLess10Num(min);
-    }
-
-    public static String convertLess10Num(int num){
-        if(num < 10){
-            return "0" + num;
-        }
-        return String.valueOf(num);
+        return CreateTablesTenMinsAvgTime.convertLess10Num(hour) + CreateTablesTenMinsAvgTime.convertLess10Num(min);
     }
 }

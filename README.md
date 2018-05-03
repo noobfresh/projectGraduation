@@ -134,3 +134,8 @@ com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Application was streami
 
 ----
 上传了这些操作数据库和过滤的代码，原始JDBC写，提取有用部分为后来服务端代码使用，写的很挫= =
+
+
+分别以十分钟为间隔、30分钟为间隔
+
+-> 删除不存在的数据 -> 查看每个表有数据和无数据的数量对比->考虑如何补数据
