@@ -98,9 +98,6 @@ public class CaculateAllAvgTime {
         }
         preparedStatement.executeBatch();
         connection.commit();
-//        preparedStatement.executeLargeUpdate();
-//        preparedStatement.executeBatch();
-//        connection.commit();
         preparedStatement.close();
         statement.close();
     }

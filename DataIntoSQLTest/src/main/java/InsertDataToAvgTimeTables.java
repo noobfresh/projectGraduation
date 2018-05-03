@@ -47,10 +47,11 @@ public class InsertDataToAvgTimeTables {
 
             //之后做一个日期计算，这样就不用重复直接拿个循环来做
 //            addTableName("20170901", connection, idList);
-            addTableName("20170908", connection, idList);
-            addTableName("20170915", connection, idList);
-            addTableName("20170922", connection, idList);
-            addTableName("20170929", connection, idList);
+//            addTableName("20170908", connection, idList);
+//            addTableName("20170915", connection, idList);
+//            addTableName("20170922", connection, idList);
+//            addTableName("20170929", connection, idList);
+            addTableName("201709", connection, idList);
             connection.close();
 
         }catch (ClassNotFoundException|SQLException e){
