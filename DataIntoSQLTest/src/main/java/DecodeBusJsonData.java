@@ -67,7 +67,7 @@ public class DecodeBusJsonData {
                         continue;
                     }
                     JSONObject busDetail = (JSONObject) entry.getValue();
-                    String busLineNo = "";
+                    String busLineNo = busDetail.getString("LINE_NO");
                     //每辆车一天的所有数据
                     for(Map.Entry<String, Object> entryTemp : busDetail.entrySet()){
                         String keyTemp = entryTemp.getKey();
@@ -92,6 +92,9 @@ public class DecodeBusJsonData {
                             String direction = stations[2];
                             int duration = Integer.valueOf(stationsAndOther[1]);
                             //填数据
+                            if(busLineNo.equals("")){
+                                System.out.println("这里真的没有数据啊");
+                            }
                             preparedStatement.setString(1, busLineNo);
                             preparedStatement.setString(2, date);
                             preparedStatement.setString(3, startStation);
