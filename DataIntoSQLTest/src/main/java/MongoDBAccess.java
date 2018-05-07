@@ -26,9 +26,10 @@ public class MongoDBAccess {
 
             FindIterable<Document> doc = collection.find();
             System.out.println("==============================================================");
-            doc.limit(7);
+//            doc.limit(7);
             int countId = 0;
             for(Document temp : doc){
+                countId++;
                 String json = temp.toJson();
                 String path = "C:\\Users\\PYF\\Desktop\\test\\busdata" + "\\" + countId + ".txt";
                 File file = new File(path);
