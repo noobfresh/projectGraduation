@@ -18,4 +18,5 @@ dependencies {
     compile 'com.opencsv:opencsv:4.1'
     compile 'mysql:mysql-connector-java:5.1.46'
     compile 'org.mongodb:mongo-java-driver:3.2.2'
+    compile 'com.alibaba:fastjson:1.2.47'
 }

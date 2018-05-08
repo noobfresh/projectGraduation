@@ -184,3 +184,9 @@ com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Application was streami
 想做的事情：
 （1）把毕设的项目代码写好，（感觉时间不够了）
 （2）毕业论文------14day
+
+
+
+----5.8
+主要在写二专论文
+创建了后端项目
