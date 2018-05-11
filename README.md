@@ -177,13 +177,13 @@ com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Application was streami
 （3）思考老师说的，要讲什么故事，用什么图----1
 
 个人觉得接下来最麻烦的工作：
-（1）学习LSTM并运用，这个应该是最后的计算了。----2~3
-（2）画web----2~3
-（3）接入高德SDK，有潜在风险------1
+（4）学习LSTM并运用，这个应该是最后的计算了。----2~3
+（5）画web----2~3
+（6）接入高德SDK，有潜在风险------1
 
 想做的事情：
-（1）把毕设的项目代码写好，（感觉时间不够了）
-（2）毕业论文------14day
+（7）把毕设的项目代码写好，（感觉时间不够了）
+（8）毕业论文------14day
 
 
 
@@ -194,3 +194,5 @@ com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Application was streami
 ----5.9-11
 写论文，翻论文
 
+5.12
+目标1，2，3完成
