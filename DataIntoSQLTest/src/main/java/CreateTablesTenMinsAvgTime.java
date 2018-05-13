@@ -54,6 +54,9 @@ public class CreateTablesTenMinsAvgTime {
      * @return
      */
     public static String timeIncrement(String time){
+        if(time.equals("0010")){
+            return time;
+        }
 
         int hour = Integer.valueOf(time.substring(0, 2));
         int min = Integer.valueOf(time.substring(2));
@@ -67,6 +70,28 @@ public class CreateTablesTenMinsAvgTime {
             }
         } else {
             min += 10;
+        }
+        return convertLess10Num(hour) + convertLess10Num(min);
+    }
+
+    public static String timeDecrement(String time){
+
+        if(time.equals("0000")){
+            return time;
+        }
+
+        int hour = Integer.valueOf(time.substring(0, 2));
+        int min = Integer.valueOf(time.substring(2));
+
+        if(min == 0){
+            min = 50;
+            if(hour == 6){
+                hour = 0;
+            } else {
+                hour--;
+            }
+        } else {
+            min -= 10;
         }
         return convertLess10Num(hour) + convertLess10Num(min);
     }
