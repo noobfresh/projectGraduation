@@ -86,20 +86,33 @@ public class FillMonthAvgTimeStrategy {
                     oneStationDurationBefore = tempDurationResultSet.getInt(1);
                 }
 
+                //如果其中一个为0的话，就不能随意除0了
+                int avgDuration = 0;
+                if(durationAfter == 0){
+                    avgDuration = durationBefore + oneStationDurationBefore;
+                }else if(durationBefore == 0){
+                    avgDuration = durationAfter - oneStationDurationAfter;
+                }else {
+                    avgDuration = (durationAfter - oneStationDurationAfter +
+                            durationBefore + oneStationDurationBefore) / 2;
+                }
 
-                int avgDuration = (durationAfter - oneStationDurationAfter +
-                        durationBefore + oneStationDurationBefore) / 2;
+
 
                 //close
                 tempDurationResultSet.close();
                 tempStatement.close();
 
                 //更新
-                String updateAvgTimeSQL = "UPDATE `avgtime201709` " +
-                        "SET DURATION = ?";
+                String updateAvgTimeSQL = "UPDATE graduationproject.`avgtime201709` " +
+                        "SET DURATION = ? WHERE START_STATION = ? AND END_STATION = ?";
                 tempStatement = connection.prepareStatement(updateAvgTimeSQL);
                 tempStatement.setInt(1, avgDuration);
-                tempStatement.executeUpdate();
+                tempStatement.setString(2, rawStartStation);
+                tempStatement.setString(3, rawEndStation);
+                tempStatement.execute();
+                connection.commit();
+                tempStatement.close();
                 //
                 System.out.println("更新了一条 起点站：" + rawStartStation + "  终点站：" + rawEndStation +
                 "  计算出来的duration：" + avgDuration);
