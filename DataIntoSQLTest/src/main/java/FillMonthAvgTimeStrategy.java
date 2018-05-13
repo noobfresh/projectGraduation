@@ -68,8 +68,27 @@ public class FillMonthAvgTimeStrategy {
                 }
 
                 //犯了个致命错误，忘记加和减一站的时间了
-                
-                int avgDuration = (durationAfter + durationBefore) / 2;
+                //后一站的单站时间
+                int oneStationDurationAfter = 0;
+                tempStatement.setString(1, rawEndStation);
+                tempStatement.setString(2, afterRawEndStation);
+                tempDurationResultSet = tempStatement.executeQuery();
+                if(tempDurationResultSet.next()){
+                    oneStationDurationAfter = tempDurationResultSet.getInt(1);
+                }
+
+                //前一站单站时间
+                int oneStationDurationBefore = 0;
+                tempStatement.setString(1, beforeRawEndStation);
+                tempStatement.setString(2, rawEndStation);
+                tempDurationResultSet = tempStatement.executeQuery();
+                if(tempDurationResultSet.next()){
+                    oneStationDurationBefore = tempDurationResultSet.getInt(1);
+                }
+
+
+                int avgDuration = (durationAfter - oneStationDurationAfter +
+                        durationBefore + oneStationDurationBefore) / 2;
 
                 //close
                 tempDurationResultSet.close();
@@ -82,7 +101,8 @@ public class FillMonthAvgTimeStrategy {
                 tempStatement.setInt(1, avgDuration);
                 tempStatement.executeUpdate();
                 //
-                System.out.println("更新了一条 " + i);
+                System.out.println("更新了一条 起点站：" + rawStartStation + "  终点站：" + rawEndStation +
+                "  计算出来的duration：" + avgDuration);
             }
 
             connection.close();
