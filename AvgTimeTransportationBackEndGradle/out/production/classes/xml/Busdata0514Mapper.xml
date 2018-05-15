@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cqu.project.graduation.mapper.Busdata0514Mapper">
+  <resultMap id="BaseResultMap" type="com.cqu.project.graduation.entity.Busdata0514">
+    <result column="line_no" jdbcType="VARCHAR" property="lineNo" />
+    <result column="date" jdbcType="VARCHAR" property="date" />
+    <result column="start_station" jdbcType="VARCHAR" property="startStation" />
+    <result column="end_station" jdbcType="VARCHAR" property="endStation" />
+    <result column="direction" jdbcType="VARCHAR" property="direction" />
+    <result column="duration" jdbcType="INTEGER" property="duration" />
+    <result column="period" jdbcType="VARCHAR" property="period" />
+  </resultMap>
+  <insert id="insert" parameterType="com.cqu.project.graduation.entity.Busdata0514">
+    insert into busdata0514 (line_no, date, start_station, 
+      end_station, direction, duration, 
+      period)
+    values (#{lineNo,jdbcType=VARCHAR}, #{date,jdbcType=VARCHAR}, #{startStation,jdbcType=VARCHAR}, 
+      #{endStation,jdbcType=VARCHAR}, #{direction,jdbcType=VARCHAR}, #{duration,jdbcType=INTEGER}, 
+      #{period,jdbcType=VARCHAR})
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select line_no, date, start_station, end_station, direction, duration, period
+    from busdata0514
+  </select>
+</mapper>
