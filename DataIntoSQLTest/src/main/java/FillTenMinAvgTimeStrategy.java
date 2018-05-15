@@ -19,6 +19,7 @@ public class FillTenMinAvgTimeStrategy {
 
             String startTime = "0600";
             while (!startTime.equals("0000")){
+                long startMillis = System.currentTimeMillis();
                 String endTime = CreateTablesTenMinsAvgTime.timeIncrement(startTime);
                 String tableName = "avgtime" + startTime + endTime;
 
@@ -31,8 +32,14 @@ public class FillTenMinAvgTimeStrategy {
                 Statement statement = connection.createStatement();
                 ResultSet resultSet = statement.executeQuery(queryRawDataSQL);
 
+                String updateSQL = "UPDATE `" + tableName + "` " +
+                        "SET DURATION = ? WHERE START_STATION = ? AND END_STATION = ?";
+                PreparedStatement preparedStatement = connection.prepareStatement(updateSQL);
+
                 //
+                int count = 0;
                 while (resultSet.next()){
+                    count++;
                     String rawStartStation = resultSet.getString(1);
                     String rawEndStation = resultSet.getString(2);
 
@@ -42,11 +49,12 @@ public class FillTenMinAvgTimeStrategy {
                     for(int i = 0; i < 3; i++){
                         String tempEndTime = CreateTablesTenMinsAvgTime.timeDecrement(tempStartTime);
                         //边界判断
-                        if(tempEndTime.equals("0000")){
+                        if(tempEndTime.equals("0050")){
                             break;
                         }
                         //
                         String tempTableName = "avgtime" + tempEndTime + tempStartTime;
+//                        System.out.println(tempTableName);
                         String tempQuerySQL = "SELECT " +
                                 " DURATION " +
                                 "FROM  " +
@@ -61,7 +69,7 @@ public class FillTenMinAvgTimeStrategy {
                         if(tempResultSet.next()){
                             avgDuration = avg(avgDuration, tempResultSet.getInt(1));
                         }
-                        tempStatement.close();
+
                         tempStartTime = tempEndTime;
                     }
 
@@ -74,6 +82,7 @@ public class FillTenMinAvgTimeStrategy {
                             break;
                         }
                         String tempTableName = "avgtime" + tempStartTime + tempEndTime;
+//                        System.out.println(tempTableName);
                         String tempQuerySQL = "SELECT " +
                                 " DURATION " +
                                 "FROM  " +
@@ -88,25 +97,28 @@ public class FillTenMinAvgTimeStrategy {
                         if(tempResultSet.next()){
                             avgDuration = avg(avgDuration, tempResultSet.getInt(1));
                         }
-                        tempStatement.close();
                         tempStartTime = tempEndTime;
                     }
-                    String updateSQL = "UPDATE `" + tableName + "` " +
-                            "SET DURATION = ? WHERE START_STATION = ? AND END_STATION = ?";
-                    PreparedStatement preparedStatement = connection.prepareStatement(updateSQL);
+
                     preparedStatement.setInt(1, avgDuration);
                     preparedStatement.setString(2, rawStartStation);
                     preparedStatement.setString(3, rawEndStation);
-                    preparedStatement.execute();
-                    connection.commit();
-                    preparedStatement.close();
+                    preparedStatement.addBatch();
+                    System.out.println(avgDuration + " " + rawStartStation + " " + rawEndStation + " " + count);
                 }
 
-                CreateTablesTenMinsAvgTime.timeIncrement(startTime);
+                preparedStatement.execute();
+                connection.commit();
+                preparedStatement.close();
+
+                System.out.println(startTime + "  front   time = " + (System.currentTimeMillis() - startMillis));
+
+                startTime = CreateTablesTenMinsAvgTime.timeIncrement(startTime);
             }
 
             startTime = "0600";
             while (!startTime.equals("0000")){
+                long startMillis = System.currentTimeMillis();
                 String endTime = CreateTablesTenMinsAvgTime.timeIncrement(startTime);
                 String tableName = "avgtime" + startTime + endTime;
 
@@ -119,8 +131,13 @@ public class FillTenMinAvgTimeStrategy {
                 Statement statement = connection.createStatement();
                 ResultSet resultSet = statement.executeQuery(queryRawDataSQL);
 
+                String updateSQL = "UPDATE `" + tableName + "` " +
+                        "SET DURATION = ? WHERE START_STATION = ? AND END_STATION = ?";
+                PreparedStatement tempStatement = connection.prepareStatement(updateSQL);
+
                 //
                 while (resultSet.next()){
+
                     String rawStartStation = resultSet.getString(1);
                     String rawEndStation = resultSet.getString(2);
 
@@ -139,16 +156,18 @@ public class FillTenMinAvgTimeStrategy {
                     if(tempResultSet.next()){
                         duration = tempResultSet.getInt(1);
                     }
-                    String updateSQL = "UPDATE `" + tableName + "` " +
-                            "SET DURATION = ? WHERE START_STATION = ? AND END_STATION = ?";
-                    PreparedStatement tempStatement = connection.prepareStatement(updateSQL);
+                    //考虑是否要把这一句变成批量更新
+
                     tempStatement.setInt(1, duration);
                     tempStatement.setString(2, rawStartStation);
                     tempStatement.setString(3, rawEndStation);
-                    tempStatement.execute();
-                    connection.commit();
-                    tempStatement.close();
+                    tempStatement.addBatch();
                 }
+                tempStatement.execute();
+                connection.commit();
+                tempStatement.close();
+                System.out.println(startTime + " behind  time = " + (System.currentTimeMillis() - startMillis));
+                startTime = CreateTablesTenMinsAvgTime.timeIncrement(startTime);
             }
             connection.close();
         }catch (ClassNotFoundException|SQLException e){

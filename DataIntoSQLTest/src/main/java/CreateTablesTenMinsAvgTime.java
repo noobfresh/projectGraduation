@@ -76,7 +76,7 @@ public class CreateTablesTenMinsAvgTime {
 
     public static String timeDecrement(String time){
 
-        if(time.equals("0000")){
+        if(time.equals("0050")){
             return time;
         }
 
