@@ -17,12 +17,12 @@ public class FillTenMinAvgTimeStrategy {
             connection = DriverManager.getConnection(url, user, pass);
             connection.setAutoCommit(false);
 
-            String startTime = "0600";
+            String startTime = "1300";
             while (!startTime.equals("0000")){
                 long startMillis = System.currentTimeMillis();
                 String endTime = CreateTablesTenMinsAvgTime.timeIncrement(startTime);
                 String tableName = "avgtime" + startTime + endTime;
-
+                System.out.println(tableName);
                 String queryRawDataSQL = "SELECT " +
                         " START_STATION, END_STATION " +
                         "FROM " +
@@ -104,12 +104,14 @@ public class FillTenMinAvgTimeStrategy {
                     preparedStatement.setString(2, rawStartStation);
                     preparedStatement.setString(3, rawEndStation);
                     preparedStatement.addBatch();
-                    System.out.println(avgDuration + " " + rawStartStation + " " + rawEndStation + " " + count);
+//                    System.out.println(avgDuration + " " + rawStartStation + " " + rawEndStation + " " + count);
                 }
 
-                preparedStatement.execute();
+                preparedStatement.executeBatch();
                 connection.commit();
                 preparedStatement.close();
+                //手动释放
+                preparedStatement = null;
 
                 System.out.println(startTime + "  front   time = " + (System.currentTimeMillis() - startMillis));
 
@@ -163,7 +165,7 @@ public class FillTenMinAvgTimeStrategy {
                     tempStatement.setString(3, rawEndStation);
                     tempStatement.addBatch();
                 }
-                tempStatement.execute();
+                tempStatement.executeBatch();
                 connection.commit();
                 tempStatement.close();
                 System.out.println(startTime + " behind  time = " + (System.currentTimeMillis() - startMillis));
