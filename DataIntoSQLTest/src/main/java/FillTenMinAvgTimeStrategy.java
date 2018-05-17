@@ -17,7 +17,8 @@ public class FillTenMinAvgTimeStrategy {
             connection = DriverManager.getConnection(url, user, pass);
             connection.setAutoCommit(false);
 
-            String startTime = "1300";
+            String startTime = "0600" +
+                    "";
             while (!startTime.equals("0000")){
                 long startMillis = System.currentTimeMillis();
                 String endTime = CreateTablesTenMinsAvgTime.timeIncrement(startTime);
@@ -46,30 +47,30 @@ public class FillTenMinAvgTimeStrategy {
                     //前三张表
                     String tempStartTime = startTime;
                     int avgDuration = 0;
+                    Statement tempStatement = connection.createStatement();
                     for(int i = 0; i < 3; i++){
                         String tempEndTime = CreateTablesTenMinsAvgTime.timeDecrement(tempStartTime);
                         //边界判断
                         if(tempEndTime.equals("0050")){
                             break;
                         }
+                        if(tempEndTime.equals("0610")){
+                            break;
+                        }
                         //
                         String tempTableName = "avgtime" + tempEndTime + tempStartTime;
-//                        System.out.println(tempTableName);
                         String tempQuerySQL = "SELECT " +
                                 " DURATION " +
                                 "FROM  " +
                                 " `" + tempTableName + "` " +
-                                "WHERE START_STATION = ?  " +
-                                "AND END_STATION = ?";
-                        PreparedStatement tempStatement =
-                                connection.prepareStatement(tempQuerySQL);
-                        tempStatement.setString(1, rawStartStation);
-                        tempStatement.setString(2, rawEndStation);
-                        ResultSet tempResultSet = tempStatement.executeQuery();
+                                "WHERE START_STATION = '" + rawStartStation + "'  " +
+                                "AND END_STATION = '" +  rawEndStation + "'";
+
+                        ResultSet tempResultSet = tempStatement.executeQuery(tempQuerySQL);
                         if(tempResultSet.next()){
                             avgDuration = avg(avgDuration, tempResultSet.getInt(1));
                         }
-
+                        tempResultSet.close();
                         tempStartTime = tempEndTime;
                     }
 
@@ -87,17 +88,18 @@ public class FillTenMinAvgTimeStrategy {
                                 " DURATION " +
                                 "FROM  " +
                                 " `" + tempTableName + "` " +
-                                "WHERE START_STATION = ?  " +
-                                "AND END_STATION = ?";
-                        PreparedStatement tempStatement =
-                                connection.prepareStatement(tempQuerySQL);
-                        tempStatement.setString(1, rawStartStation);
-                        tempStatement.setString(2, rawEndStation);
-                        ResultSet tempResultSet = tempStatement.executeQuery();
+                                "WHERE START_STATION = '" + rawStartStation + "'  " +
+                                "AND END_STATION = '" +  rawEndStation + "'";
+                        ResultSet tempResultSet = tempStatement.executeQuery(tempQuerySQL);
                         if(tempResultSet.next()){
                             avgDuration = avg(avgDuration, tempResultSet.getInt(1));
                         }
+                        tempResultSet.close();
                         tempStartTime = tempEndTime;
+                    }
+                    tempStatement.close();
+                    if(avgDuration > 0 && avgDuration < 10){
+                        System.out.println(avgDuration);
                     }
 
                     preparedStatement.setInt(1, avgDuration);
@@ -138,6 +140,7 @@ public class FillTenMinAvgTimeStrategy {
                 PreparedStatement tempStatement = connection.prepareStatement(updateSQL);
 
                 //
+                Statement statement1 = connection.createStatement();
                 while (resultSet.next()){
 
                     String rawStartStation = resultSet.getString(1);
@@ -147,12 +150,9 @@ public class FillTenMinAvgTimeStrategy {
                             " DURATION " +
                             "FROM  " +
                             " `avgtime20170901` " +
-                            "WHERE START_STATION = ?  " +
-                            "AND END_STATION = ?";
-                    PreparedStatement preparedStatement = connection.prepareStatement(queryFromDaySQL);
-                    preparedStatement.setString(1, rawStartStation);
-                    preparedStatement.setString(2, rawEndStation);
-                    ResultSet tempResultSet = preparedStatement.executeQuery();
+                            "WHERE START_STATION = '" + rawStartStation +"'  " +
+                            "AND END_STATION = '" + rawEndStation + "'";
+                    ResultSet tempResultSet = statement1.executeQuery(queryFromDaySQL);
 
                     int duration = 0;
                     if(tempResultSet.next()){
@@ -180,6 +180,10 @@ public class FillTenMinAvgTimeStrategy {
     public static int avg(int origin, int delta){
         if(origin == 0){
             return delta;
+        }
+        //防止delta为0
+        if(delta == 0){
+            return origin;
         }
         return (origin + delta) / 2;
     }
