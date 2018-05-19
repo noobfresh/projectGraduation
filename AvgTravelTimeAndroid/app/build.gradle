@@ -45,4 +45,11 @@ dependencies {
     // 支持Gson解析
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
 
+
+    //gaode map
+    compile 'com.amap.api:3dmap:latest.integration'
+    compile 'com.amap.api:map2d:latest.integration'
+    compile 'com.amap.api:navi-3dmap:latest.integration'
+    compile 'com.amap.api:search:latest.integration'
+    compile 'com.amap.api:location:latest.integration'
 }
