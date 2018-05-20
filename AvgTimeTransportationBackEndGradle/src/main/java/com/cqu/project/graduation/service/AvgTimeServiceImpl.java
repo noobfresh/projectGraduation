@@ -1,6 +1,8 @@
 package com.cqu.project.graduation.service;
 
 
+import com.cqu.project.graduation.entity.Avgtime;
+import com.cqu.project.graduation.mapper.AvgtimeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,15 +10,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class AvgTimeServiceImpl implements IAvgTimeService{
 
-    private Avgtime06000610Mapper mapper;
+    private AvgtimeMapper mapper;
 
     @Autowired
-    public AvgTimeServiceImpl(Avgtime06000610Mapper mapper) {
+    public AvgTimeServiceImpl(AvgtimeMapper mapper) {
         this.mapper = mapper;
     }
 
     @Override
-    public Avgtime06000610 getAvgTimeByTest(String startStation, String endStation) {
-        return mapper.selectByPrimaryKey(startStation, endStation);
+    public Avgtime getAvgTimeByTest(String startStation, String endStation, String tableName) {
+        return mapper.selectByPrimaryKey(startStation, endStation, tableName);
     }
 }

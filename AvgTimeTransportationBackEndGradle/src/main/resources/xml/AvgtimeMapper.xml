@@ -35,7 +35,7 @@
   </update>
   <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
     select START_STATION, END_STATION, DIRECTION, DURATION, DISTANCE, TIME, ISBUS
-    from avgtime
+    from ${tableName}
     where START_STATION = #{startStation,jdbcType=VARCHAR}
       and END_STATION = #{endStation,jdbcType=VARCHAR}
   </select>

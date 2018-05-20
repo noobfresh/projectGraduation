@@ -9,7 +9,9 @@ public interface OdMapper {
 
     int insert(Od record);
 
-    Od selectByPrimaryKey(@Param("startId") Integer startId, @Param("endId") Integer endId);
+    Od selectByPrimaryKey(@Param("startId") Integer startId,
+                          @Param("endId") Integer endId,
+                          @Param("tableName") String tableName);
 
     List<Od> selectAll();
 

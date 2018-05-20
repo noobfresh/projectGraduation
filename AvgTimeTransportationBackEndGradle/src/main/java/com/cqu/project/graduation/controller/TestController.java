@@ -1,7 +1,9 @@
 package com.cqu.project.graduation.controller;
 
-import com.cqu.project.graduation.entity.Avgtime06000610;
+
+import com.cqu.project.graduation.entity.Avgtime;
 import com.cqu.project.graduation.service.IAvgTimeService;
+import com.cqu.project.graduation.util.TimeGeneratorUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,12 +23,5 @@ public class TestController {
         this.avgTimeService = avgTimeService;
     }
 
-    @RequestMapping("/showTest")
-    @ResponseBody
-    public Map toIndex(String startStation, String endStation) {
-        Avgtime06000610 test = avgTimeService.getAvgTimeByTest(startStation, endStation);
-        Map<String, String> map = new HashMap<>();
-        map.put("duration", String.valueOf(test.getDuration()));
-        return map;
-    }
+
 }
