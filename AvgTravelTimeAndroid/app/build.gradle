@@ -20,6 +20,7 @@ android {
     dataBinding {
         enabled = true
     }
+
 }
 
 dependencies {
@@ -47,9 +48,14 @@ dependencies {
 
 
     //gaode map
+    //3d map
     compile 'com.amap.api:3dmap:latest.integration'
+    //2d map
     compile 'com.amap.api:map2d:latest.integration'
+    //导航
     compile 'com.amap.api:navi-3dmap:latest.integration'
+    //搜索
     compile 'com.amap.api:search:latest.integration'
+    //定位
     compile 'com.amap.api:location:latest.integration'
 }

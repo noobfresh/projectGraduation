@@ -5,6 +5,10 @@ import com.cqu.project.graduation.service.IAvgTimeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/test")
@@ -18,8 +22,11 @@ public class TestController {
     }
 
     @RequestMapping("/showTest")
-    public String toIndex(String startStation, String endStation) {
+    @ResponseBody
+    public Map toIndex(String startStation, String endStation) {
         Avgtime06000610 test = avgTimeService.getAvgTimeByTest(startStation, endStation);
-        return String.valueOf(test.getDuration());
+        Map<String, String> map = new HashMap<>();
+        map.put("duration", String.valueOf(test.getDuration()));
+        return map;
     }
 }
