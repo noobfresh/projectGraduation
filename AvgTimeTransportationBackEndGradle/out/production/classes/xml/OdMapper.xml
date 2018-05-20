@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cqu.project.graduation.mapper.OdMapper">
+  <resultMap id="BaseResultMap" type="com.cqu.project.graduation.entity.Od">
+    <id column="START_ID" jdbcType="INTEGER" property="startId" />
+    <id column="END_ID" jdbcType="INTEGER" property="endId" />
+    <result column="TICKET_ID" jdbcType="VARCHAR" property="ticketId" />
+    <result column="TXN_DATE" jdbcType="VARCHAR" property="txnDate" />
+    <result column="START_TIME" jdbcType="VARCHAR" property="startTime" />
+    <result column="END_TIME" jdbcType="VARCHAR" property="endTime" />
+    <result column="START_STATION" jdbcType="VARCHAR" property="startStation" />
+    <result column="END_STATION" jdbcType="VARCHAR" property="endStation" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    delete from od
+    where START_ID = #{startId,jdbcType=INTEGER}
+      and END_ID = #{endId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.cqu.project.graduation.entity.Od">
+    insert into od (START_ID, END_ID, TICKET_ID, 
+      TXN_DATE, START_TIME, END_TIME, 
+      START_STATION, END_STATION)
+    values (#{startId,jdbcType=INTEGER}, #{endId,jdbcType=INTEGER}, #{ticketId,jdbcType=VARCHAR}, 
+      #{txnDate,jdbcType=VARCHAR}, #{startTime,jdbcType=VARCHAR}, #{endTime,jdbcType=VARCHAR}, 
+      #{startStation,jdbcType=VARCHAR}, #{endStation,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.cqu.project.graduation.entity.Od">
+    update od
+    set TICKET_ID = #{ticketId,jdbcType=VARCHAR},
+      TXN_DATE = #{txnDate,jdbcType=VARCHAR},
+      START_TIME = #{startTime,jdbcType=VARCHAR},
+      END_TIME = #{endTime,jdbcType=VARCHAR},
+      START_STATION = #{startStation,jdbcType=VARCHAR},
+      END_STATION = #{endStation,jdbcType=VARCHAR}
+    where START_ID = #{startId,jdbcType=INTEGER}
+      and END_ID = #{endId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
+    select START_ID, END_ID, TICKET_ID, TXN_DATE, START_TIME, END_TIME, START_STATION, 
+    END_STATION
+    from od
+    where START_ID = #{startId,jdbcType=INTEGER}
+      and END_ID = #{endId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select START_ID, END_ID, TICKET_ID, TXN_DATE, START_TIME, END_TIME, START_STATION, 
+    END_STATION
+    from od
+  </select>
+</mapper>
