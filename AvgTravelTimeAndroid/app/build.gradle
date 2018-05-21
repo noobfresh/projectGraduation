@@ -9,6 +9,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
     buildTypes {
         release {
@@ -31,6 +32,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:0.5'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:2.2.2'
 
+
+
     // Android 支持 Rxjava
     // 此处一定要注意使用RxJava2的版本
     compile 'io.reactivex.rxjava2:rxjava:2.0.1'
@@ -48,14 +51,9 @@ dependencies {
 
 
     //gaode map
-    //3d map
-    compile 'com.amap.api:3dmap:latest.integration'
-    //2d map
-    compile 'com.amap.api:map2d:latest.integration'
-    //导航
-    compile 'com.amap.api:navi-3dmap:latest.integration'
-    //搜索
-    compile 'com.amap.api:search:latest.integration'
-    //定位
-    compile 'com.amap.api:location:latest.integration'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+//    compile 'com.amap.api:3dmap:latest.integration'
+//    compile 'com.amap.api:navi-3dmap:latest.integration'
+//    compile 'com.amap.api:search:latest.integration'
+//    compile 'com.amap.api:location:latest.integration'
 }
