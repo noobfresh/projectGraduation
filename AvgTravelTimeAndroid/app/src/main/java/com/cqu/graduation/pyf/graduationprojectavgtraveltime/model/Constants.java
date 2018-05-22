@@ -6,7 +6,7 @@ package com.cqu.graduation.pyf.graduationprojectavgtraveltime.model;
 
 public class Constants {
 
-    public static String DEFAULT_CITY = "重庆";
+    public static String DEFAULT_CITY = "023";
     public static final String EXTRA_TIP = "ExtraTip";
     public static final String KEY_WORDS_NAME = "KeyWord";
 }

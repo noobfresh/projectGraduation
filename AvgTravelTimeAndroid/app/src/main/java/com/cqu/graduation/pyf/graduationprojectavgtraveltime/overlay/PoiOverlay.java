@@ -47,8 +47,8 @@ public class PoiOverlay {
 	 * 去掉PoiOverlay上所有的Marker。
 	 */
 	public void removeFromMap() {
-		for (Marker mark : mPoiMarks) {
-			mark.remove();
+		for(int i = 1; i < mPoiMarks.size(); i++){
+			mPoiMarks.remove(i);
 		}
 	}
 	/**

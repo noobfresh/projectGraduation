@@ -1,11 +1,13 @@
 package com.cqu.graduation.pyf.graduationprojectavgtraveltime.view;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -50,6 +52,10 @@ public class InputTipsActivity extends AppCompatActivity implements SearchView.O
         mSearchView.onActionViewExpanded();
         mSearchView.setIconifiedByDefault(true);
         mSearchView.setSubmitButtonEnabled(false);
+
+        EditText editText = mSearchView.findViewById(android.support.v7.appcompat.R.id.search_src_text);
+        editText.setTextColor(Color.rgb(0, 0, 0));
+        editText.setHintTextColor(Color.rgb(235, 235, 235));
     }
 
     /**

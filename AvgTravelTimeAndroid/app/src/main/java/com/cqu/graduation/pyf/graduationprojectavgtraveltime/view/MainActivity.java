@@ -2,10 +2,12 @@ package com.cqu.graduation.pyf.graduationprojectavgtraveltime.view;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
+import android.location.Location;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,6 +47,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private PoiSearch.Query query;// Poi查询条件类
     private PoiSearch poiSearch;// POI搜索
     private int currentPage;
+    private LatLng currentPosition;
+    private Button locationBtn;
 
     private Marker mPoiMarker;
 
@@ -66,14 +70,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initialMap(savedInstanceState);
         setUpMap();
 
-
-
         //
         textView = findViewById(R.id.main_keywords);
         textView.setOnClickListener(this);
 
         cleanKeyWords = findViewById(R.id.clean_keywords);
         cleanKeyWords.setOnClickListener(this);
+
+        //
+        locationBtn = findViewById(R.id.location);
+        locationBtn.setOnClickListener(this);
     }
 
     private void initialMap(Bundle savedInstanceState){
@@ -89,15 +95,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //连续定位、且将视角移动到地图中心点，定位点依照设备方向旋转，并且会跟随设备移动。
         // （1秒1次定位）如果不设置myLocationType，默认也会执行此种模式。
-        myLocationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_LOCATION_ROTATE);
+        myLocationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_LOCATE);
         myLocationStyle.showMyLocation(true);
         //设置连续定位模式下的定位间隔，
         // 只在连续定位模式下生效，单次定位模式下不会生效。单位为毫秒。
-        myLocationStyle.interval(10000);
+//        myLocationStyle.interval(10000);
         aMap.setMyLocationStyle(myLocationStyle);//设置定位蓝点的Style
         aMap.getUiSettings().setMyLocationButtonEnabled(false);//设置默认定位按钮是否显示，非必需设置。
         // 设置为true表示启动显示定位蓝点，false表示隐藏定位蓝点并不进行定位，默认是false。
         aMap.setMyLocationEnabled(true);
+
+        aMap.setOnMyLocationChangeListener(new AMap.OnMyLocationChangeListener() {
+            @Override
+            public void onMyLocationChange(Location location) {
+                if(aMap.getMyLocationStyle().getMyLocationType() == MyLocationStyle.LOCATION_TYPE_LOCATE){
+                    aMap.setMyLocationStyle(aMap.getMyLocationStyle().myLocationType(
+                            MyLocationStyle.LOCATION_TYPE_FOLLOW_NO_CENTER));
+                }
+                if(location != null){
+                    LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
+                    currentPosition = latLng;
+                }
+            }
+        });
     }
 
     /**
@@ -105,7 +125,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     private void setUpMap() {
         aMap.setOnMarkerClickListener(this);// 添加点击marker监听事件
-//        aMap.setInfoWindowAdapter(this);// 添加显示infowindow监听事件
         aMap.getUiSettings().setRotateGesturesEnabled(false);
     }
 
@@ -148,6 +167,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 aMap.clear();
                 cleanKeyWords.setVisibility(View.GONE);
                 break;
+            case R.id.location:
+                aMap.moveCamera(CameraUpdateFactory.changeLatLng(currentPosition));
             default:
                 break;
         }
@@ -239,9 +260,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         //返回来有3种情况
-        //
+        //没有tip，但输入了关键字
+        //有tip
+        //什么都没输就回来了-----什么都不做
         if (resultCode == RESULT_CODE_INPUTTIPS && data
                 != null) {
+            //有tip
             aMap.clear();
             Tip tip = data.getParcelableExtra(Constants.EXTRA_TIP);
             if (tip.getPoiID() == null || tip.getPoiID().equals("")) {
@@ -254,6 +278,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 cleanKeyWords.setVisibility(View.VISIBLE);
             }
         } else if (resultCode == RESULT_CODE_KEYWORDS && data != null) {
+            //没有tip，但输入了关键字
             aMap.clear();
             String keywords = data.getStringExtra(Constants.KEY_WORDS_NAME);
             if(keywords != null && !keywords.equals("")){

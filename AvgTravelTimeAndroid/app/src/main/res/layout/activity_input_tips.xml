@@ -36,8 +36,6 @@
                 android:imeOptions="actionSearch"
                 android:inputType="textCapWords"
                 android:singleLine="true"
-                android:textColor="#fff"
-                android:textColorHint="#fff"
                 app:queryHint="请输入关键字"
                 app:searchIcon="@null" />
         </LinearLayout>
