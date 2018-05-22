@@ -210,3 +210,10 @@ com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Application was streami
 10.与9同理，取每张卡第一个起点
 
 好像没有体现出来预测
+
+doing 5,6
+新问题，公交的旅程估计有点麻烦
+
+//搜索
+//路线规划
+

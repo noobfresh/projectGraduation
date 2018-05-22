@@ -32,8 +32,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:0.5'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:2.2.2'
 
-
-
     // Android 支持 Rxjava
     // 此处一定要注意使用RxJava2的版本
     compile 'io.reactivex.rxjava2:rxjava:2.0.1'
@@ -48,7 +46,6 @@ dependencies {
 
     // 支持Gson解析
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
-
 
     //gaode map
     compile fileTree(dir: 'libs', include: ['*.jar'])
