@@ -34,5 +34,30 @@ public class Useless {
         });
 
         search.searchPOIAsyn();*/
+
+
+
+        /*timePicker = findViewById(R.id.timepicker);
+        timePicker.setIs24HourView(true);
+        setNumberPickerTextSize(timePicker);
+        timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+            @Override
+            public void onTimeChanged(TimePicker timePicker, int i, int i1) {
+                time = TimeUtil.formatTime(i,i1);
+            }
+        });
+
+        datePicker = findViewById(R.id.datepicker);
+        //设置年份为隐藏
+        ((ViewGroup) ((ViewGroup)(datePicker.getChildAt(0)))
+                .getChildAt(0)).getChildAt(0).setVisibility(View.GONE);
+        Calendar calendar = Calendar.getInstance();
+        datePicker.init(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
+                calendar.get(Calendar.DAY_OF_MONTH), new DatePicker.OnDateChangedListener() {
+                    @Override
+                    public void onDateChanged(DatePicker datePicker, int i, int i1, int i2) {
+                        date = TimeUtil.formatDate(i1+1, i2);
+                    }
+                });*/
     }
 }

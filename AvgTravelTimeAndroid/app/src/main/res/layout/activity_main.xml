@@ -65,9 +65,9 @@
         <Button
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="@mipmap/ic_launcher"
+            android:background="@drawable/dir_station"
             android:layout_alignParentBottom="true"
-            android:layout_margin="20dp"
+            android:layout_margin="40dp"
             android:id="@+id/location"/>
 
         <Button

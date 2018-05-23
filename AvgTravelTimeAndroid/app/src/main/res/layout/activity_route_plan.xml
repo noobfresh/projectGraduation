@@ -60,7 +60,7 @@
             android:id="@+id/timepicker"
             android:layout_below="@id/linearlayout"
             android:layout_toRightOf="@id/datepicker"
-            android:layout_marginLeft="20dp">
+            android:visibility="gone">
 
         </TimePicker>
 
@@ -70,9 +70,62 @@
             android:datePickerMode="spinner"
             android:calendarViewShown="false"
             android:id="@+id/datepicker"
+            android:layout_below="@id/linearlayout"
+            android:visibility="gone">
+        </DatePicker>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/linearlayout2"
             android:layout_below="@id/linearlayout">
 
-        </DatePicker>
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:text="日期选择"
+                android:id="@+id/date"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="40dp"/>
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:text="时间选择"
+                android:id="@+id/time"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="20dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="查询"
+                android:id="@+id/search_button" />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"
+            android:layout_below="@id/linearlayout2"/>
+
+        <ListView
+            android:id="@+id/bus_result_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="#00000000"
+            android:divider="@null"
+            android:fadingEdge="none"
+            android:fadingEdgeLength="0dp"
+            android:footerDividersEnabled="false"
+            android:headerDividersEnabled="false"
+            android:listSelector="#00000000"
+            android:layout_below="@id/linearlayout2"
+            android:layout_marginTop="5dp">
+        </ListView>
+
     </RelativeLayout>
 
 </layout>

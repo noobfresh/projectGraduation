@@ -1,19 +1,44 @@
 package com.cqu.graduation.pyf.graduationprojectavgtraveltime.view;
 
+import android.app.AlertDialog;
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
+import com.amap.api.services.core.LatLonPoint;
 import com.amap.api.services.help.Tip;
+import com.amap.api.services.route.BusRouteResult;
+import com.amap.api.services.route.DriveRouteResult;
+import com.amap.api.services.route.RideRouteResult;
+import com.amap.api.services.route.RouteSearch;
+import com.amap.api.services.route.WalkRouteResult;
 import com.cqu.graduation.pyf.graduationprojectavgtraveltime.R;
+import com.cqu.graduation.pyf.graduationprojectavgtraveltime.adapter.BusResultListAdapter;
 import com.cqu.graduation.pyf.graduationprojectavgtraveltime.model.Constants;
+import com.cqu.graduation.pyf.graduationprojectavgtraveltime.util.TimeUtil;
 
-public class RoutePlanActivity extends AppCompatActivity implements View.OnClickListener{
+import java.sql.Time;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
+public class RoutePlanActivity extends AppCompatActivity implements View.OnClickListener,
+        RouteSearch.OnRouteSearchListener{
+
+    private static final String TAG = "RoutePlanActivity";
 
     private static final int REQUEST_CODE = 1;
     private static final String REQUEST_PARAM_START = "startPosition";
@@ -22,14 +47,33 @@ public class RoutePlanActivity extends AppCompatActivity implements View.OnClick
     public static final int RESULT_CODE_START = 11;
     public static final int RESULT_CODE_END = 22;
 
+    private final int ROUTE_TYPE_BUS = 1;
+    private final int ROUTE_TYPE_DRIVE = 2;
+    private final int ROUTE_TYPE_WALK = 3;
+    private final int ROUTE_TYPE_CROSSTOWN = 4;
+
 
     private TextView startStation;
     private TextView endStation;
-    private TimePicker timePicker;
-    private DatePicker datePicker;
+
+    private TextView dateTextView;
+    private TextView timeTextView;
+//    private TimePicker timePicker;
+//    private DatePicker datePicker;
+    private Button searchBtn;
+    private ListView busResultList;
+
+    private String time = TimeUtil.time();
+    private String date = TimeUtil.date();
+    private BusRouteResult mBusRouteResult;
+    private RouteSearch routeSearch;
 
     private Tip startTip;
     private Tip endTip;
+    private LatLonPoint mStartPoint;
+    private LatLonPoint mEndPoint;
+
+    private String[] interval = {"00", "10", "20", "30", "40", "50"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +86,20 @@ public class RoutePlanActivity extends AppCompatActivity implements View.OnClick
         startStation.setOnClickListener(this);
         endStation.setOnClickListener(this);
 
-        timePicker = findViewById(R.id.timepicker);
-        timePicker.setIs24HourView(true);
-        datePicker = findViewById(R.id.datepicker);
-        //设置年份为隐藏
-        ((ViewGroup) ((ViewGroup)(datePicker.getChildAt(0)))
-                .getChildAt(0)).getChildAt(0).setVisibility(View.GONE);
+
+
+        searchBtn = findViewById(R.id.search_button);
+        searchBtn.setOnClickListener(this);
+
+        dateTextView = findViewById(R.id.date);
+        dateTextView.setOnClickListener(this);
+        timeTextView = findViewById(R.id.time);
+        timeTextView.setOnClickListener(this);
+
+        busResultList = findViewById(R.id.bus_result_list);
+
+        routeSearch = new RouteSearch(this);
+        routeSearch.setRouteSearchListener(this);
     }
 
 
@@ -63,6 +115,36 @@ public class RoutePlanActivity extends AppCompatActivity implements View.OnClick
                 Intent intent2 = new Intent(this, InputTipsActivity.class);
                 intent2.putExtra("position", REQUEST_PARAM_END);
                 startActivityForResult(intent2, REQUEST_CODE);
+                break;
+            case R.id.date:
+                DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                        AlertDialog.THEME_HOLO_LIGHT,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+                                date = TimeUtil.formatDate(i1+1, i2);
+                                dateTextView.setText((i1 + 1) + "月" + i2 + "日");
+                                Log.d(TAG, "onDateSet: " + date);
+                            }
+                        }, TimeUtil.year(), TimeUtil.month(), TimeUtil.day());
+
+                datePickerDialog.show();
+                break;
+            case R.id.time:
+                DurationTimePickDialog timePickerDialog = new DurationTimePickDialog(this,
+                        new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int i, int i1) {
+                        time = TimeUtil.formatTime(i, i1);
+                        timeTextView.setText(i + ":" + i1);
+                        Log.d(TAG, "onTimeSet: " + time);
+                    }
+                }, TimeUtil.hour(), TimeUtil.min(), true, 10);
+                timePickerDialog.show();
+                break;
+            case R.id.search_button:
+                //数据库查询
+                searchRouteResult(ROUTE_TYPE_BUS, RouteSearch.BusDefault);
                 break;
             default:
                 break;
@@ -80,4 +162,134 @@ public class RoutePlanActivity extends AppCompatActivity implements View.OnClick
             endStation.setText("终点：        " + endTip.getName());
         }
     }
+
+
+
+    /**
+     * 得到timePicker里面的android.widget.NumberPicker组件 （有两个android.widget.NumberPicker组件--hour，minute）
+     * @param viewGroup
+     * @return
+     */
+    private List<NumberPicker> findNumberPicker(ViewGroup viewGroup)
+    {
+        List<NumberPicker> npList = new ArrayList<NumberPicker>();
+        View child = null;
+
+        if (null != viewGroup)
+        {
+            for (int i = 0; i < viewGroup.getChildCount(); i++)
+            {
+                child = viewGroup.getChildAt(i);
+                if (child instanceof NumberPicker)
+                {
+                    npList.add((NumberPicker)child);
+                }
+                else if (child instanceof LinearLayout)
+                {
+                    List<NumberPicker> result = findNumberPicker((ViewGroup)child);
+                    if (result.size() > 0)
+                    {
+                        return result;
+                    }
+                }
+            }
+        }
+        return npList;
+    }
+
+    /**
+     * 查找timePicker里面的android.widget.NumberPicker组件 ，并对其进行时间间隔设置
+     * @param viewGroup  TimePicker timePicker
+     */
+    private void setNumberPickerTextSize(ViewGroup viewGroup){
+        List<NumberPicker> npList = findNumberPicker(viewGroup);
+        if (null != npList)
+        {
+            for (NumberPicker mMinuteSpinner : npList)
+            {
+//              System.out.println("mMinuteSpinner.toString()="+mMinuteSpinner.toString());
+                if(mMinuteSpinner.toString().contains("id/minute")){//对分钟进行间隔设置
+
+                    mMinuteSpinner.setMinValue(0);
+                    mMinuteSpinner.setMaxValue(interval.length-1);
+                    mMinuteSpinner.setDisplayedValues(interval);  //这里的minuts是一个String数组，就是要显示的分钟值
+                }
+                //对小时进行间隔设置 使用 if(mMinuteSpinner.toString().contains("id/hour")){}即可
+            }
+        }
+    }
+
+    @Override
+    public void onBusRouteSearched(BusRouteResult busRouteResult, int i) {
+//        aMap.clear();// 清理地图上的所有覆盖物
+        if (i == 1000) {
+            if (busRouteResult != null && busRouteResult.getPaths() != null) {
+                if (busRouteResult.getPaths().size() > 0) {
+                    mBusRouteResult = busRouteResult;
+                    BusResultListAdapter mBusResultListAdapter = new BusResultListAdapter(this, mBusRouteResult);
+                    busResultList.setAdapter(mBusResultListAdapter);
+                } else if (busRouteResult != null && busRouteResult.getPaths() == null) {
+                    Toast.makeText(this, "没结果", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                Toast.makeText(this, "没结果", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(this, "没结果", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void onDriveRouteSearched(DriveRouteResult driveRouteResult, int i) {
+
+    }
+
+    @Override
+    public void onWalkRouteSearched(WalkRouteResult walkRouteResult, int i) {
+
+    }
+
+    @Override
+    public void onRideRouteSearched(RideRouteResult rideRouteResult, int i) {
+
+    }
+
+    /**
+     * 开始搜索路径规划方案
+     */
+    public void searchRouteResult(int routeType, int mode) {
+        mStartPoint = startTip.getPoint();
+        mEndPoint = endTip.getPoint();
+
+        if (mStartPoint == null) {
+            Toast.makeText(this, "起点未设置", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (mEndPoint == null) {
+            Toast.makeText(this, "终点未设置", Toast.LENGTH_SHORT).show();
+        }
+        final RouteSearch.FromAndTo fromAndTo = new RouteSearch.FromAndTo(
+                mStartPoint, mEndPoint);
+        if (routeType == ROUTE_TYPE_BUS) {// 公交路径规划
+            RouteSearch.BusRouteQuery query = new RouteSearch.BusRouteQuery(fromAndTo, mode,
+                    Constants.DEFAULT_CITY, 0);// 第一个参数表示路径规划的起点和终点，第二个参数表示公交查询模式，第三个参数表示公交查询城市区号，第四个参数表示是否计算夜班车，0表示不计算
+            routeSearch.calculateBusRouteAsyn(query);// 异步路径规划公交模式查询
+        } else if (routeType == ROUTE_TYPE_DRIVE) {// 驾车路径规划
+            RouteSearch.DriveRouteQuery query = new RouteSearch.DriveRouteQuery(fromAndTo, mode, null,
+                    null, "");// 第一个参数表示路径规划的起点和终点，第二个参数表示驾车模式，第三个参数表示途经点，第四个参数表示避让区域，第五个参数表示避让道路
+            routeSearch.calculateDriveRouteAsyn(query);// 异步路径规划驾车模式查询
+        } else if (routeType == ROUTE_TYPE_WALK) {// 步行路径规划
+            RouteSearch.WalkRouteQuery query = new RouteSearch.WalkRouteQuery(fromAndTo, mode);
+            routeSearch.calculateWalkRouteAsyn(query);// 异步路径规划步行模式查询
+        } else if (routeType == ROUTE_TYPE_CROSSTOWN) {
+            RouteSearch.FromAndTo fromAndTo_bus = new RouteSearch.FromAndTo(
+                    mStartPoint, mEndPoint);
+            // 第一个参数表示路径规划的起点和终点，第二个参数表示公交查询模式，
+            // 第三个参数表示公交查询城市区号，第四个参数表示是否计算夜班车，0表示不计算
+            RouteSearch.BusRouteQuery query = new RouteSearch.BusRouteQuery(fromAndTo_bus, mode,
+                    Constants.DEFAULT_CITY, 0);
+            routeSearch.calculateBusRouteAsyn(query);// 异步路径规划公交模式查询
+        }
+    }
+
 }
