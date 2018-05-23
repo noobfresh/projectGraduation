@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -25,6 +26,10 @@ import java.util.List;
 public class InputTipsActivity extends AppCompatActivity implements SearchView.OnQueryTextListener,
         Inputtips.InputtipsListener, AdapterView.OnItemClickListener, View.OnClickListener{
 
+    private static final String TAG = "InputTipsActivity";
+
+    private String position;
+
     private SearchView mSearchView;// 输入搜索关键字
     private ImageView mBack;
     private ListView mInputListView;
@@ -35,6 +40,11 @@ public class InputTipsActivity extends AppCompatActivity implements SearchView.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_tips);
+        Intent intent = getIntent();
+        if(intent != null && !IsEmptyOrNullString(String.valueOf
+                (intent.getCharSequenceExtra("position")))){
+            position =  String.valueOf(intent.getCharSequenceExtra("position"));
+        }
 
         initSearchView();
         mInputListView = (ListView) findViewById(R.id.inputtip_list);
@@ -66,6 +76,7 @@ public class InputTipsActivity extends AppCompatActivity implements SearchView.O
      */
     @Override
     public void onGetInputtips(List<Tip> tipList, int rCode) {
+        //数据源与view的绑定
 
         //magic num
         if (rCode == 1000) {// 正确返回
@@ -88,13 +99,17 @@ public class InputTipsActivity extends AppCompatActivity implements SearchView.O
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         //选择某个搜索结果时，保存信息，传递到main
-        if (mCurrentTipList != null) {
-            Tip tip = (Tip) adapterView.getItemAtPosition(i);
-            Intent intent = new Intent();
+        Tip tip = (Tip) adapterView.getItemAtPosition(i);
+        Intent intent = new Intent();
+        if (mCurrentTipList != null && !IsEmptyOrNullString(position)) {
+            intent.putExtra(Constants.ROUTE_EXTRA_TIP, tip);
+            setResult(position.equals("endPosition") ?
+                    RoutePlanActivity.RESULT_CODE_END : RoutePlanActivity.RESULT_CODE_START, intent);
+        } else {
             intent.putExtra(Constants.EXTRA_TIP, tip);
             setResult(MainActivity.RESULT_CODE_INPUTTIPS, intent);
-            this.finish();
         }
+        this.finish();
     }
 
     /**
@@ -120,6 +135,7 @@ public class InputTipsActivity extends AppCompatActivity implements SearchView.O
      */
     @Override
     public boolean onQueryTextChange(String newText) {
+        //数据源请求逻辑
         //输入关键字非空时
         if (!IsEmptyOrNullString(newText)) {
             InputtipsQuery inputquery = new InputtipsQuery(newText, Constants.DEFAULT_CITY);

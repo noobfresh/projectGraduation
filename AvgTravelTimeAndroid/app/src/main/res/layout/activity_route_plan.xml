@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.cqu.graduation.pyf.graduationprojectavgtraveltime.view.RoutePlanActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/linearlayout">
+
+            <View
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="起点"
+                android:layout_marginLeft="40dp"
+                android:id="@+id/startPosition"
+                android:textColor="#000"
+                android:gravity="center_vertical"
+                android:hint="关键字搜索"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="终点"
+                android:id="@+id/endPosition"
+                android:layout_marginLeft="40dp"
+                android:textColor="#000"
+                android:gravity="center_vertical"
+                android:hint="关键字搜索"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey" />
+        </LinearLayout>
+
+        <TimePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:timePickerMode="spinner"
+            android:id="@+id/timepicker"
+            android:layout_below="@id/linearlayout"
+            android:layout_toRightOf="@id/datepicker"
+            android:layout_marginLeft="20dp">
+
+        </TimePicker>
+
+        <DatePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:datePickerMode="spinner"
+            android:calendarViewShown="false"
+            android:id="@+id/datepicker"
+            android:layout_below="@id/linearlayout">
+
+        </DatePicker>
+    </RelativeLayout>
+
+</layout>
