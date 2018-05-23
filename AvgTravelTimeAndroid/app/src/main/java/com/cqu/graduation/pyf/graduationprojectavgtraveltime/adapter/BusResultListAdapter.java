@@ -12,6 +12,7 @@ import com.amap.api.services.route.BusPath;
 import com.amap.api.services.route.BusRouteResult;
 import com.cqu.graduation.pyf.graduationprojectavgtraveltime.R;
 import com.cqu.graduation.pyf.graduationprojectavgtraveltime.util.AMapUtil;
+import com.cqu.graduation.pyf.graduationprojectavgtraveltime.view.BusRouteDetailActivity;
 
 import java.util.List;
 
@@ -62,12 +63,12 @@ public class BusResultListAdapter extends BaseAdapter {
 			
 			@Override
 			public void onClick(View v) {
-//				Intent intent = new Intent(mContext.getApplicationContext(),
-//						BusRouteDetailActivity.class);
-//				intent.putExtra("bus_path", item);
-//				intent.putExtra("bus_result", mBusRouteResult);
-//				intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//				mContext.startActivity(intent);
+				Intent intent = new Intent(mContext.getApplicationContext(),
+						BusRouteDetailActivity.class);
+				intent.putExtra("bus_path", item);
+				intent.putExtra("bus_result", mBusRouteResult);
+				intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				mContext.startActivity(intent);
 				
 			}
 		});
