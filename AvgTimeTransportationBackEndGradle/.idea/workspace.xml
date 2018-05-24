@@ -7,18 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="841710f5-8bab-4d13-9ac0-f9cc45d65697" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/IRailwayStationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/RailwayStationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/controller/CaculateTimeAndroidController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/controller/CaculateTimeAndroidController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/mybatis/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/mybatis/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/controller/CaculateTimeAndroidController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/controller/CaculateTimeAndroidController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/mybatis/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/mybatis/generatorConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculateTimeAndroidController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculateTimeAndroidController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/entity/Railwaystation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/mapper/RailwaystationMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/xml/RailwaystationMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AvgTravelTimeAndroid/app/src/main/java/com/cqu/graduation/pyf/graduationprojectavgtraveltime/adapter/BusResultListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AvgTravelTimeAndroid/app/src/main/java/com/cqu/graduation/pyf/graduationprojectavgtraveltime/adapter/BusResultListAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AvgTravelTimeAndroid/app/src/main/java/com/cqu/graduation/pyf/graduationprojectavgtraveltime/view/InputTipsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AvgTravelTimeAndroid/app/src/main/java/com/cqu/graduation/pyf/graduationprojectavgtraveltime/view/InputTipsActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AvgTravelTimeAndroid/app/src/main/res/layout/item_bus_result.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AvgTravelTimeAndroid/app/src/main/res/layout/item_bus_result.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/IRailwayStationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/IRailwayStationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DataIntoSQLTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DataIntoSQLTest/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DataIntoSQLTest/out/production/classes/CreateTablesTenMinsAvgTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DataIntoSQLTest/out/production/classes/CreateTablesTenMinsAvgTime.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DataIntoSQLTest/out/production/classes/OnlyForTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DataIntoSQLTest/out/production/classes/OnlyForTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -82,20 +84,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AvgtimeMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/mapper/AvgtimeMapper.java">
+      <file leaf-file-name="RailwayStationServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/RailwayStationServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AvgTimeServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/AvgTimeServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+            <state relative-caret-position="429">
+              <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -103,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CaculateTimeAndroidController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CaculateTimeAndroidController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculateTimeAndroidController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="30">
+              <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,20 +108,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="generatorConfig.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/generatorConfig.xml">
+      <file leaf-file-name="RailwaystationMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/mapper/RailwaystationMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="71" column="60" lean-forward="true" selection-start-line="71" selection-start-column="60" selection-end-line="71" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IRailwayStationService.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/IRailwayStationService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+            <state relative-caret-position="100">
+              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -139,8 +123,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="spring-beans.schema" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -405,9 +389,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/mapper/OdMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/xml/OdMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/mapper/BusdataMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculateTimeAndroidController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/IRailwayStationService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/RailwayStationServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculateTimeAndroidController.java" />
       </list>
     </option>
   </component>
@@ -582,7 +567,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.AvgTimeTransportationBackEndGradle [mybatisGenerate]">
+  <component name="RunManager" selected="Tomcat Server.test">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -766,12 +751,12 @@
       <workItem from="1526705217460" duration="651000" />
       <workItem from="1526798603521" duration="8367000" />
       <workItem from="1526807392666" duration="157000" />
-      <workItem from="1527092625705" duration="5871000" />
+      <workItem from="1527092625705" duration="10359000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35021000" />
+    <option name="totallyTimeSpent" value="39509000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -788,7 +773,7 @@
       <window_info id="Structure" order="0" side_tool="true" />
       <window_info anchor="right" id="Ant Build" order="0" />
       <window_info id="UI Designer" order="0" />
-      <window_info anchor="bottom" id="Debug" order="0" weight="0.6512397" />
+      <window_info anchor="bottom" id="Debug" order="0" weight="0.6446281" />
       <window_info anchor="bottom" id="TODO" order="0" />
       <window_info anchor="bottom" id="Messages" order="1" weight="0.6446281" />
       <window_info anchor="right" id="Palette&#9;" order="0" />
@@ -799,7 +784,7 @@
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Spring" order="0" />
       <window_info anchor="bottom" id="Terminal" order="0" />
-      <window_info active="true" content_ui="combo" x="516" y="61" width="333" height="605" id="Project" order="0" visible="true" weight="0.2549168" />
+      <window_info content_ui="combo" x="516" y="61" width="333" height="605" id="Project" order="0" visible="true" weight="0.2549168" />
       <window_info id="Web" order="0" side_tool="true" />
       <window_info anchor="right" id="Gradle" order="0" weight="0.32980332" />
       <window_info anchor="right" id="Theme Preview" order="0" />
@@ -824,7 +809,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.6452145" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.6446281" />
       <window_info anchor="bottom" id="TODO" order="5" />
       <window_info anchor="bottom" id="Find" order="12" />
       <window_info anchor="bottom" id="Java Enterprise" order="6" />
@@ -832,7 +817,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="right" id="Gradle" order="4" weight="0.32980332" />
-      <window_info active="true" content_ui="combo" x="516" y="61" width="333" height="605" id="Project" order="6" visible="true" weight="0.2473525" />
+      <window_info active="true" content_ui="combo" x="516" y="61" width="333" height="605" id="Project" order="6" visible="true" weight="0.2549168" />
       <window_info anchor="right" id="Database" order="5" weight="0.32980332" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
@@ -852,29 +837,21 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculateTimeAndroidController.java</url>
-          <line>30</line>
+          <line>57</line>
           <properties />
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculateTimeAndroidController.java</url>
+          <line>38</line>
+          <properties />
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="3" />
+      <option name="time" value="11" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
-          <caret line="48" column="66" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mybatis.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1175">
-          <caret line="47" column="11" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -1004,27 +981,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/LoginServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/CaculateAdminServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="58" selection-start-line="2" selection-start-column="58" selection-end-line="2" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/ICaculatAdminService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculteAdminController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
@@ -1095,6 +1051,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mybatis.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="42" column="57" selection-start-line="42" selection-start-column="57" selection-end-line="42" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/AvgTimeServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -1112,24 +1075,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/4.3.17.RELEASE/42a297f13fd0c2bf304f0b4f589b589dc1e69159/spring-web-4.3.17.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/generatorConfig.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="211" selection-start-line="211" selection-end-line="211" />
+        <state relative-caret-position="230">
+          <caret line="71" column="60" lean-forward="true" selection-start-line="71" selection-start-column="60" selection-end-line="71" selection-end-column="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mybatis.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/IRailwayStationService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="42" column="57" selection-start-line="42" selection-start-column="57" selection-end-line="42" selection-end-column="57" />
+        <state relative-caret-position="150">
+          <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculateTimeAndroidController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/LoginServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="50">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/ICaculatAdminService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/CaculateAdminServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="58" selection-start-line="2" selection-start-column="58" selection-end-line="2" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/RailwayStationServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1143,10 +1127,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/generatorConfig.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/xml/RailwaystationMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="71" column="60" lean-forward="true" selection-start-line="71" selection-start-column="60" selection-end-line="71" selection-end-column="60" />
+        <state relative-caret-position="25">
+          <caret line="34" column="14" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -1157,10 +1141,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/IRailwayStationService.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/4.3.17.RELEASE/42a297f13fd0c2bf304f0b4f589b589dc1e69159/spring-web-4.3.17.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        <state relative-caret-position="111">
+          <caret line="213" selection-start-line="213" selection-end-line="213" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculateTimeAndroidController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

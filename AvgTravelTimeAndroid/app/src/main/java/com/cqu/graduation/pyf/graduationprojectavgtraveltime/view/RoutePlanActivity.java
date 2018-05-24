@@ -37,6 +37,7 @@ import com.cqu.graduation.pyf.graduationprojectavgtraveltime.model.Constants;
 import com.cqu.graduation.pyf.graduationprojectavgtraveltime.model.IRequestAvgTime;
 import com.cqu.graduation.pyf.graduationprojectavgtraveltime.util.TimeUtil;
 
+import java.io.IOException;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -90,7 +91,7 @@ public class RoutePlanActivity extends AppCompatActivity implements View.OnClick
 
     private Retrofit retrofit;
     private static final String httpurl = "http://10.249.147.185:8080/index/";
-    private long duration;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -342,11 +343,12 @@ public class RoutePlanActivity extends AppCompatActivity implements View.OnClick
         }
     }
 
-
+    private long duration = 0;
     public long getDuration(String startStation, String endStation, String startTime, int weekday){
 
         IRequestAvgTime requestAvgTime = retrofit.create(IRequestAvgTime.class);
         Call<AvgTime> call = requestAvgTime.getCall(startStation, endStation, startTime, String.valueOf(weekday));
+
         call.enqueue(new Callback<AvgTime>() {
             @Override
             public void onResponse(Call<AvgTime> call, Response<AvgTime> response) {
@@ -355,7 +357,7 @@ public class RoutePlanActivity extends AppCompatActivity implements View.OnClick
 
             @Override
             public void onFailure(Call<AvgTime> call, Throwable t) {
-                Log.d(TAG, "onFailure: " + t.getLocalizedMessage());
+                t.printStackTrace();
             }
         });
         return duration;

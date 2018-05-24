@@ -60,15 +60,18 @@
         </javaClientGenerator>
 
         <!-- sql占位符，表示所有的表 -->
-        <table tableName="avgtime">
-            <generatedKey column="epa_id" sqlStatement="Mysql" identity="true" />
-        </table>
+        <!--<table tableName="avgtime">-->
+            <!--<generatedKey column="epa_id" sqlStatement="Mysql" identity="true" />-->
+        <!--</table>-->
 
-        <table tableName="busdata">
-            <generatedKey column="epa_id" sqlStatement="Mysql" identity="true" />
-        </table>
+        <!--<table tableName="busdata">-->
+            <!--<generatedKey column="epa_id" sqlStatement="Mysql" identity="true" />-->
+        <!--</table>-->
 
-        <table tableName="od">
+        <!--<table tableName="od">-->
+            <!--<generatedKey column="epa_id" sqlStatement="Mysql" identity="true" />-->
+        <!--</table>-->
+        <table tableName="railwaystation">
             <generatedKey column="epa_id" sqlStatement="Mysql" identity="true" />
         </table>
     </context>

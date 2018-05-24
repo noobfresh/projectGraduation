@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cqu.project.graduation.mapper.RailwaystationMapper">
+  <resultMap id="BaseResultMap" type="com.cqu.project.graduation.entity.Railwaystation">
+    <id column="station_name" jdbcType="VARCHAR" property="stationName" />
+    <result column="id" jdbcType="VARCHAR" property="id" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from railwaystation
+    where station_name = #{stationName,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cqu.project.graduation.entity.Railwaystation">
+    insert into railwaystation (station_name, id)
+    values (#{stationName,jdbcType=VARCHAR}, #{id,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.cqu.project.graduation.entity.Railwaystation">
+    update railwaystation
+    set id = #{id,jdbcType=VARCHAR}
+    where station_name = #{stationName,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select station_name, id
+    from railwaystation
+    where station_name = #{stationName,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select station_name, id
+    from railwaystation
+  </select>
+</mapper>
