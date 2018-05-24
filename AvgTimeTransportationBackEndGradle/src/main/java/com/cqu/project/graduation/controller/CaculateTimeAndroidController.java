@@ -29,6 +29,8 @@ public class CaculateTimeAndroidController {
                                       String endStation,
                                       String startTime, String weekday) {
         String tableName = "avgtime" + startTime + TimeGeneratorUtil.timeIncrement(startTime);
+        //传进来的站点是中文，需要查两次，转换一波
+
         Avgtime test = avgTimeService.getAvgTimeByTest(startStation, endStation,tableName);
         Map<String, String> map = new HashMap<>();
         map.put("duration", String.valueOf(test.getDuration()));

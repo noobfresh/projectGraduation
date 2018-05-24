@@ -160,6 +160,6 @@ public class InputTipsActivity extends AppCompatActivity implements SearchView.O
     }
 
     public static boolean IsEmptyOrNullString(String s) {
-        return (s == null) || (s.trim().length() == 0);
+        return (s == null) || (s.trim().length() == 0) || s.equals("null");
     }
 }

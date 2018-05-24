@@ -1,5 +1,7 @@
 package com.cqu.graduation.pyf.graduationprojectavgtraveltime.util;
 
+import android.content.Intent;
+
 import java.util.Calendar;
 
 /**
@@ -58,5 +60,18 @@ public class TimeUtil {
     public static int min(){
         Calendar calendar = Calendar.getInstance();
         return calendar.get(Calendar.MINUTE);
+    }
+
+    public static int weekday(String date){
+        int year = 2018;
+        int month = Integer.valueOf(date.substring(0,2));
+        int day = Integer.valueOf(date.substring(2));
+
+        if (month == 1 || month == 2) {
+            month += 12;
+            year--;
+        }
+        int iWeek = (day + 2 * month + 3 * (month + 1) / 5 + year + year / 4 - year / 100 + year / 400) % 7;
+        return iWeek;
     }
 }

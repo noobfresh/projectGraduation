@@ -38,7 +38,7 @@
   <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
     select START_ID, END_ID, TICKET_ID, TXN_DATE, START_TIME, END_TIME, START_STATION, 
     END_STATION
-    from od
+    from ${tableName}
     where START_ID = #{startId,jdbcType=INTEGER}
       and END_ID = #{endId,jdbcType=INTEGER}
   </select>

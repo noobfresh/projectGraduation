@@ -18,22 +18,35 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.amap.api.services.busline.BusStationItem;
 import com.amap.api.services.core.LatLonPoint;
 import com.amap.api.services.help.Tip;
+import com.amap.api.services.route.BusPath;
 import com.amap.api.services.route.BusRouteResult;
+import com.amap.api.services.route.BusStep;
 import com.amap.api.services.route.DriveRouteResult;
+import com.amap.api.services.route.RailwayStationItem;
 import com.amap.api.services.route.RideRouteResult;
+import com.amap.api.services.route.RouteRailwayItem;
 import com.amap.api.services.route.RouteSearch;
 import com.amap.api.services.route.WalkRouteResult;
 import com.cqu.graduation.pyf.graduationprojectavgtraveltime.R;
 import com.cqu.graduation.pyf.graduationprojectavgtraveltime.adapter.BusResultListAdapter;
+import com.cqu.graduation.pyf.graduationprojectavgtraveltime.bean.AvgTime;
 import com.cqu.graduation.pyf.graduationprojectavgtraveltime.model.Constants;
+import com.cqu.graduation.pyf.graduationprojectavgtraveltime.model.IRequestAvgTime;
 import com.cqu.graduation.pyf.graduationprojectavgtraveltime.util.TimeUtil;
 
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RoutePlanActivity extends AppCompatActivity implements View.OnClickListener,
         RouteSearch.OnRouteSearchListener{
@@ -75,6 +88,10 @@ public class RoutePlanActivity extends AppCompatActivity implements View.OnClick
 
     private String[] interval = {"00", "10", "20", "30", "40", "50"};
 
+    private Retrofit retrofit;
+    private static final String httpurl = "http://10.249.147.185:8080/index/";
+    private long duration;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,6 +117,11 @@ public class RoutePlanActivity extends AppCompatActivity implements View.OnClick
 
         routeSearch = new RouteSearch(this);
         routeSearch.setRouteSearchListener(this);
+
+        		retrofit = new Retrofit.Builder()
+				.baseUrl(httpurl)
+				.addConverterFactory(GsonConverterFactory.create())
+				.build();
     }
 
 
@@ -226,7 +248,9 @@ public class RoutePlanActivity extends AppCompatActivity implements View.OnClick
             if (busRouteResult != null && busRouteResult.getPaths() != null) {
                 if (busRouteResult.getPaths().size() > 0) {
                     mBusRouteResult = busRouteResult;
-                    BusResultListAdapter mBusResultListAdapter = new BusResultListAdapter(this, mBusRouteResult);
+                    dealWithResultTime();
+                    BusResultListAdapter mBusResultListAdapter = new BusResultListAdapter(
+                            this, mBusRouteResult, date, time);
                     busResultList.setAdapter(mBusResultListAdapter);
                 } else if (busRouteResult != null && busRouteResult.getPaths() == null) {
                     Toast.makeText(this, "没结果", Toast.LENGTH_SHORT).show();
@@ -292,4 +316,48 @@ public class RoutePlanActivity extends AppCompatActivity implements View.OnClick
         }
     }
 
+
+    public void dealWithResultTime() {
+        Log.d(TAG, "dealWithResultTime: ");
+        for(BusPath path : mBusRouteResult.getPaths()){
+            for(BusStep step : path.getSteps()){
+
+                //取轻轨数据
+                if(step.getBusLines().size() > 0){
+                    //起点站和终点站，
+                    //但是如何区分公交和轻轨呢。这个SDK这里坑了
+                    String startStationName = step.getBusLines()
+                            .get(0).getDepartureBusStation().getBusStationName();
+                    String endStationName = step.getBusLines()
+                            .get(0).getArrivalBusStation().getBusStationName();
+
+                    long temp = getDuration(startStationName,
+                            endStationName, time,
+                            TimeUtil.weekday(date));
+                    if(temp != 0){
+                        step.getBusLines().get(0).setDuration(temp);
+                    }
+                }
+            }
+        }
+    }
+
+
+    public long getDuration(String startStation, String endStation, String startTime, int weekday){
+
+        IRequestAvgTime requestAvgTime = retrofit.create(IRequestAvgTime.class);
+        Call<AvgTime> call = requestAvgTime.getCall(startStation, endStation, startTime, String.valueOf(weekday));
+        call.enqueue(new Callback<AvgTime>() {
+            @Override
+            public void onResponse(Call<AvgTime> call, Response<AvgTime> response) {
+                duration = response.body().getDuration();
+            }
+
+            @Override
+            public void onFailure(Call<AvgTime> call, Throwable t) {
+                Log.d(TAG, "onFailure: " + t.getLocalizedMessage());
+            }
+        });
+        return duration;
+    }
 }
