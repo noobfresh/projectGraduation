@@ -17,6 +17,8 @@ public class Od {
 
     private String endStation;
 
+    private Integer c;
+
     public Integer getStartId() {
         return startId;
     }
@@ -79,5 +81,13 @@ public class Od {
 
     public void setEndStation(String endStation) {
         this.endStation = endStation == null ? null : endStation.trim();
+    }
+
+    public Integer getC() {
+        return c;
+    }
+
+    public void setC(Integer c) {
+        this.c = c;
     }
 }

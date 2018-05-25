@@ -1,5 +1,6 @@
 package com.cqu.project.graduation.mapper;
 
+import com.cqu.project.graduation.entity.ODvo;
 import com.cqu.project.graduation.entity.Od;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
@@ -16,4 +17,8 @@ public interface OdMapper {
     List<Od> selectAll();
 
     int updateByPrimaryKey(Od record);
+
+    int countByDate(@Param("tableName") String tableName);
+
+    List<Od> top5ODsByTable(@Param("tableName") String tableName);
 }

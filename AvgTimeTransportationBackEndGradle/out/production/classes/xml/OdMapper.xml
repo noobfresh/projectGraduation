@@ -10,6 +10,7 @@
     <result column="END_TIME" jdbcType="VARCHAR" property="endTime" />
     <result column="START_STATION" jdbcType="VARCHAR" property="startStation" />
     <result column="END_STATION" jdbcType="VARCHAR" property="endStation" />
+    <result column="C" jdbcType="INTEGER" property="c"/>
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="map">
     delete from od
@@ -46,5 +47,21 @@
     select START_ID, END_ID, TICKET_ID, TXN_DATE, START_TIME, END_TIME, START_STATION, 
     END_STATION
     from od
+  </select>
+
+  <select id="countByDate" parameterType="map" resultType="java.lang.Integer">
+    select count(*)
+    from  ${tableName}
+  </select>
+
+  <select id="top5ODsByTable" parameterType="map" resultMap="BaseResultMap">
+    SELECT
+	COUNT(*) AS C, START_STATION, END_STATION
+    FROM
+        ${tableName}
+    GROUP BY
+        START_STATION, END_STATION
+    ORDER BY C DESC
+    LIMIT 5
   </select>
 </mapper>

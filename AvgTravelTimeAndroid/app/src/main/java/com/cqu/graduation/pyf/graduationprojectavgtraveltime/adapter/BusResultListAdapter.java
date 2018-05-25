@@ -108,4 +108,11 @@ public class BusResultListAdapter extends BaseAdapter {
 
 	private long duration = 0L;
 
+	public void setDatas(BusRouteResult busRouteResult){
+		Log.d(TAG, "setDatas: ");
+		this.mBusRouteResult = busRouteResult;
+		this.mBusPathList = busRouteResult.getPaths();
+		notifyDataSetChanged();
+	}
+
 }

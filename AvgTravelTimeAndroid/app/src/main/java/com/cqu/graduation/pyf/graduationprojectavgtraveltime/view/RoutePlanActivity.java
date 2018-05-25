@@ -90,7 +90,9 @@ public class RoutePlanActivity extends AppCompatActivity implements View.OnClick
     private String[] interval = {"00", "10", "20", "30", "40", "50"};
 
     private Retrofit retrofit;
-    private static final String httpurl = "http://10.249.147.185:8080/index/";
+    private static final String httpurl = "http://192.168.229.1:8080/index/";
+
+    private BusResultListAdapter mBusResultListAdapter;
 
 
     @Override
@@ -250,7 +252,7 @@ public class RoutePlanActivity extends AppCompatActivity implements View.OnClick
                 if (busRouteResult.getPaths().size() > 0) {
                     mBusRouteResult = busRouteResult;
                     dealWithResultTime();
-                    BusResultListAdapter mBusResultListAdapter = new BusResultListAdapter(
+                    mBusResultListAdapter = new BusResultListAdapter(
                             this, mBusRouteResult, date, time);
                     busResultList.setAdapter(mBusResultListAdapter);
                 } else if (busRouteResult != null && busRouteResult.getPaths() == null) {
@@ -334,7 +336,8 @@ public class RoutePlanActivity extends AppCompatActivity implements View.OnClick
 
                     long temp = getDuration(startStationName,
                             endStationName, time,
-                            TimeUtil.weekday(date));
+                            TimeUtil.weekday(date), mBusRouteResult.getPaths().indexOf(path),
+                            path.getSteps().indexOf(step));
                     if(temp != 0){
                         step.getBusLines().get(0).setDuration(temp);
                     }
@@ -344,7 +347,8 @@ public class RoutePlanActivity extends AppCompatActivity implements View.OnClick
     }
 
     private long duration = 0;
-    public long getDuration(String startStation, String endStation, String startTime, int weekday){
+    public long getDuration(String startStation, String endStation, String startTime, int weekday,
+                            final int pathIndex, final int stepIndex){
 
         IRequestAvgTime requestAvgTime = retrofit.create(IRequestAvgTime.class);
         Call<AvgTime> call = requestAvgTime.getCall(startStation, endStation, startTime, String.valueOf(weekday));
@@ -352,7 +356,28 @@ public class RoutePlanActivity extends AppCompatActivity implements View.OnClick
         call.enqueue(new Callback<AvgTime>() {
             @Override
             public void onResponse(Call<AvgTime> call, Response<AvgTime> response) {
-                duration = response.body().getDuration();
+                //只替换轨交的平均旅程时间,即请求之后有值的
+                Log.d(TAG, "onResponse: duration = " + response.body().getDuration());
+                if(response.body().getDuration() != 0) {
+                    float all = 0;
+                    for(int i = 0;
+                        i < mBusRouteResult.getPaths().get(pathIndex).getSteps().size();
+                        i++){
+                        if(i == stepIndex){
+                            all += response.body().getDuration();
+                            continue;
+                        }
+                        all += mBusRouteResult.getPaths().get(pathIndex)
+                                .getSteps().get(i)
+                                .getBusLines().get(0)
+                                .getDuration();
+                    }
+                    mBusRouteResult.getPaths().get(pathIndex).setDuration((long) all);
+                }
+
+
+
+                mBusResultListAdapter.setDatas(mBusRouteResult);
             }
 
             @Override
