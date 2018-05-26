@@ -23,9 +23,24 @@ public class InsertBusStation {
             connection = DriverManager.getConnection(url, user, pass);
             connection.setAutoCommit(false);
 
-            String insertSQL = "INSERT INTO bussatation VALUES(?, ?, ?)";
+            String path = "F:\\github\\test\\bus.csv";
+            DataInputStream in = new DataInputStream(new FileInputStream(new File(path)));
+            //解析中文防乱码
+            CSVReader csvReader = new CSVReader(new InputStreamReader(in, "gbk"));
+            String[] read = csvReader.readNext();
+
+            String insertSQL = "INSERT INTO busstation VALUES(?, ?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(insertSQL);
-            int id = 0;
+            while ((read = csvReader.readNext()) != null){
+                preparedStatement.setString(1, read[0]);
+                preparedStatement.setString(2, read[1]);
+                preparedStatement.setString(3, read[2]);
+                preparedStatement.addBatch();
+            }
+
+            preparedStatement.executeBatch();
+            connection.commit();
+            preparedStatement.close();
 
             connection.close();
         }catch (Exception e){
