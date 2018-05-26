@@ -36,16 +36,23 @@ public class CaculateTimeAndroidController {
                                       String startTime, String weekday) {
         Map<String, String> map = new HashMap<>();
         try {
-            String tableName = "avgtime" + startTime + TimeGeneratorUtil.timeIncrement(startTime);
-            //传进来的站点是中文，需要查两次，转换一波
-            Railwaystation start = railwayStationService.selectByName(startStation);
-            Railwaystation end = railwayStationService.selectByName(endStation);
+            //注意若时间不在运营范围内，则直接返回0
             Avgtime test = null;
-            if(start != null && end != null){
-                String startId = start.getId();
-                String endId = end.getId();
-                test = avgTimeService.getAvgTimeByTest(startId, endId,tableName);
+            int startTimeInt = Integer.valueOf(startTime);
+
+            if(startTimeInt >= 600 && startTimeInt <= 2359){
+                String tableName = "avgtime" + startTime + TimeGeneratorUtil.timeIncrement(startTime);
+                //传进来的站点是中文，需要查两次，转换一波
+                Railwaystation start = railwayStationService.selectByName(startStation);
+                Railwaystation end = railwayStationService.selectByName(endStation);
+
+                if(start != null && end != null){
+                    String startId = start.getId();
+                    String endId = end.getId();
+                    test = avgTimeService.getAvgTimeByTest(startId, endId,tableName);
+                }
             }
+
 
             map.put("startStation", test != null ? test.getStartStation() : "");
             map.put("endStation", test != null ? test.getEndStation(): "");

@@ -7,28 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="841710f5-8bab-4d13-9ac0-f9cc45d65697" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/entity/ODvo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/controller/CaculateTimeAndroidController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/controller/CaculateTimeAndroidController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/controller/CaculteAdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/controller/CaculteAdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/mapper/OdMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/mapper/OdMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/service/CaculateAdminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/service/CaculateAdminServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/service/ICaculatAdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/service/ICaculatAdminService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/xml/OdMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/xml/OdMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/controller/CaculateTimeAndroidController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/controller/CaculateTimeAndroidController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/controller/CaculteAdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/controller/CaculteAdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/mapper/OdMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/mapper/OdMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/service/CaculateAdminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/service/CaculateAdminServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/service/ICaculatAdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/service/ICaculatAdminService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/xml/OdMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xml/OdMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculteAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculteAdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/entity/Od.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/entity/Od.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/mapper/OdMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/mapper/OdMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/CaculateAdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/CaculateAdminServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/ICaculatAdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/ICaculatAdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/xml/OdMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/xml/OdMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculateTimeAndroidController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculateTimeAndroidController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DataIntoSQLTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DataIntoSQLTest/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DataIntoSQLTest/out/production/classes/CreateTablesTenMinsAvgTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DataIntoSQLTest/out/production/classes/CreateTablesTenMinsAvgTime.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DataIntoSQLTest/out/production/classes/OnlyForTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DataIntoSQLTest/out/production/classes/OnlyForTest.class" afterDir="false" />
@@ -96,7 +75,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
@@ -115,6 +94,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="380">
               <caret line="65" column="11" lean-forward="true" selection-start-line="65" selection-start-column="11" selection-end-line="65" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CaculateTimeAndroidController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculateTimeAndroidController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23">
+              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -420,7 +411,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/IRailwayStationService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/RailwayStationServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculateTimeAndroidController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/entity/ODvo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/entity/Od.java" />
         <option value="$PROJECT_DIR$/src/main/resources/xml/OdMapper.xml" />
@@ -429,6 +419,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/mapper/OdMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculteAdminController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculateTimeAndroidController.java" />
       </list>
     </option>
   </component>
@@ -787,12 +778,12 @@
       <workItem from="1526705217460" duration="651000" />
       <workItem from="1526798603521" duration="8367000" />
       <workItem from="1526807392666" duration="157000" />
-      <workItem from="1527092625705" duration="25765000" />
+      <workItem from="1527092625705" duration="28140000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54915000" />
+    <option name="totallyTimeSpent" value="57290000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -873,7 +864,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculateTimeAndroidController.java</url>
-          <line>57</line>
+          <line>64</line>
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
@@ -1121,16 +1112,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculateTimeAndroidController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="57" selection-start-line="57" selection-end-line="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/jre/lib/ext/nashorn.jar!/jdk/nashorn/internal/runtime/resources/fx/bootstrap.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
@@ -1224,6 +1205,16 @@
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculateTimeAndroidController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
