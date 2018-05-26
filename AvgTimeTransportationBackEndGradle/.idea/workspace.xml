@@ -7,8 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="841710f5-8bab-4d13-9ac0-f9cc45d65697" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculateTimeAndroidController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculateTimeAndroidController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AvgTravelTimeAndroid/app/src/main/java/com/cqu/graduation/pyf/graduationprojectavgtraveltime/view/RoutePlanActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AvgTravelTimeAndroid/app/src/main/java/com/cqu/graduation/pyf/graduationprojectavgtraveltime/view/RoutePlanActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -72,7 +71,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CaculateTimeAndroidController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="19" column="86" selection-start-line="19" selection-start-column="86" selection-end-line="19" selection-end-column="86" />
+              <folding>
+                <element signature="e#3913#3919#0#HTML" expanded="true" />
+                <element signature="e#4000#6391#0#JSP" />
+                <element signature="e#830#902#0#HTML" />
+                <element signature="e#928#3114#0#HTML" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CaculateTimeAndroidController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculateTimeAndroidController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
@@ -138,6 +152,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>alert</find>
+      <find>hAdminP</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -402,7 +417,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/CaculateAdminServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/mapper/OdMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculteAdminController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/mapper/BusstationMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/BusStationServiceImpl.java" />
@@ -413,6 +427,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/xml/BusstationMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/xml/BusdataMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculateTimeAndroidController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
       </list>
     </option>
   </component>
@@ -432,7 +447,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1386" />
@@ -467,87 +482,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
-            <path>
-              <item name="AvgTimeTransportationBackEndGradle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AvgTimeTransportationBackEndGradle" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AvgTimeTransportationBackEndGradle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AvgTimeTransportationBackEndGradle" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="graduation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AvgTimeTransportationBackEndGradle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AvgTimeTransportationBackEndGradle" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="graduation" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AvgTimeTransportationBackEndGradle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AvgTimeTransportationBackEndGradle" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="graduation" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AvgTimeTransportationBackEndGradle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AvgTimeTransportationBackEndGradle" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="graduation" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AvgTimeTransportationBackEndGradle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AvgTimeTransportationBackEndGradle" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="graduation" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AvgTimeTransportationBackEndGradle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AvgTimeTransportationBackEndGradle" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AvgTimeTransportationBackEndGradle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AvgTimeTransportationBackEndGradle" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="xml" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AvgTimeTransportationBackEndGradle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AvgTimeTransportationBackEndGradle" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AvgTimeTransportationBackEndGradle" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AvgTimeTransportationBackEndGradle" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -566,6 +500,11 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3586207" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\github\projectGraduation\AvgTimeTransportationBackEndGradle\src\main\webapp\img" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -764,16 +703,15 @@
       <workItem from="1526798603521" duration="8367000" />
       <workItem from="1526807392666" duration="157000" />
       <workItem from="1527092625705" duration="28140000" />
-      <workItem from="1527326364472" duration="13268000" />
+      <workItem from="1527326364472" duration="17053000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70558000" />
+    <option name="totallyTimeSpent" value="74343000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.50075644" side_tool="true" weight="0.8033058" />
@@ -797,7 +735,7 @@
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Spring" order="0" />
       <window_info anchor="bottom" id="Terminal" order="0" />
-      <window_info content_ui="combo" x="516" y="61" width="333" height="605" id="Project" order="0" visible="true" weight="0.25869894" />
+      <window_info active="true" content_ui="combo" x="516" y="61" width="333" height="605" id="Project" order="0" visible="true" weight="0.25869894" />
       <window_info id="Web" order="0" side_tool="true" />
       <window_info anchor="right" id="Gradle" order="0" weight="0.32980332" />
       <window_info anchor="right" id="Theme Preview" order="0" />
@@ -859,8 +797,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/mapping/avgtime20170908Mapper.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/mapping/avgtime20170901Mapper.java" />
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/4.3.17.RELEASE/a3d40d84150579049509139f350ba7908b5448d2/spring-webmvc-4.3.17.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/annotation/AnnotationMethodHandlerAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="343">
@@ -1100,13 +1036,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2525">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/entity/Busstation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
@@ -1210,6 +1139,29 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#selectCorrectOne#0;class#CaculateTimeAndroidController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/img/loginBackground.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/meta.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="19" column="86" selection-start-line="19" selection-start-column="86" selection-end-line="19" selection-end-column="86" />
+          <folding>
+            <element signature="e#3913#3919#0#HTML" expanded="true" />
+            <element signature="e#4000#6391#0#JSP" />
+            <element signature="e#830#902#0#HTML" />
+            <element signature="e#928#3114#0#HTML" />
           </folding>
         </state>
       </provider>
