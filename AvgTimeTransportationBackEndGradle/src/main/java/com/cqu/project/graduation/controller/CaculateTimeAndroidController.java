@@ -86,7 +86,7 @@ public class CaculateTimeAndroidController {
     @RequestMapping("/busCaculate")
     @ResponseBody
     public Map<String, String> busAvgTimeCaculte(String lineNo, String startStation,
-                                                 String endStation, String weekday,
+                                                 String endStation, int weekday,
                                                  String startTime, String startDirection){
         Map<String, String > map = new HashMap<>();
 
@@ -159,7 +159,7 @@ public class CaculateTimeAndroidController {
             map.put("period", "");
             map.put("startStation", "");
             map.put("endStation", "");
-            map.put("duration", "");
+            map.put("duration", "0");
         }
         return map;
     }

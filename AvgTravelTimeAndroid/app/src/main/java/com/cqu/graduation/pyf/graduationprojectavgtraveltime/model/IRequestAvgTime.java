@@ -1,6 +1,7 @@
 package com.cqu.graduation.pyf.graduationprojectavgtraveltime.model;
 
 import com.cqu.graduation.pyf.graduationprojectavgtraveltime.bean.AvgTime;
+import com.cqu.graduation.pyf.graduationprojectavgtraveltime.bean.BusData;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -28,10 +29,11 @@ public interface IRequestAvgTime {
      * @param startDirection 线路的起点站
      * @return
      */
-    Call<AvgTime> getBusCall(@Query("lineNo") String lineNo,
+    @GET("android/busCaculate")
+    Call<BusData> getBusCall(@Query("lineNo") String lineNo,
                              @Query("startStation") String startStation,
                              @Query("endStation") String endStation,
-                             @Query("weeekDay") String weekday,
+                             @Query("weeekDay") int weekday,
                              @Query("startTime") String startTime,
                              @Query("startDirection") String startDirection);
 }
