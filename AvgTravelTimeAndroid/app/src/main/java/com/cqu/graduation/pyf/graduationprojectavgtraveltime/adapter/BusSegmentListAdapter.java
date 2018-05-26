@@ -1,6 +1,7 @@
 package com.cqu.graduation.pyf.graduationprojectavgtraveltime.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -21,6 +22,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BusSegmentListAdapter extends BaseAdapter {
+
+	private static final String TAG = "BusSegmentListAdapter";
+
 	private Context mContext;
 	private List<SchemeBusStep> mBusStepList = new ArrayList<SchemeBusStep>();
 
@@ -131,6 +135,10 @@ public class BusSegmentListAdapter extends BaseAdapter {
 				return convertView;
 	
 			}else if (item.isBus() && item.getBusLines().size() > 0) {
+
+				Log.d(TAG, "getView: bus line name = " + item.getBusLines().get(0).getBusLineName());
+
+				Log.d(TAG, "getView: bus line id = " + item.getBusLines().get(0).getBusLineName());
 				holder.busDirIcon.setImageResource(R.drawable.dir14);
 				holder.busDirUp.setVisibility(View.VISIBLE);
 				holder.busDirDown.setVisibility(View.VISIBLE);

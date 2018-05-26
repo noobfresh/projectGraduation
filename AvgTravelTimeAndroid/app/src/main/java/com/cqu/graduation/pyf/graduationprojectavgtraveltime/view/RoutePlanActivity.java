@@ -342,24 +342,23 @@ public class RoutePlanActivity extends AppCompatActivity implements View.OnClick
                     String endStationName = step.getBusLines()
                             .get(0).getArrivalBusStation().getBusStationName();
 
-                    long temp = getDuration(startStationName,
+                    getRailwayDuration(startStationName,
                             endStationName, time,
                             TimeUtil.weekday(date), mBusRouteResult.getPaths().indexOf(path),
                             path.getSteps().indexOf(step));
-                    if(temp != 0){
-                        step.getBusLines().get(0).setDuration(temp);
-                    }
                 }
             }
         }
     }
 
-    private long duration = 0;
-    public long getDuration(String startStation, String endStation, String startTime, int weekday,
+
+    public void getRailwayDuration(String startStation, String endStation,
+                                   String startTime, int weekday,
                             final int pathIndex, final int stepIndex){
 
         IRequestAvgTime requestAvgTime = retrofit.create(IRequestAvgTime.class);
-        Call<AvgTime> call = requestAvgTime.getCall(startStation, endStation, startTime, String.valueOf(weekday));
+        Call<AvgTime> call = requestAvgTime.getRailWayCall(startStation,
+                endStation, startTime, String.valueOf(weekday));
 
         call.enqueue(new Callback<AvgTime>() {
             @Override
@@ -375,39 +374,32 @@ public class RoutePlanActivity extends AppCompatActivity implements View.OnClick
                             .setDuration(response.body()
                                     .getDuration());
                     float all = 0;
-                    Log.d(TAG, "onResponse: size = " + mBusRouteResult.getPaths().get(pathIndex).getSteps().size());
+
                     for(int i = 0;
                         i < mBusRouteResult.getPaths().get(pathIndex).getSteps().size();
                         i++){
+                        //步行
                         RouteBusWalkItem item = mBusRouteResult.getPaths()
                                 .get(pathIndex).getSteps().get(i).getWalk();
-
                         if(item != null){
                             all += item.getDuration();
-                            Log.d(TAG, "onResponse: 走路" +
-                                    AMapUtil.getFriendlyTime((int)item.getDuration()));
-
                         }
 
                         if(i == stepIndex){
                             all += response.body().getDuration();
-                            Log.d(TAG, "onResponse: 轨交" +
-                                    AMapUtil.getFriendlyTime(response.body().getDuration()));
+                            mBusRouteResult.getPaths().get(pathIndex)
+                                    .getSteps().get(stepIndex)
+                                    .getBusLines().get(0)
+                                    .setDuration(response.body().getDuration());
                             continue;
                         }
-                        //区分走路和公交/轨交
+                        //公交/轨交
                         List list = mBusRouteResult.getPaths().get(pathIndex).getSteps().get(i).getBusLines();
                         if(list != null && list.size() > 0){
                             all += mBusRouteResult.getPaths().get(pathIndex)
                                     .getSteps().get(i)
                                     .getBusLines().get(0)
                                     .getDuration();
-                            Log.d(TAG, "onResponse: 公交" +
-                                    AMapUtil.getFriendlyTime((int)mBusRouteResult.getPaths().get(pathIndex)
-                                            .getSteps().get(i)
-                                            .getBusLines().get(0)
-                                            .getDuration()));
-
                         }
 
 
@@ -425,7 +417,14 @@ public class RoutePlanActivity extends AppCompatActivity implements View.OnClick
                 t.printStackTrace();
             }
         });
-        return duration;
+
+    }
+
+    public void getBusDuration(String lineNo, String startStation,
+                               String endStation, String weekday,
+                               String startTime, String startDirection,
+                               final int pathIndex, final int stepIndex){
+
     }
 
     /**

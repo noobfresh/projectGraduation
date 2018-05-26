@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cqu.project.graduation.mapper.BusstationMapper">
+  <resultMap id="BaseResultMap" type="com.cqu.project.graduation.entity.Busstation">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <id column="line_no" jdbcType="VARCHAR" property="lineNo" />
+    <result column="station_name" jdbcType="VARCHAR" property="stationName" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    delete from busstation
+    where id = #{id,jdbcType=VARCHAR}
+      and line_no = #{lineNo,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cqu.project.graduation.entity.Busstation">
+    insert into busstation (id, line_no, station_name
+      )
+    values (#{id,jdbcType=VARCHAR}, #{lineNo,jdbcType=VARCHAR}, #{stationName,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.cqu.project.graduation.entity.Busstation">
+    update busstation
+    set station_name = #{stationName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+      and line_no = #{lineNo,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
+    select id, line_no, station_name
+    from busstation
+    where id = #{id,jdbcType=VARCHAR}
+      and line_no = #{lineNo,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, line_no, station_name
+    from busstation
+  </select>
+
+  <select id="selectByStationName" parameterType="map" resultMap="BaseResultMap">
+    select id, line_no, station_name
+    from busstation
+    where station_name = #{stationName, jdbcType=VARCHAR}
+      and line_no = #{lineNo, jdbcType=VARCHAR}
+  </select>
+
+
+  <select id="selectOnlyByStationName" parameterType="map" resultMap="BaseResultMap">
+    select id, line_no, station_name
+    from busstation
+    where station_name = #{stationName, jdbcType=VARCHAR}
+  </select>
+
+  <select id="selectByRange" parameterType="map" resultMap="BaseResultMap">
+    select id, line_no, station_name
+    from busstation
+    where id between #{startId, jdbcType=INTEGER}
+    and #{endId, jdbcType=INTEGER}
+    and line_no = #{lineNo, jdbcType=VARCHAR}
+  </select>
+</mapper>

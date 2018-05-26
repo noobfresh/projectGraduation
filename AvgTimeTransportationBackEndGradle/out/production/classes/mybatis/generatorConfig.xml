@@ -71,8 +71,11 @@
         <!--<table tableName="od">-->
             <!--<generatedKey column="epa_id" sqlStatement="Mysql" identity="true" />-->
         <!--</table>-->
-        <table tableName="railwaystation">
-            <generatedKey column="epa_id" sqlStatement="Mysql" identity="true" />
+        <!--<table tableName="railwaystation">-->
+            <!--<generatedKey column="epa_id" sqlStatement="Mysql" identity="true" />-->
+        <!--</table>-->
+        <table tableName="busstation">
+            <generatedKey column="epa_id" sqlStatement="Mysql" identity="true"/>
         </table>
     </context>
 </generatorConfiguration>

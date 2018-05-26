@@ -10,7 +10,9 @@ public interface BusdataMapper {
 
     List<Busdata> selectAll();
 
-    Busdata selectByLineStationPeriod(@Param("lineNo") String lineNo,
+    Busdata selectByCondition(@Param("lineNo") String lineNo,
                           @Param("startStation") String startStation,
-                          @Param("endStation") String endStation);
+                          @Param("endStation") String endStation,
+                          @Param("direction") String direction,
+                          @Param("period") String period);
 }

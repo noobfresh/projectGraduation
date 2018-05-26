@@ -11,7 +11,7 @@
     <result column="period" jdbcType="VARCHAR" property="period" />
   </resultMap>
   <insert id="insert" parameterType="com.cqu.project.graduation.entity.Busdata">
-    insert into busdata (line_no, date, start_station, 
+    insert into busdata (line_no, `date`, start_station,
       end_station, direction, duration, 
       period)
     values (#{lineNo,jdbcType=VARCHAR}, #{date,jdbcType=VARCHAR}, #{startStation,jdbcType=VARCHAR}, 
@@ -21,5 +21,17 @@
   <select id="selectAll" resultMap="BaseResultMap">
     select line_no, date, start_station, end_station, direction, duration, period
     from busdata
+  </select>
+
+  <select id="selectByCondition" parameterType="map" resultMap="BaseResultMap">
+    select line_no, `date`, start_station,
+      end_station, direction, duration,
+      period
+    from busdata0505
+    where line_no = #{lineNo, jdbcType=VARCHAR}
+    and start_station = #{startStation, jdbcType=VARCHAR}
+    and end_station = #{endStation, jdbcType=VARCHAR}
+    and direction = #{direction, jdbcType=VARCHAR}
+    and period = #{period, jdbcType=VARCHAR}
   </select>
 </mapper>

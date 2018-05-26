@@ -69,20 +69,35 @@
       <file leaf-file-name="InsertRailwayStation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/InsertRailwayStation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
+            <state relative-caret-position="575">
               <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InsertBusStation.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="InsertBusStation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/InsertBusStation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="256">
-              <caret line="28" column="74" selection-start-line="28" selection-start-column="74" selection-end-line="28" selection-end-column="74" />
+              <caret line="28" column="74" lean-forward="true" selection-start-line="28" selection-start-column="74" selection-end-line="28" selection-end-column="74" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AlterAvgTimeEngine.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/AlterAvgTimeEngine.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-400">
+              <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AlterBusDataEngine.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/AlterBusDataEngine.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="281">
+              <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -455,6 +470,7 @@
         <option value="$PROJECT_DIR$/src/main/java/InsertRailwayStation.java" />
         <option value="$PROJECT_DIR$/src/main/java/OuputAvgOdData.java" />
         <option value="$PROJECT_DIR$/src/main/java/InsertBusStation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/AlterBusDataEngine.java" />
       </list>
     </option>
   </component>
@@ -513,9 +529,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -548,12 +564,12 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.InsertBusStation">
+  <component name="RunManager" selected="Application.AlterBusDataEngine">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
-    <configuration name="FillDayAvgTimeStrategy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="FillDayAvgTimeStrategy" />
+    <configuration name="AlterBusDataEngine" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AlterBusDataEngine" />
       <module name="DataIntoSQLTest_main" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -633,19 +649,19 @@
       <method />
     </configuration>
     <list>
-      <item itemvalue="Application.FillDayAvgTimeStrategy" />
       <item itemvalue="Application.FillTenMinAvgTimeStrategy" />
       <item itemvalue="Application.InsertRailwayStation" />
       <item itemvalue="Application.OuputAvgOdData" />
       <item itemvalue="Application.InsertBusStation" />
+      <item itemvalue="Application.AlterBusDataEngine" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AlterBusDataEngine" />
         <item itemvalue="Application.InsertBusStation" />
         <item itemvalue="Application.OuputAvgOdData" />
         <item itemvalue="Application.InsertRailwayStation" />
         <item itemvalue="Application.FillTenMinAvgTimeStrategy" />
-        <item itemvalue="Application.FillDayAvgTimeStrategy" />
       </list>
     </recent_temporary>
   </component>
@@ -696,11 +712,13 @@
       <workItem from="1526807557375" duration="4082000" />
       <workItem from="1527092282160" duration="338000" />
       <workItem from="1527306585589" duration="2188000" />
+      <workItem from="1527326336871" duration="20000" />
+      <workItem from="1527327677048" duration="280000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="274283000" />
+    <option name="totallyTimeSpent" value="274583000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -713,7 +731,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="bottom" id="TODO" order="9" weight="0.32838285" />
@@ -724,20 +741,20 @@
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5015129" side_tool="true" weight="0.34488449" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.32980332" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49848714" weight="0.9438944" />
+      <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.32838285" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.21633889" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.22239032" />
       <window_info anchor="right" id="Database" order="5" weight="0.32980332" />
       <window_info anchor="right" id="Gradle" order="2" weight="0.32980332" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.3419062" />
       <window_info anchor="right" id="Ant Build" order="3" />
       <window_info id="UI Designer" order="1" />
       <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.32838285" />
+      <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="right" id="Hierarchy" order="8" weight="0.32980332" />
       <window_info anchor="bottom" id="Database Console" order="10" weight="0.32838285" />
       <window_info anchor="bottom" id="Build" order="6" weight="0.32838285" />
@@ -806,13 +823,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/OData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="950">
-          <caret line="38" column="36" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CsvFileInit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="775">
@@ -1082,13 +1092,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/AlterAvgTimeEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1149,10 +1152,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-332">
           <caret line="74" column="10" selection-start-line="74" selection-start-column="10" selection-end-line="74" selection-end-column="10" />
-          <folding>
-            <element signature="e#2274#2275#0" expanded="true" />
-            <element signature="e#2318#2319#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1160,26 +1159,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/InsertRailwayStation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
+        <state relative-caret-position="575">
           <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/InsertBusStation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
-          <caret line="28" column="74" selection-start-line="28" selection-start-column="74" selection-end-line="28" selection-end-column="74" />
+          <caret line="28" column="74" lean-forward="true" selection-start-line="28" selection-start-column="74" selection-end-line="28" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/AlterAvgTimeEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-400">
+          <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/AlterBusDataEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
