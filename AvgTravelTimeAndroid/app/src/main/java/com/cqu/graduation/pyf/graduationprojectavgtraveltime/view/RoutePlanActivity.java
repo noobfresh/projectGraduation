@@ -2,6 +2,7 @@ package com.cqu.graduation.pyf.graduationprojectavgtraveltime.view;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import android.widget.DatePicker;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.NumberPicker;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -27,6 +29,7 @@ import com.amap.api.services.route.BusStep;
 import com.amap.api.services.route.DriveRouteResult;
 import com.amap.api.services.route.RailwayStationItem;
 import com.amap.api.services.route.RideRouteResult;
+import com.amap.api.services.route.RouteBusWalkItem;
 import com.amap.api.services.route.RouteRailwayItem;
 import com.amap.api.services.route.RouteSearch;
 import com.amap.api.services.route.WalkRouteResult;
@@ -35,6 +38,7 @@ import com.cqu.graduation.pyf.graduationprojectavgtraveltime.adapter.BusResultLi
 import com.cqu.graduation.pyf.graduationprojectavgtraveltime.bean.AvgTime;
 import com.cqu.graduation.pyf.graduationprojectavgtraveltime.model.Constants;
 import com.cqu.graduation.pyf.graduationprojectavgtraveltime.model.IRequestAvgTime;
+import com.cqu.graduation.pyf.graduationprojectavgtraveltime.util.AMapUtil;
 import com.cqu.graduation.pyf.graduationprojectavgtraveltime.util.TimeUtil;
 
 import java.io.IOException;
@@ -94,6 +98,8 @@ public class RoutePlanActivity extends AppCompatActivity implements View.OnClick
 
     private BusResultListAdapter mBusResultListAdapter;
 
+    private ProgressBar progressBar = null;// 搜索时进度条
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,7 +112,7 @@ public class RoutePlanActivity extends AppCompatActivity implements View.OnClick
         startStation.setOnClickListener(this);
         endStation.setOnClickListener(this);
 
-
+        progressBar = findViewById(R.id.progressBar);
 
         searchBtn = findViewById(R.id.search_button);
         searchBtn.setOnClickListener(this);
@@ -264,6 +270,7 @@ public class RoutePlanActivity extends AppCompatActivity implements View.OnClick
         } else {
             Toast.makeText(this, "没结果", Toast.LENGTH_SHORT).show();
         }
+        dissmissProgressDialog();
     }
 
     @Override
@@ -285,6 +292,7 @@ public class RoutePlanActivity extends AppCompatActivity implements View.OnClick
      * 开始搜索路径规划方案
      */
     public void searchRouteResult(int routeType, int mode) {
+        showProgressDialog();
         mStartPoint = startTip.getPoint();
         mEndPoint = endTip.getPoint();
 
@@ -357,26 +365,58 @@ public class RoutePlanActivity extends AppCompatActivity implements View.OnClick
             @Override
             public void onResponse(Call<AvgTime> call, Response<AvgTime> response) {
                 //只替换轨交的平均旅程时间,即请求之后有值的
-                Log.d(TAG, "onResponse: duration = " + response.body().getDuration());
+
                 if(response.body().getDuration() != 0) {
+                    Log.d(TAG, "onResponse: duration = " + response.body().getDuration());
+                    //确保前后一致
+                    mBusRouteResult.getPaths().get(pathIndex)
+                            .getSteps().get(stepIndex)
+                            .getBusLines().get(0)
+                            .setDuration(response.body()
+                                    .getDuration());
                     float all = 0;
+                    Log.d(TAG, "onResponse: size = " + mBusRouteResult.getPaths().get(pathIndex).getSteps().size());
                     for(int i = 0;
                         i < mBusRouteResult.getPaths().get(pathIndex).getSteps().size();
                         i++){
+                        RouteBusWalkItem item = mBusRouteResult.getPaths()
+                                .get(pathIndex).getSteps().get(i).getWalk();
+
+                        if(item != null){
+                            all += item.getDuration();
+                            Log.d(TAG, "onResponse: 走路" +
+                                    AMapUtil.getFriendlyTime((int)item.getDuration()));
+
+                        }
+
                         if(i == stepIndex){
                             all += response.body().getDuration();
+                            Log.d(TAG, "onResponse: 轨交" +
+                                    AMapUtil.getFriendlyTime(response.body().getDuration()));
                             continue;
                         }
-                        all += mBusRouteResult.getPaths().get(pathIndex)
-                                .getSteps().get(i)
-                                .getBusLines().get(0)
-                                .getDuration();
+                        //区分走路和公交/轨交
+                        List list = mBusRouteResult.getPaths().get(pathIndex).getSteps().get(i).getBusLines();
+                        if(list != null && list.size() > 0){
+                            all += mBusRouteResult.getPaths().get(pathIndex)
+                                    .getSteps().get(i)
+                                    .getBusLines().get(0)
+                                    .getDuration();
+                            Log.d(TAG, "onResponse: 公交" +
+                                    AMapUtil.getFriendlyTime((int)mBusRouteResult.getPaths().get(pathIndex)
+                                            .getSteps().get(i)
+                                            .getBusLines().get(0)
+                                            .getDuration()));
+
+                        }
+
+
                     }
                     mBusRouteResult.getPaths().get(pathIndex).setDuration((long) all);
                 }
-
-
-
+                if(progressBar.getVisibility() == View.VISIBLE){
+                    dissmissProgressDialog();
+                }
                 mBusResultListAdapter.setDatas(mBusRouteResult);
             }
 
@@ -386,5 +426,19 @@ public class RoutePlanActivity extends AppCompatActivity implements View.OnClick
             }
         });
         return duration;
+    }
+
+    /**
+     * 显示进度框
+     */
+    private void showProgressDialog() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+
+    /**
+     * 隐藏进度框
+     */
+    private void dissmissProgressDialog() {
+       progressBar.setVisibility(View.GONE);
     }
 }

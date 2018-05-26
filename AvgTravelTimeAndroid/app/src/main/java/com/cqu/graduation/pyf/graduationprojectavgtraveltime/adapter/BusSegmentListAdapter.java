@@ -15,6 +15,7 @@ import com.amap.api.services.route.BusStep;
 import com.amap.api.services.route.RailwayStationItem;
 import com.cqu.graduation.pyf.graduationprojectavgtraveltime.R;
 import com.cqu.graduation.pyf.graduationprojectavgtraveltime.bean.SchemeBusStep;
+import com.cqu.graduation.pyf.graduationprojectavgtraveltime.util.AMapUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -123,7 +124,8 @@ public class BusSegmentListAdapter extends BaseAdapter {
 				holder.busDirUp.setVisibility(View.VISIBLE);
 				holder.busDirDown.setVisibility(View.VISIBLE);
 				holder.busLineName.setText("步行"
-						+ (int) item.getWalk().getDistance() + "米");
+						+ (int) item.getWalk().getDistance() + "米" + "\n（约" +
+						AMapUtil.getFriendlyTime((int) item.getWalk().getDuration()) + "）");
 				holder.busStationNum.setVisibility(View.GONE);
 				holder.busExpandImage.setVisibility(View.GONE);
 				return convertView;
@@ -132,7 +134,9 @@ public class BusSegmentListAdapter extends BaseAdapter {
 				holder.busDirIcon.setImageResource(R.drawable.dir14);
 				holder.busDirUp.setVisibility(View.VISIBLE);
 				holder.busDirDown.setVisibility(View.VISIBLE);
-				holder.busLineName.setText(item.getBusLines().get(0).getBusLineName());
+				holder.busLineName.setText(item.getBusLines().get(0).getBusLineName() +
+						"\n（约" + AMapUtil.getFriendlyTime((int) item.getBusLines()
+						.get(0).getDuration()) + "）");
 				holder.busStationNum.setVisibility(View.VISIBLE);
 				holder.busStationNum
 						.setText((item.getBusLines().get(0).getPassStationNum() + 1) + "站");

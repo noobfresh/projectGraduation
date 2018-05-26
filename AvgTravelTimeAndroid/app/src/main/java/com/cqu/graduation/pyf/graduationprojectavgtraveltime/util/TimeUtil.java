@@ -19,7 +19,7 @@ public class TimeUtil {
     }
 
     public static String addZero(int num){
-        if (num < 0){
+        if (num < 10){
             return "0" + num;
         }
         return String.valueOf(num);
