@@ -20,7 +20,7 @@ public class CaculateAdminServiceImpl implements ICaculatAdminService {
 
     @Override
     public int countODByDay(String date) {
-        String tableName = "od2017" + date;
+        String tableName = "od" + date;
         return odMapper.countByDate(tableName);
     }
 

@@ -330,22 +330,22 @@
                     <li>
                         <h2 class="obtain">旅程时间<i></i></h2>
                         <div class="secondary">
-                            <h3>全天</h3>
-                            <h3>一周</h3>
+                            <h3 id="avgtimeday" onclick="goToOther(this)">全天</h3>
+                            <h3 id="avgtimeweek" onclick="goToOther(this)">一周</h3>
                         </div>
                     </li>
                     <li>
                         <h2 class="obtain">LSTM<i></i></h2>
                         <div class="secondary">
-                            <h3>全天</h3>
-                            <h3>一周</h3>
+                            <h3 id="lstmday" onclick="goToOther(this)">全天</h3>
+                            <h3 id="lstmweek" onclick="goToOther(this)">一周</h3>
                         </div>
                     </li>
                     <li>
                         <h2 class="obtain">统计<i></i></h2>
                         <div class="secondary">
-                            <h3>全天</h3>
-                            <h3>一周</h3>
+                            <h3 id="statday" onclick="goToOther(this)">全天</h3>
+                            <h3 id="statweek" onclick="goToOther(this)">一周</h3>
                         </div>
                     </li>
                 </ul>
@@ -353,8 +353,12 @@
         </div>
     </div>
     <div id="showPart" style="float: left;">
-        <input type="date" value="2017-09-01"/>
-        <%--<div id="main" style="height: 400px; background-color: #000000; width: 900px"></div>--%>
+        <label for="dateInput" style="margin-left: 50px; margin-top: 50px; margin-bottom: 50px;">
+            选择日期：</label>
+        <input type="date" value="2017-09-01" id="dateInput"/>
+        <button id="searachBtn" onclick="requestByDate()" style="width: 100px; height: 50px">查询</button>
+        <div id="main"
+             style="height: 400px; background-color: #000000; width: 900px; margin-left: 50px"></div>
     </div>
     <script type="text/javascript">
         window.onload = function () {
@@ -417,15 +421,18 @@
             }
 
             // 子导航点击事件
-            var seconC = document.querySelectorAll(".secondary h3")
-            for (var i = 0; i < seconC.length; i++) {
-                seconC[i].onclick = function () {
-                    for (var i = 0; i < seconC.length; i++) {
-                        seconC[i].classList.remove("seconFocus");
-                    }
-                    this.classList.add("seconFocus");
-                }
-            }
+            // var seconC = document.querySelectorAll(".secondary h3");
+            // for (var i = 0; i < seconC.length; i++) {
+            //     seconC[i].onclick = function () {
+            //         for (var i = 0; i < seconC.length; i++) {
+            //             //焦点变色问题
+            //             seconC[i].classList.remove("seconFocus");
+            //         }
+            //         this.classList.add("seconFocus");
+            //         // window.location.href = 'http://localhost:8080/index/';
+            //         console.log(seconC[i]);
+            //     }
+            // }
 
             // 隐藏菜单
             var obscure = document.querySelector(".navH span");
@@ -481,6 +488,21 @@
             }
             return r;
         }
+
+        function showAndHide(elem) {
+            var seconC = document.querySelectorAll(".secondary h3");
+            for (var i = 0; i < seconC.length; i++) {
+                //焦点变色问题
+                seconC[i].classList.remove("seconFocus");
+            }
+            elem.classList.add("seconFocus");
+        }
+
+        function goToOther(elem) {
+            showAndHide(elem);
+            console.log(elem.id);
+            window.location.href = "http://localhost:8080/index/" + elem.id + ".jsp";
+        }
     </script>
 </body>
 
@@ -505,11 +527,14 @@
             myChart.showLoading();
 
             var counts = [];
-
+            var date = document.getElementById("dateInput").value;
+            var dateArray = date.split("-");
+            date = dateArray[0] + dateArray[1] + dateArray[2];
+            console.log(date);
             $.ajax({
                 type: 'GET',
                 url: "http://localhost:8080/index/admin/countDayODs",
-                data: "date=0901",
+                data: "date=" + date,
                 dataType: "json",
                 success: function (result) {
                     console.log(result);
@@ -519,7 +544,7 @@
                         myChart.hideLoading();
                         var option = {
                             title: {
-                                text: '20170901出行OD量',
+                                text: date + '出行OD量: ' + result.count + "人次",
                                 x: 'center'
                             },
                             tooltip: {
@@ -529,7 +554,7 @@
                             legend: {
                                 orient: 'vertial',
                                 x: 'left',
-                                data: ['20170901']
+                                data: [date]
                             },
                             series: [
                                 {
@@ -538,7 +563,7 @@
                                     radius: '55%',
                                     center: ['50%', '60%'],
                                     data: [
-                                        {name: '20170901', value: result.count}
+                                        {name: date, value: result.count}
                                     ]
                                 }
                             ]
@@ -557,5 +582,65 @@
             })
         }
     );
+
+
+    function requestByDate() {
+        var mycharts = require('echarts').init(document.getElementById("main"));
+        mycharts.showLoading();
+        var counts = [];
+        var date = document.getElementById("dateInput").value;
+        var dateArray = date.split("-");
+        date = dateArray[0] + dateArray[1] + dateArray[2];
+        console.log(date);
+        $.ajax({
+            type: 'GET',
+            url: "http://localhost:8080/index/admin/countDayODs",
+            data: "date=" + date,
+            dataType: "json",
+            success: function (result) {
+                console.log(result);
+                if (result) {
+                    counts.push(result.count);
+                    console.log(counts);
+                    mycharts.hideLoading();
+                    var option = {
+                        title: {
+                            text: date + '出行OD量: ' + result.count + "人次",
+                            x: 'center'
+                        },
+                        tooltip: {
+                            trigger: 'item',
+                            formatter: "{a} <br/>{b} : {c} ({d}%)"
+                        },
+                        legend: {
+                            orient: 'vertial',
+                            x: 'left',
+                            data: [date]
+                        },
+                        series: [
+                            {
+                                type: 'pie',
+                                name: '数量',
+                                radius: '55%',
+                                center: ['50%', '60%'],
+                                data: [
+                                    {name: date, value: result.count}
+                                ]
+                            }
+                        ]
+                    };
+
+                    mycharts.setOption(option);
+                    mycharts.hideLoading();
+                }
+
+            },
+            error: function (errorMsg) {
+                alert(errorMsg);
+                console.log(errorMsg);
+                mycharts.hideLoading();
+            }
+        })
+    }
 </script>
 </html>

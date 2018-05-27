@@ -309,201 +309,202 @@
 <body>
 
 
-    <div id="menu">
-        <!--隐藏菜单-->
-        <div id="ensconce">
-            <h2>
-                <img src="${pageContext.request.contextPath}/img/show.png" alt="">
-                国内各地景点
-            </h2>
-        </div>
+<div id="menu">
+    <!--隐藏菜单-->
+    <div id="ensconce">
+        <h2>
+            <img src="${pageContext.request.contextPath}/img/show.png" alt="">
+            国内各地景点
+        </h2>
+    </div>
 
-        <!--显示菜单-->
-        <div id="open">
-            <div class="navH">
-                国内各地景点
-                <span><img class="obscure"
-                           src="${pageContext.request.contextPath}/img/obscure.png" alt=""></span>
-            </div>
-            <div class="navBox">
-                <ul>
-                    <li>
-                        <h2 class="obtain">旅程时间<i></i></h2>
-                        <div class="secondary">
-                            <h3 id="avgtimeday" onclick="goToOther(this)">全天</h3>
-                            <h3 id="avgtimeweek" onclick="goToOther(this)">一周</h3>
-                        </div>
-                    </li>
-                    <li>
-                        <h2 class="obtain">LSTM<i></i></h2>
-                        <div class="secondary">
-                            <h3 id="lstmday" onclick="goToOther(this)">全天</h3>
-                            <h3 id="lstmweek" onclick="goToOther(this)">一周</h3>
-                        </div>
-                    </li>
-                    <li>
-                        <h2 class="obtain">统计<i></i></h2>
-                        <div class="secondary">
-                            <h3 id="statday" onclick="goToOther(this)">全天</h3>
-                            <h3 id="statweek" onclick="goToOther(this)">一周</h3>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+    <!--显示菜单-->
+    <div id="open">
+        <div class="navH">
+            国内各地景点
+            <span><img class="obscure"
+                       src="${pageContext.request.contextPath}/img/obscure.png" alt=""></span>
+        </div>
+        <div class="navBox">
+            <ul>
+                <li>
+                    <h2 class="obtain">旅程时间<i></i></h2>
+                    <div class="secondary">
+                        <h3 id="avgtimeday" onclick="goToOther(this)">全天</h3>
+                        <h3 id="avgtimeweek" onclick="goToOther(this)">一周</h3>
+                    </div>
+                </li>
+                <li>
+                    <h2 class="obtain">LSTM<i></i></h2>
+                    <div class="secondary">
+                        <h3 id="lstmday" onclick="goToOther(this)">全天</h3>
+                        <h3 id="lstmweek" onclick="goToOther(this)">一周</h3>
+                    </div>
+                </li>
+                <li>
+                    <h2 class="obtain">统计<i></i></h2>
+                    <div class="secondary">
+                        <h3 id="statday" onclick="goToOther(this)">全天</h3>
+                        <h3 id="statweek" onclick="goToOther(this)">一周</h3>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
-    <div id="showPart" style="float: left;">
-        <label for="dateInput" style="margin-left: 50px; margin-top: 50px; margin-bottom: 50px;">
-            选择日期：</label>
-        <input type="date" value="2017-09-01" id="dateInput"/>
-        <button id="searachBtn" onclick="requestByDate()" style="width: 100px; height: 50px">查询</button>
-        <div id="main"
-             style="height: 400px; background-color: #000000; width: 900px; margin-left: 50px"></div>
-    </div>
-    <script type="text/javascript">
-        window.onload = function () {
-            var flag = true;
-            var liC = document.querySelectorAll(".navBox li h2");
-            // 主导航nav点击事件
-            for (var i = 0; i < liC.length; i++) {
-                liC[i].onclick = function () {
-                    if (flag) {
-                        // 节流阀
-                        flag = false;
-                        setTimeout(function () {
-                            flag = true;
-                        }, 500)
-                        // 自点
-                        if (this.className === "obFocus") {
-                            this.querySelector("i").classList.remove("arrowRot");
-                            getNext(this).style.height = "0";
-                            this.classList.add("obtain");
-                            this.classList.remove("obFocus");
-                            return
-                        }
-
-                        var sec = getNext(this);
-                        var sib = siblings(sec.parentNode);
-                        var otherArr = [];
-                        var arrowClass = [];
-                        // 排他 secondary arrowRot obFocus
-                        for (var j = 0; j < sib.length; j++) {
-                            var sibSec = sib[j].getElementsByTagName('*');
-                            for (var i = 0; i < sibSec.length; i++) {
-                                if (sibSec[i].className == "secondary") {
-                                    otherArr.push(sibSec[i])
-                                }
-                                if (sibSec[i].className == "arrowRot") {
-                                    arrowClass.push(sibSec[i])
-                                }
-                                if (sibSec[i].className == "obFocus") {
-                                    sibSec[i].classList.remove("obFocus");
-                                    sibSec[i].classList.add("obtain");
-
-                                }
-                            }
-                        }
-                        for (var i = 0; i < otherArr.length; i++) {
-                            otherArr[i].style.height = "0";
-                        }
-                        if (arrowClass[0]) {
-                            arrowClass[0].classList.remove("arrowRot");
-                        }
-
-                        // 留自己
-                        sec.style.height = 1.0 + "rem";
-                        this.getElementsByTagName("i")[0].classList.add("arrowRot");
-                        this.classList.remove("obtain");
-                        this.classList.add("obFocus");
+</div>
+<div id="showPart" style="float: left;">
+    <label for="dateInput" style="margin-left: 50px; margin-top: 50px; margin-bottom: 50px;">
+        选择日期：</label>
+    <input type="date" value="2017-09-01" id="dateInput"/>
+    <button id="searachBtn" onclick="requestByDate()" style="width: 100px; height: 50px">查询</button>
+    <div id="main"
+         style="height: 400px; background-color: #000000; width: 900px; margin-left: 50px"></div>
+</div>
+<script type="text/javascript">
+    window.onload = function () {
+        var flag = true;
+        var liC = document.querySelectorAll(".navBox li h2");
+        // 主导航nav点击事件
+        for (var i = 0; i < liC.length; i++) {
+            liC[i].onclick = function () {
+                if (flag) {
+                    // 节流阀
+                    flag = false;
+                    setTimeout(function () {
+                        flag = true;
+                    }, 500)
+                    // 自点
+                    if (this.className === "obFocus") {
+                        this.querySelector("i").classList.remove("arrowRot");
+                        getNext(this).style.height = "0";
+                        this.classList.add("obtain");
+                        this.classList.remove("obFocus");
+                        return
                     }
 
+                    var sec = getNext(this);
+                    var sib = siblings(sec.parentNode);
+                    var otherArr = [];
+                    var arrowClass = [];
+                    // 排他 secondary arrowRot obFocus
+                    for (var j = 0; j < sib.length; j++) {
+                        var sibSec = sib[j].getElementsByTagName('*');
+                        for (var i = 0; i < sibSec.length; i++) {
+                            if (sibSec[i].className == "secondary") {
+                                otherArr.push(sibSec[i])
+                            }
+                            if (sibSec[i].className == "arrowRot") {
+                                arrowClass.push(sibSec[i])
+                            }
+                            if (sibSec[i].className == "obFocus") {
+                                sibSec[i].classList.remove("obFocus");
+                                sibSec[i].classList.add("obtain");
+
+                            }
+                        }
+                    }
+                    for (var i = 0; i < otherArr.length; i++) {
+                        otherArr[i].style.height = "0";
+                    }
+                    if (arrowClass[0]) {
+                        arrowClass[0].classList.remove("arrowRot");
+                    }
+
+                    // 留自己
+                    sec.style.height = 1.0 + "rem";
+                    this.getElementsByTagName("i")[0].classList.add("arrowRot");
+                    this.classList.remove("obtain");
+                    this.classList.add("obFocus");
                 }
-            }
-
-            // 子导航点击事件
-            // var seconC = document.querySelectorAll(".secondary h3");
-            // for (var i = 0; i < seconC.length; i++) {
-            //     seconC[i].onclick = function () {
-            //         for (var i = 0; i < seconC.length; i++) {
-            //             //焦点变色问题
-            //             seconC[i].classList.remove("seconFocus");
-            //         }
-            //         this.classList.add("seconFocus");
-            //         // window.location.href = 'http://localhost:8080/index/';
-            //         console.log(seconC[i]);
-            //     }
-            // }
-
-            // 隐藏菜单
-            var obscure = document.querySelector(".navH span");
-            var open = document.querySelector("#open");
-            var ensconce = document.querySelector("#ensconce");
-            obscure.onclick = function () {
-                open.style.marginLeft = "-300px";
-                setTimeout(function () {
-                    ensconce.style.display = "block";
-                }, 350)
-
-            }
-            //显示菜单
-            var showC = document.querySelector("#ensconce h2");
-            showC.onclick = function () {
-                open.style.marginLeft = "0px";
-                setTimeout(function () {
-                    ensconce.style.display = "none";
-                }, 100)
 
             }
         }
 
-        function getByClass(clsName, parent) {
-            var oParent = parent ? document.getElementById(parent) : document,
-                boxArr = new Array(),
-                oElements = oParent.getElementsByTagName('*');
-            for (var i = 0; i < oElements.length; i++) {
-                if (oElements[i].className == clsName) {
-                    boxArr.push(oElements[i]);
-                }
-            }
-            return boxArr;
-        }
-        // 获取下一个兄弟元素
-        function getNext(node) {
-            if (!node.nextSibling) return null;
-            var nextNode = node.nextSibling;
-            if (nextNode.nodeType == 1) {
-                return nextNode;
-            }
-            return getNext(node.nextSibling);
-        }
+        // 子导航点击事件
+        // var seconC = document.querySelectorAll(".secondary h3");
+        // for (var i = 0; i < seconC.length; i++) {
+        //     seconC[i].onclick = function () {
+        //         for (var i = 0; i < seconC.length; i++) {
+        //             //焦点变色问题
+        //             seconC[i].classList.remove("seconFocus");
+        //         }
+        //         this.classList.add("seconFocus");
+        //         // window.location.href = 'http://localhost:8080/index/';
+        //         console.log(seconC[i]);
+        //     }
+        // }
 
-        // 获取除了自己以外的其他亲兄弟元素
-        function siblings(elem) {
-            var r = [];
-            var n = elem.parentNode.firstChild;
-            for (; n; n = n.nextSibling) {
-                if (n.nodeType === 1 && n !== elem) {
-                    r.push(n);
-                }
-            }
-            return r;
-        }
+        // 隐藏菜单
+        var obscure = document.querySelector(".navH span");
+        var open = document.querySelector("#open");
+        var ensconce = document.querySelector("#ensconce");
+        obscure.onclick = function () {
+            open.style.marginLeft = "-300px";
+            setTimeout(function () {
+                ensconce.style.display = "block";
+            }, 350)
 
-        function showAndHide(elem) {
-            var seconC = document.querySelectorAll(".secondary h3");
-            for (var i = 0; i < seconC.length; i++) {
-                //焦点变色问题
-                seconC[i].classList.remove("seconFocus");
-            }
-            elem.classList.add("seconFocus");
         }
+        //显示菜单
+        var showC = document.querySelector("#ensconce h2");
+        showC.onclick = function () {
+            open.style.marginLeft = "0px";
+            setTimeout(function () {
+                ensconce.style.display = "none";
+            }, 100)
 
-        function goToOther(elem) {
-            showAndHide(elem);
-            console.log(elem.id);
-            window.location.href = "http://localhost:8080/index/" + elem.id + ".jsp";
         }
-    </script>
+    }
+
+    function getByClass(clsName, parent) {
+        var oParent = parent ? document.getElementById(parent) : document,
+            boxArr = new Array(),
+            oElements = oParent.getElementsByTagName('*');
+        for (var i = 0; i < oElements.length; i++) {
+            if (oElements[i].className == clsName) {
+                boxArr.push(oElements[i]);
+            }
+        }
+        return boxArr;
+    }
+    // 获取下一个兄弟元素
+    function getNext(node) {
+        if (!node.nextSibling) return null;
+        var nextNode = node.nextSibling;
+        if (nextNode.nodeType == 1) {
+            return nextNode;
+        }
+        return getNext(node.nextSibling);
+    }
+
+    // 获取除了自己以外的其他亲兄弟元素
+    function siblings(elem) {
+        var r = [];
+        var n = elem.parentNode.firstChild;
+        for (; n; n = n.nextSibling) {
+            if (n.nodeType === 1 && n !== elem) {
+                r.push(n);
+            }
+        }
+        return r;
+    }
+
+    function showAndHide(elem) {
+        var seconC = document.querySelectorAll(".secondary h3");
+        for (var i = 0; i < seconC.length; i++) {
+            //焦点变色问题
+            seconC[i].classList.remove("seconFocus");
+        }
+        elem.classList.add("seconFocus");
+    }
+
+    function goToOther(elem) {
+        showAndHide(elem);
+        console.log(elem.id);
+        window.location.href = "http://localhost:8080/index/" + elem.id + ".jsp";
+
+    }
+</script>
 </body>
 
 <script type="text/javascript">
@@ -544,7 +545,7 @@
                         myChart.hideLoading();
                         var option = {
                             title: {
-                                text: date + '出行OD量: ' + result.count + "人次",
+                                text: date + '预测准确率（天）',
                                 x: 'center'
                             },
                             tooltip: {
@@ -605,7 +606,7 @@
                     mycharts.hideLoading();
                     var option = {
                         title: {
-                            text: date + '出行OD量: ' + result.count + "人次",
+                            text: date + '预测准确率（天）',
                             x: 'center'
                         },
                         tooltip: {
