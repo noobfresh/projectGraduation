@@ -17,8 +17,12 @@ public class FillDayAvgTimeStrategy {
             connection = DriverManager.getConnection(url, user, pass);
             connection.setAutoCommit(false);
 
-            for(int i = 0; i < 31; i += 7){
-                String tableName = "avgtime201709" + CsvFileInit.getNumbers(i+1);
+            //注意循环条件
+            for(int i = 1; i < 11; i ++){
+                if(i == 15 || i == 22 || i == 29){
+                    continue;
+                }
+                String tableName = "avgtime201709" + CsvFileInit.getNumbers(i);
                 String rawDataSQL = "SELECT " +
                         " START_STATION, END_STATION, DURATION " +
                         "FROM " +

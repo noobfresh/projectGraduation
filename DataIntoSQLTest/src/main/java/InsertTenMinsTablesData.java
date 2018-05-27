@@ -34,8 +34,8 @@ public class InsertTenMinsTablesData {
             String startTime = "0600";
             while (!startTime.equals("0000")){
                 //
-                String endTime = CreateTables30MinsAvgTime.timeIncrement(startTime);
-                tableName = "avgTime" + startTime + endTime;
+                String endTime = CreateTablesTenMinsAvgTime.timeIncrement(startTime);
+                tableName = "avgTime20170902" + startTime + endTime;
 
                 InsertRecord(tableName, connection, keyList);
 
@@ -63,7 +63,7 @@ public class InsertTenMinsTablesData {
             //距离
             preparedStatement.setFloat(5, 0.0f);
             //时间段
-            preparedStatement.setString(6, "20170901");
+            preparedStatement.setString(6, "20170902");
             //是否公交
             preparedStatement.setString(7, "0");
             preparedStatement.addBatch();

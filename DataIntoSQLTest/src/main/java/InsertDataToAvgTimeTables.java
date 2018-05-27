@@ -23,7 +23,7 @@ public class InsertDataToAvgTimeTables {
         CSVReader csvReader = null;
         try {
             csvReader = new CSVReader(new BufferedReader(new FileReader(
-                    "C:\\Users\\PYF\\Desktop\\test\\STATION_ID.csv")));
+                    "F:\\github\\test\\STATION_ID.csv")));
             String[] nextLine = csvReader.readNext();
             while ((nextLine = csvReader.readNext()) != null){
                 idList.add(nextLine[0]);
@@ -51,7 +51,22 @@ public class InsertDataToAvgTimeTables {
 //            addTableName("20170915", connection, idList);
 //            addTableName("20170922", connection, idList);
 //            addTableName("20170929", connection, idList);
-            addTableName("201709", connection, idList);
+//            addTableName("201709", connection, idList);
+//            addTableName("20170904", connection, idList);
+//            addTableName("20170905", connection, idList);
+//            addTableName("20170906", connection, idList);
+//            addTableName("20170907", connection, idList);
+//            addTableName("20170909", connection, idList);
+//            addTableName("20170910", connection, idList);
+
+            for(int i = 11; i < 30; i++){
+                if(i == 15 || i == 22 || i == 29){
+                    continue;
+                }
+                addTableName("201709" + i, connection, idList);
+            }
+            addTableName("20170902", connection, idList);
+            addTableName("20170903", connection, idList);
             connection.close();
 
         }catch (ClassNotFoundException|SQLException e){

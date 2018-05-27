@@ -23,10 +23,12 @@ public class TimeGeneratorUtil {
         return convertLess10Num(hour) + convertLess10Num(min);
     }
 
-     private static String convertLess10Num(int time){
+     public static String convertLess10Num(int time){
         if(time < 10){
             return "0" + time;
         }
         return String.valueOf(time);
     }
+
+
 }

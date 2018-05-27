@@ -22,10 +22,22 @@ public class CaculateAllAvgTime {
             connection.setAutoCommit(false);
 
 //            addParamsTablesName("20170901", connection);
-            addParamsTablesName("20170908", connection);
-            addParamsTablesName("20170915", connection);
-            addParamsTablesName("20170922", connection);
-            addParamsTablesName("20170929", connection);
+//            addParamsTablesName("20170904", connection);
+//            addParamsTablesName("20170905", connection);
+//            addParamsTablesName("20170906", connection);
+//            addParamsTablesName("20170907", connection);
+//            addParamsTablesName("20170909", connection);
+//            addParamsTablesName("20170910", connection);
+
+            for(int i = 11; i < 30; i++){
+                if(i == 15 || i == 22 || i == 29){
+                    continue;
+                }
+                addParamsTablesName("201709" + i, connection);
+            }
+            addParamsTablesName("20170902", connection);
+            addParamsTablesName("20170903", connection);
+
 
             connection.close();
         }catch (ClassNotFoundException|SQLException e){

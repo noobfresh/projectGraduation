@@ -26,7 +26,7 @@ public class CreateTablesTenMinsAvgTime {
             String startTime = "0600";
             while (!startTime.equals("0000")){
                 String endTime = timeIncrement(startTime);
-                tableName = "avgTime" + startTime + endTime;
+                tableName = "avgTime20170902" + startTime + endTime;
                 String createTableSQL = "CREATE TABLE `"+ tableName +"` ( " +
                         "  `START_STATION` varchar(20) NOT NULL, " +
                         "  `END_STATION` varchar(20) NOT NULL, " +

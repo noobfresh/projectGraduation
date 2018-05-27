@@ -330,8 +330,8 @@
                 <li>
                     <h2 class="obtain">旅程时间<i></i></h2>
                     <div class="secondary">
-                        <h3 id="avgtimeday" onclick="goToOther(this)">全天</h3>
-                        <h3 id="avgtimeweek" onclick="goToOther(this)">一周</h3>
+                        <h3 id="avgtimeday" onclick="goToOther(this)">轨交全天</h3>
+                        <h3 id="avgtimeweek" onclick="goToOther(this)">轨交一周</h3>
                     </div>
                 </li>
                 <li>
@@ -356,9 +356,11 @@
     <label for="dateInput" style="margin-left: 50px; margin-top: 50px; margin-bottom: 50px;">
         选择日期：</label>
     <input type="date" value="2017-09-01" id="dateInput"/>
+    <label for="start">起点：</label><input type="text" style="width: 100px; margin-left: 50px" id="start" placeholder="起点站"/>
+    <label for="start">终点：</label><input type="text" style="width: 100px; margin-left: 50px" id="end" placeholder="终点站"/>
     <button id="searachBtn" onclick="requestByDate()" style="width: 100px; height: 50px">查询</button>
     <div id="main"
-         style="height: 400px; background-color: #000000; width: 900px; margin-left: 50px"></div>
+         style="height: 400px; background-color: #000000; width: 1000px; margin-left: 50px"></div>
 </div>
 <script type="text/javascript">
     window.onload = function () {
@@ -519,52 +521,78 @@
     require(
         [
             'echarts',
-            'echarts/chart/pie'
+            'echarts/chart/line'
         ],
         function getOd(ec) {
             var myChart = ec.init(document.getElementById('main'));
 
             myChart.showLoading();
-
-            var counts = [];
             var date = document.getElementById("dateInput").value;
             var dateArray = date.split("-");
             date = dateArray[0] + dateArray[1] + dateArray[2];
-            console.log(date);
+            var counts = [];
+            var startName = "大学城";
+            var endName = "沙坪坝";
+            var xArray = [];
+            var yArray = [];
             $.ajax({
                 type: 'GET',
-                url: "http://localhost:8080/index/admin/countDayODs",
-                data: "date=" + date,
+                url: "http://localhost:8080/index/admin/avgtimeday",
+                data: "startStationName=" + startName + "&endStationName=" + endName,
                 dataType: "json",
                 success: function (result) {
-                    console.log(result);
+                    // console.log(result);
                     if (result) {
-                        counts.push(result.count);
-                        console.log(counts);
+
+                        console.log(result);
+                        for(var i = 0; i < result.result.length; i++){
+                            xArray.push(result.result[i].timeRange);
+                            yArray.push(result.result[i].avgtime.duration);
+                        }
+                        console.log(xArray);
+                        console.log(yArray);
                         myChart.hideLoading();
                         var option = {
-                            title: {
-                                text: date + '日平均旅程对比 ',
-                                x: 'center'
+                            title : {
+                                text: date + '运营时间内旅程时间变化（每10分钟）'
                             },
-                            tooltip: {
-                                trigger: 'item',
-                                formatter: "{a} <br/>{b} : {c} ({d}%)"
+                            tooltip : {
+                                trigger: 'axis'
                             },
                             legend: {
-                                orient: 'vertial',
-                                x: 'left',
-                                data: [date]
+                                data:[startName + "~" + endName]
                             },
-                            series: [
+                            toolbox: {
+                                show : true,
+                                feature : {
+                                    mark : {show: true},
+                                    dataView : {show: true, readOnly: false},
+                                    magicType : {show: true, type: ['line', 'bar']},
+                                    restore : {show: true},
+                                    saveAsImage : {show: true}
+                                }
+                            },
+                            calculable : true,
+                            xAxis : [
                                 {
-                                    type: 'pie',
-                                    name: '数量',
-                                    radius: '55%',
-                                    center: ['50%', '60%'],
-                                    data: [
-                                        {name: date, value: result.count}
-                                    ]
+                                    type : 'category',
+                                    boundaryGap : false,
+                                    data : xArray
+                                }
+                            ],
+                            yAxis : [
+                                {
+                                    type : 'value',
+                                    axisLabel : {
+                                        formatter: '{value} second'
+                                    }
+                                }
+                            ],
+                            series : [
+                                {
+                                    name:'旅程时间',
+                                    type:'line',
+                                    data:yArray
                                 }
                             ]
                         };
@@ -587,45 +615,72 @@
     function requestByDate() {
         var mycharts = require('echarts').init(document.getElementById("main"));
         mycharts.showLoading();
-        var counts = [];
         var date = document.getElementById("dateInput").value;
         var dateArray = date.split("-");
         date = dateArray[0] + dateArray[1] + dateArray[2];
-        console.log(date);
+        var counts = [];
+        var startName = document.getElementById("start").value;
+        var endName = document.getElementById("end").value;
+        var xArray = [];
+        var yArray = [];
         $.ajax({
             type: 'GET',
-            url: "http://localhost:8080/index/admin/countDayODs",
-            data: "date=" + date,
+            url: "http://localhost:8080/index/admin/avgtimeday",
+            data: "startStationName=" + startName + "&endStationName=" + endName,
             dataType: "json",
             success: function (result) {
-                console.log(result);
+                // console.log(result);
                 if (result) {
-                    counts.push(result.count);
-                    console.log(counts);
+
+                    console.log(result);
+                    for(var i = 0; i < result.result.length; i++){
+                        xArray.push(result.result[i].timeRange);
+                        yArray.push(result.result[i].avgtime.duration);
+                    }
+                    console.log(xArray);
+                    console.log(yArray);
                     mycharts.hideLoading();
                     var option = {
-                        title: {
-                            text: date + '日平均旅程对比 ',
-                            x: 'center'
+                        title : {
+                            text: date + '运营时间内旅程时间变化（每10分钟）'
                         },
-                        tooltip: {
-                            trigger: 'item',
-                            formatter: "{a} <br/>{b} : {c} ({d}%)"
+                        tooltip : {
+                            trigger: 'axis'
                         },
                         legend: {
-                            orient: 'vertial',
-                            x: 'left',
-                            data: [date]
+                            data:[startName + "~" + endName]
                         },
-                        series: [
+                        toolbox: {
+                            show : true,
+                            feature : {
+                                mark : {show: true},
+                                dataView : {show: true, readOnly: false},
+                                magicType : {show: true, type: ['line', 'bar']},
+                                restore : {show: true},
+                                saveAsImage : {show: true}
+                            }
+                        },
+                        calculable : true,
+                        xAxis : [
                             {
-                                type: 'pie',
-                                name: '数量',
-                                radius: '55%',
-                                center: ['50%', '60%'],
-                                data: [
-                                    {name: date, value: result.count}
-                                ]
+                                type : 'category',
+                                boundaryGap : false,
+                                data : xArray
+                            }
+                        ],
+                        yAxis : [
+                            {
+                                type : 'value',
+                                axisLabel : {
+                                    formatter: '{value} second'
+                                }
+                            }
+                        ],
+                        series : [
+                            {
+                                name:'旅程时间',
+                                type:'line',
+                                data:yArray
                             }
                         ]
                     };
@@ -638,7 +693,7 @@
             error: function (errorMsg) {
                 alert(errorMsg);
                 console.log(errorMsg);
-                mycharts.hideLoading();
+                myChart.hideLoading();
             }
         })
     }

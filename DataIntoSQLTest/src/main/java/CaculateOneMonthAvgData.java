@@ -47,7 +47,8 @@ public class CaculateOneMonthAvgData {
 
 
             //写入avgTime表
-            String sqlUpdate = "UPDATE " + "avgtime201709" + " SET DURATION = ? WHERE START_STATION = ? AND END_STATION = ?";
+            String sqlUpdate = "UPDATE " + "avgtime201709" +
+                    " SET DURATION = ? WHERE START_STATION = ? AND END_STATION = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sqlUpdate);
             for(AvgTimeData temp : avgTimeDatas.values()){
                 preparedStatement.setInt(1, (int)temp.getDuration());

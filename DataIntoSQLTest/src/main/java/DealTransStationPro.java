@@ -25,6 +25,15 @@ public class DealTransStationPro {
 //            updateZeroRecords("20170929", connection);
 //            updateZeroRecords("201709", connection);
 
+            for(int i = 11; i < 30; i++){
+                if(i == 15 || i == 22 || i == 29){
+                    continue;
+                }
+                updateZeroRecords("201709" + i, connection);
+            }
+            updateZeroRecords("20170902", connection);
+            updateZeroRecords("20170903", connection);
+
             connection.close();
         } catch (Exception e){
             e.printStackTrace();

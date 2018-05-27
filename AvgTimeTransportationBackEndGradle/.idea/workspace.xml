@@ -7,14 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="841710f5-8bab-4d13-9ac0-f9cc45d65697" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/avgtimeday.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/avgtimeweek.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/lstmday.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/lstmweek.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/statday.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/statweek.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/CaculateAdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/CaculateAdminServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculteAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculteAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/util/TimeGeneratorUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/util/TimeGeneratorUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/avgtimeday.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/avgtimeday.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/avgtimeweek.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/avgtimeweek.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataIntoSQLTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DataIntoSQLTest/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataIntoSQLTest/src/main/java/CaculateAllAvgTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataIntoSQLTest/src/main/java/CaculateAllAvgTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataIntoSQLTest/src/main/java/DealTransStationPro.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataIntoSQLTest/src/main/java/DealTransStationPro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataIntoSQLTest/src/main/java/FillDayAvgTimeStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataIntoSQLTest/src/main/java/FillDayAvgTimeStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataIntoSQLTest/src/main/java/InsertDataToAvgTimeTables.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataIntoSQLTest/src/main/java/InsertDataToAvgTimeTables.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -78,47 +80,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/admin.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="503" column="85" selection-start-line="503" selection-start-column="85" selection-end-line="503" selection-end-column="85" />
-              <folding>
-                <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#10904#14693#0#HTML" />
-                <element signature="e#14740#15151#0#HTML" />
-                <element signature="e#15204#15443#0#HTML" />
-                <element signature="e#15505#15770#0#HTML" />
-                <element signature="e#707#2790#0#HTML" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="avgtimeday.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/avgtimeday.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="546" column="43" selection-start-line="546" selection-start-column="43" selection-end-line="546" selection-end-column="43" />
+            <state relative-caret-position="280">
+              <caret line="358" column="4" lean-forward="true" selection-start-line="358" selection-start-column="4" selection-end-line="359" selection-end-column="121" />
               <folding>
                 <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="e#11265#15243#0#HTML" />
@@ -130,107 +103,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="avgtimeweek.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="avgtimeweek.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/avgtimeweek.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="545" column="54" selection-start-line="545" selection-start-column="54" selection-end-line="545" selection-end-column="54" />
+            <state relative-caret-position="66">
+              <caret line="696" column="28" selection-start-line="696" selection-start-column="28" selection-end-line="696" selection-end-column="28" />
               <folding>
-                <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#11265#15243#0#HTML" />
-                <element signature="e#15290#15701#0#HTML" />
-                <element signature="e#15754#15993#0#HTML" />
-                <element signature="e#16055#16320#0#HTML" />
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#input#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="statday.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/statday.jsp">
+      <file leaf-file-name="CaculteAdminController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculteAdminController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="545" column="53" selection-start-line="545" selection-start-column="53" selection-end-line="545" selection-end-column="53" />
+            <state relative-caret-position="55">
+              <caret line="82" column="80" selection-start-line="82" selection-start-column="80" selection-end-line="82" selection-end-column="80" />
               <folding>
-                <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#11265#15243#0#HTML" />
-                <element signature="e#15290#15701#0#HTML" />
-                <element signature="e#15754#15993#0#HTML" />
-                <element signature="e#16055#16320#0#HTML" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="statweek.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/statweek.jsp">
+      <file leaf-file-name="TimeGeneratorUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/util/TimeGeneratorUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="545" column="54" selection-start-line="545" selection-start-column="54" selection-end-line="545" selection-end-column="54" />
-              <folding>
-                <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#11265#15243#0#HTML" />
-                <element signature="e#15290#15701#0#HTML" />
-                <element signature="e#15754#15993#0#HTML" />
-                <element signature="e#16055#16320#0#HTML" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lstmday.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/lstmday.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="545" column="55" selection-start-line="545" selection-start-column="55" selection-end-line="545" selection-end-column="55" />
-              <folding>
-                <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#11265#15243#0#HTML" />
-                <element signature="e#15290#15701#0#HTML" />
-                <element signature="e#15754#15993#0#HTML" />
-                <element signature="e#16055#16320#0#HTML" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lstmweek.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/lstmweek.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="545" column="54" selection-start-line="545" selection-start-column="54" selection-end-line="545" selection-end-column="54" />
-              <folding>
-                <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#label#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#11265#15243#0#HTML" />
-                <element signature="e#15290#15701#0#HTML" />
-                <element signature="e#15754#15993#0#HTML" />
-                <element signature="e#16055#16320#0#HTML" />
-              </folding>
+            <state relative-caret-position="180">
+              <caret line="25" column="42" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -255,6 +159,7 @@
       <find>m-t-md</find>
       <find>onclick</find>
       <find>admin</find>
+      <find>s</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -505,7 +410,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/mapper/AvgtimeMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/xml/AvgtimeMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/util/TimeGeneratorUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/TestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/IRailwayStationService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/RailwayStationServiceImpl.java" />
@@ -514,7 +418,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/xml/OdMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/ICaculatAdminService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/mapper/OdMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculteAdminController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/mapper/BusstationMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/BusStationServiceImpl.java" />
@@ -539,6 +442,14 @@
         <option value="$PROJECT_DIR$/src/main/webapp/adminAvgtimeWeek.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/adminAvgtimeDay.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/admin.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/statday.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/statweek.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/lstmday.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/lstmweek.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/avgtimeday.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/util/TimeGeneratorUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculteAdminController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/avgtimeweek.jsp" />
       </list>
     </option>
   </component>
@@ -643,6 +554,15 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="graduation" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AvgTimeTransportationBackEndGradle" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AvgTimeTransportationBackEndGradle" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AvgTimeTransportationBackEndGradle" type="b2602c69:ProjectViewProjectNode" />
@@ -896,12 +816,12 @@
       <workItem from="1526798603521" duration="8367000" />
       <workItem from="1526807392666" duration="157000" />
       <workItem from="1527092625705" duration="28140000" />
-      <workItem from="1527326364472" duration="39684000" />
+      <workItem from="1527326364472" duration="49479000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96974000" />
+    <option name="totallyTimeSpent" value="106769000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -929,7 +849,7 @@
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Spring" order="0" />
       <window_info anchor="bottom" id="Terminal" order="0" />
-      <window_info active="true" content_ui="combo" x="516" y="61" width="333" height="605" id="Project" order="0" sideWeight="0.49752066" visible="true" weight="0.25869894" />
+      <window_info content_ui="combo" x="516" y="61" width="333" height="605" id="Project" order="0" sideWeight="0.49752066" visible="true" weight="0.25869894" />
       <window_info id="Web" order="0" side_tool="true" />
       <window_info anchor="right" id="Gradle" order="0" weight="0.32980332" />
       <window_info anchor="right" id="Theme Preview" order="0" />
@@ -987,7 +907,7 @@
           <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="15" />
+      <option name="time" value="16" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -995,13 +915,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/util/TimeGeneratorUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1030,13 +943,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
           <caret line="42" column="57" selection-start-line="42" selection-start-column="57" selection-end-line="42" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/mapper/AvgtimeMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
@@ -1168,13 +1074,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/IAvgTimeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/xml/BusdataMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1186,16 +1085,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/AvgTimeServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1282,13 +1171,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/img/obscure.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1314,36 +1196,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculteAdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-170">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/lstmweek.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="545" column="54" selection-start-line="545" selection-start-column="54" selection-end-line="545" selection-end-column="54" />
-          <folding>
-            <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#11265#15243#0#HTML" />
-            <element signature="e#15290#15701#0#HTML" />
-            <element signature="e#15754#15993#0#HTML" />
-            <element signature="e#16055#16320#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/lstmday.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="545" column="55" selection-start-line="545" selection-start-column="55" selection-end-line="545" selection-end-column="55" />
+        <state relative-caret-position="-9">
+          <caret line="495" column="53" lean-forward="true" selection-start-line="495" selection-start-column="53" selection-end-line="495" selection-end-column="53" />
           <folding>
             <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
@@ -1361,8 +1217,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/statweek.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="545" column="54" selection-start-line="545" selection-start-column="54" selection-end-line="545" selection-end-column="54" />
+        <state relative-caret-position="330">
+          <caret line="504" selection-start-line="504" selection-end-line="504" />
+          <folding>
+            <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#11265#15243#0#HTML" />
+            <element signature="e#15290#15701#0#HTML" />
+            <element signature="e#15754#15993#0#HTML" />
+            <element signature="e#16055#16320#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/lstmday.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="504" selection-start-line="504" selection-end-line="504" />
           <folding>
             <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
@@ -1380,8 +1255,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/statday.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="545" column="53" selection-start-line="545" selection-start-column="53" selection-end-line="545" selection-end-column="53" />
+        <state relative-caret-position="330">
+          <caret line="504" selection-start-line="504" selection-end-line="504" />
           <folding>
             <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
@@ -1397,60 +1272,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/avgtimeweek.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="545" column="54" selection-start-line="545" selection-start-column="54" selection-end-line="545" selection-end-column="54" />
-          <folding>
-            <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#11265#15243#0#HTML" />
-            <element signature="e#15290#15701#0#HTML" />
-            <element signature="e#15754#15993#0#HTML" />
-            <element signature="e#16055#16320#0#HTML" />
-          </folding>
+        <state relative-caret-position="350">
+          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="62" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/avgtimeday.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/mapper/AvgtimeMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="546" column="43" selection-start-line="546" selection-start-column="43" selection-end-line="546" selection-end-column="43" />
+        <state relative-caret-position="250">
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/AvgTimeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="26" column="31" lean-forward="true" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
           <folding>
-            <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#11265#15243#0#HTML" />
-            <element signature="e#15290#15701#0#HTML" />
-            <element signature="e#15754#15993#0#HTML" />
-            <element signature="e#16055#16320#0#HTML" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/admin.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="503" column="85" selection-start-line="503" selection-start-column="85" selection-end-line="503" selection-end-column="85" />
+        <state relative-caret-position="262">
+          <caret line="529" column="12" lean-forward="true" selection-start-line="529" selection-start-column="12" selection-end-line="531" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/IAvgTimeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/avgtimeday.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="358" column="4" lean-forward="true" selection-start-line="358" selection-start-column="4" selection-end-line="359" selection-end-column="121" />
           <folding>
             <element signature="n#script#0;n#head#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#10904#14693#0#HTML" />
-            <element signature="e#14740#15151#0#HTML" />
-            <element signature="e#15204#15443#0#HTML" />
-            <element signature="e#15505#15770#0#HTML" />
-            <element signature="e#707#2790#0#HTML" />
+            <element signature="e#11265#15243#0#HTML" />
+            <element signature="e#15290#15701#0#HTML" />
+            <element signature="e#15754#15993#0#HTML" />
+            <element signature="e#16055#16320#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/util/TimeGeneratorUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="25" column="42" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculteAdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="82" column="80" selection-start-line="82" selection-start-column="80" selection-end-line="82" selection-end-column="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/avgtimeweek.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="696" column="28" selection-start-line="696" selection-start-column="28" selection-end-line="696" selection-end-column="28" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#input#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
