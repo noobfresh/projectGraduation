@@ -10,6 +10,7 @@
 <html>
 <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
 <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
 <head>
     <style type="text/css">
         html{height: 100%;}
@@ -47,6 +48,12 @@
             margin-top: 15px;
         }
 
+        .m-t-md {
+            font-weight: bold;
+            font-family: "微软雅黑";
+            color: #000;
+        }
+
         .signinpanel form {
             background: rgba(255, 255, 255, 0.2);
             border: 1px solid rgba(255,255,255,.3);
@@ -57,6 +64,7 @@
             -webkit-border-radius: 3px;
             border-radius: 3px;
             padding: 30px;
+            padding-top: 10px;
         }
 
         .signup-footer{border-top: solid 1px rgba(255,255,255,.3);margin:20px 0;padding-top: 15px;}
@@ -95,6 +103,24 @@
         }
     </style>
 
+    <script type="text/javascript">
+        function check(form) {
+            console.log(form);
+            var ajax_option = {
+                url: "http://localhost:8080/index/login/vertify",
+                success: function (data) {
+                    console.log(data)
+                    if(data.page == "index"){
+                        window.location.href = "http://localhost:8080/index";
+                    }else {
+                        window.location.href = "http://localhost:8080/index/admin.jsp"
+                    }
+                }
+            }
+            $("#formId").ajaxSubmit(ajax_option);
+        }
+    </script>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>管理后台登录界面</title>
@@ -114,14 +140,14 @@
     <div class="row">
         <div class="col-sm-12">
 
-            <form class="m-t" role="form" action="index.html">
-                <h4 class="no-margins">登录：</h4>
-                <p class="m-t-md">欢迎登录交通数据管理系统</p>
+            <form class="m-t" role="form" id="formId" action="./login/vertify" method="post">
+                <h3 class="m-t-md">欢迎登录交通数据管理系统</h3>
+                <p class="no-margins">登录：</p>
                 <div class="form-group">
-                    <input type="email" class="form-control" placeholder="用户名" required="">
+                    <input type="email" name="username" class="form-control" placeholder="用户名" required="">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="密码" required="">
+                    <input type="password" name="password" class="form-control" placeholder="密码" required="">
                 </div>
                 <button type="submit" class="btn btn-primary block full-width m-b">登 录</button>
 
@@ -138,79 +164,5 @@
 </body>
 
 
-<%--<script type="text/javascript">
-    // 路径配置
-    require.config({
-        paths: {
-            echarts: 'http://echarts.baidu.com/build/dist'
-        }
-    });
 
-    // 使用
-
-    require(
-        [
-            'echarts',
-            'echarts/chart/pie'
-        ],
-        function (ec) {
-            var myChart = ec.init(document.getElementById('main'));
-
-            myChart.showLoading();
-
-            var counts = [];
-
-            $.ajax({
-                type: 'GET',
-                url: "http://localhost:8080/index/admin/countDayODs",
-                data: "date=0901",
-                dataType: "json",
-                success: function (result) {
-                    console.log(result);
-                    if (result) {
-                        counts.push(result.count);
-                        console.log(counts);
-                        myChart.hideLoading();
-                        var option = {
-                            title: {
-                                text: '20170901出行OD量',
-                                x: 'center'
-                            },
-                            tooltip: {
-                                trigger: 'item',
-                                formatter: "{a} <br/>{b} : {c} ({d}%)"
-                            },
-                            legend: {
-                                orient: 'vertial',
-                                x: 'left',
-                                data: ['20170901']
-                            },
-                            series: [
-                                {
-                                    type: 'pie',
-                                    name: '数量',
-                                    radius: '55%',
-                                    center: ['50%', '60%'],
-                                    data: [
-                                        {name: '20170901', value: result.count}
-                                    ]
-                                }
-                            ]
-                        };
-
-                        myChart.setOption(option);
-                        myChart.hideLoading();
-                    }
-
-                },
-                error: function (errorMsg) {
-                    alert(errorMsg);
-                    console.log(errorMsg);
-                    myChart.hideLoading();
-                }
-            })
-        }
-    );
-
-</script>--%>
 </html>
