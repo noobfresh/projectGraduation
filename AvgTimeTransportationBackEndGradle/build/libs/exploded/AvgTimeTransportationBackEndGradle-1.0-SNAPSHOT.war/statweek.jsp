@@ -314,14 +314,14 @@
     <div id="ensconce">
         <h2>
             <img src="${pageContext.request.contextPath}/img/show.png" alt="">
-            国内各地景点
+            菜单
         </h2>
     </div>
 
     <!--显示菜单-->
     <div id="open">
         <div class="navH">
-            国内各地景点
+            菜单
             <span><img class="obscure"
                        src="${pageContext.request.contextPath}/img/obscure.png" alt=""></span>
         </div>
@@ -330,8 +330,10 @@
                 <li>
                     <h2 class="obtain">旅程时间<i></i></h2>
                     <div class="secondary">
-                        <h3 id="avgtimeday" onclick="goToOther(this)">全天</h3>
-                        <h3 id="avgtimeweek" onclick="goToOther(this)">一周</h3>
+                        <h3 id="avgtimeday" onclick="goToOther(this)">轨交全天</h3>
+                        <h3 id="avgtimeweek" onclick="goToOther(this)">轨交一周</h3>
+                        <h3 id="busdataday" onclick="goToOther(this)">公交一天</h3>
+                        <h3 id="busdataweek" onclick="goToOther(this)">公交一周</h3>
                     </div>
                 </li>
                 <li>
@@ -353,12 +355,13 @@
     </div>
 </div>
 <div id="showPart" style="float: left;">
-    <label for="dateInput" style="margin-left: 50px; margin-top: 50px; margin-bottom: 50px;">
+    <label for="dateInput1" style="margin-left: 50px; margin-top: 50px; margin-bottom: 50px;">
         选择日期：</label>
-    <input type="date" value="2017-09-01" id="dateInput"/>
+    <input type="date" value="2017-09-04" id="dateInput1"/>
+    <input type="date" value="2017-09-10" id="dateInput2"/>
     <button id="searachBtn" onclick="requestByDate()" style="width: 100px; height: 50px">查询</button>
     <div id="main"
-         style="height: 400px; background-color: #000000; width: 900px; margin-left: 50px"></div>
+         style="height: 600px; background-color: #000000; width: 900px; margin-left: 50px"></div>
 </div>
 <script type="text/javascript">
     window.onload = function () {
@@ -411,7 +414,7 @@
                     }
 
                     // 留自己
-                    sec.style.height = 1.0 + "rem";
+                    sec.style.height = 1.5 + "rem";
                     this.getElementsByTagName("i")[0].classList.add("arrowRot");
                     this.classList.remove("obtain");
                     this.classList.add("obFocus");
@@ -520,7 +523,7 @@
     require(
         [
             'echarts',
-            'echarts/chart/pie'
+            'echarts/chart/bar'
         ],
         function getOd(ec) {
             var myChart = ec.init(document.getElementById('main'));
@@ -528,44 +531,78 @@
             myChart.showLoading();
 
             var counts = [];
-            var date = document.getElementById("dateInput").value;
-            var dateArray = date.split("-");
-            date = dateArray[0] + dateArray[1] + dateArray[2];
-            console.log(date);
+            var date1 = document.getElementById("dateInput1").value;
+            var dateArray = date1.split("-");
+            date1 = dateArray[0] + dateArray[1] + dateArray[2];
+            var date2 = document.getElementById("dateInput2").value;
+            dateArray = date2.split("-");
+            date2 = dateArray[0] + dateArray[1] + dateArray[2];
+
+            console.log(date1);
+            console.log(date2);
+
+            var trueArray = [];
+            var calArray = [];
+            var yArray = [];
+
             $.ajax({
                 type: 'GET',
-                url: "http://localhost:8080/index/admin/countDayODs",
-                data: "date=" + date,
+                url: "http://localhost:8080/index/admin/statweek",
+                data: "startDate=" + date1 + "&endDate=" + date2,
                 dataType: "json",
                 success: function (result) {
                     console.log(result);
                     if (result) {
                         counts.push(result.count);
                         console.log(counts);
+
+                        for(var i = 0; i < result.result.length; i++){
+                            yArray.push(result.result[i].timeRange);
+                            trueArray.push(result.result[i].statistic.havingnum);
+                            calArray.push(result.result[i].statistic.missingnum);
+                        }
+
                         myChart.hideLoading();
                         var option = {
                             title: {
-                                text: date +  '统计量（周）',
-                                x: 'center'
+                                text: date1 + "~" + date2 + "真实数据与计算数据统计量对比（日）"
                             },
-                            tooltip: {
-                                trigger: 'item',
-                                formatter: "{a} <br/>{b} : {c} ({d}%)"
+                            tooltip : {
+                                trigger: 'axis',
+                                axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                                    type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                                }
                             },
                             legend: {
-                                orient: 'vertial',
-                                x: 'left',
-                                data: [date]
+                                data:['真实数据数目', '计算数据数目'],
+                                x: 'right'
                             },
-                            series: [
+                            calculable : true,
+                            xAxis : [
                                 {
-                                    type: 'pie',
-                                    name: '数量',
-                                    radius: '55%',
-                                    center: ['50%', '60%'],
-                                    data: [
-                                        {name: date, value: result.count}
-                                    ]
+                                    type : 'value'
+                                }
+                            ],
+                            yAxis : [
+                                {
+                                    type : 'category',
+                                    data : yArray
+                                }
+                            ],
+                            series : [
+                                {
+                                    name:'真实数据数目',
+                                    type:'bar',
+                                    stack: '总量',
+                                    itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
+                                    data: trueArray
+                                },
+                                {
+                                    name:'计算数据数目',
+                                    type:'bar',
+                                    stack: '总量',
+                                    itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
+                                    data: calArray
                                 }
                             ]
                         };
@@ -589,44 +626,78 @@
         var mycharts = require('echarts').init(document.getElementById("main"));
         mycharts.showLoading();
         var counts = [];
-        var date = document.getElementById("dateInput").value;
-        var dateArray = date.split("-");
-        date = dateArray[0] + dateArray[1] + dateArray[2];
-        console.log(date);
+        var date1 = document.getElementById("dateInput1").value;
+        var dateArray = date1.split("-");
+        date1 = dateArray[0] + dateArray[1] + dateArray[2];
+        var date2 = document.getElementById("dateInput2").value;
+        dateArray = date2.split("-");
+        date2 = dateArray[0] + dateArray[1] + dateArray[2];
+
+        console.log(date1);
+        console.log(date2);
+
+        var trueArray = [];
+        var calArray = [];
+        var yArray = [];
+
         $.ajax({
             type: 'GET',
-            url: "http://localhost:8080/index/admin/countDayODs",
-            data: "date=" + date,
+            url: "http://localhost:8080/index/admin/statweek",
+            data: "startDate=" + date1 + "&endDate=" + date2,
             dataType: "json",
             success: function (result) {
                 console.log(result);
                 if (result) {
                     counts.push(result.count);
                     console.log(counts);
+
+                    for(var i = 0; i < result.result.length; i++){
+                        yArray.push(result.result[i].timeRange);
+                        trueArray.push(result.result[i].statistic.havingnum);
+                        calArray.push(result.result[i].statistic.missingnum);
+                    }
+
                     mycharts.hideLoading();
                     var option = {
                         title: {
-                            text: date + '统计量（周）',
-                            x: 'center'
+                            text: date1 + "~" + date2 + "真实数据与计算数据统计量对比（日）"
                         },
-                        tooltip: {
-                            trigger: 'item',
-                            formatter: "{a} <br/>{b} : {c} ({d}%)"
+                        tooltip : {
+                            trigger: 'axis',
+                            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                            }
                         },
                         legend: {
-                            orient: 'vertial',
-                            x: 'left',
-                            data: [date]
+                            data:['真实数据数目', '计算数据数目'],
+                            x: 'right'
                         },
-                        series: [
+                        calculable : true,
+                        xAxis : [
                             {
-                                type: 'pie',
-                                name: '数量',
-                                radius: '55%',
-                                center: ['50%', '60%'],
-                                data: [
-                                    {name: date, value: result.count}
-                                ]
+                                type : 'value'
+                            }
+                        ],
+                        yAxis : [
+                            {
+                                type : 'category',
+                                data : yArray
+                            }
+                        ],
+                        series : [
+                            {
+                                name:'真实数据数目',
+                                type:'bar',
+                                stack: '总量',
+                                itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
+                                data: trueArray
+                            },
+                            {
+                                name:'计算数据数目',
+                                type:'bar',
+                                stack: '总量',
+                                itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
+                                data: calArray
                             }
                         ]
                     };

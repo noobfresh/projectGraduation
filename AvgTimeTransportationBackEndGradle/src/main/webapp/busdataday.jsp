@@ -357,10 +357,14 @@
 <div id="showPart" style="float: left;">
     <label for="dateInput" style="margin-left: 50px; margin-top: 50px; margin-bottom: 50px;">
         选择日期：</label>
-    <input type="date" value="2017-09-02" id="dateInput"/>
+    <input type="date" value="2014-05-05" id="dateInput"/>
+    <label for="busInput">公交线路</label>
+    <input type="text" id="busInput" required="请输入线路号">
+    <label for="direction">方向</label>
+    <input type="text" id="direction" required="R(正方向)/F(反方向)">
     <button id="searachBtn" onclick="requestByDate()" style="width: 100px; height: 50px">查询</button>
     <div id="main"
-         style="height: 600px; background-color: #000000; width: 900px; margin-left: 50px"></div>
+         style="height: 400px; background-color: #000000; width: 1000px; margin-left: 50px"></div>
 </div>
 <script type="text/javascript">
     window.onload = function () {
@@ -504,7 +508,6 @@
         showAndHide(elem);
         console.log(elem.id);
         window.location.href = "http://localhost:8080/index/" + elem.id + ".jsp";
-
     }
 </script>
 </body>
@@ -522,81 +525,78 @@
     require(
         [
             'echarts',
-            'echarts/chart/bar'
+            'echarts/chart/line'
         ],
         function getOd(ec) {
             var myChart = ec.init(document.getElementById('main'));
 
             myChart.showLoading();
-
-            var counts = [];
             var date = document.getElementById("dateInput").value;
             var dateArray = date.split("-");
             date = dateArray[0] + dateArray[1] + dateArray[2];
-            console.log(date);
-
-            var trueArray = [];
-            var calArray = [];
+            var counts = [];
+            var startName = "大学城";
+            var endName = "沙坪坝";
+            var xArray = [];
             var yArray = [];
-
             $.ajax({
                 type: 'GET',
-                url: "http://localhost:8080/index/admin/statday",
-                data: "date=" + date,
+                url: "http://localhost:8080/index/admin/avgtimeday",
+                data: "startStationName=" + startName + "&endStationName=" + endName,
                 dataType: "json",
                 success: function (result) {
-                    console.log(result);
+                    // console.log(result);
                     if (result) {
-                        counts.push(result.count);
-                        console.log(counts);
 
+                        console.log(result);
                         for(var i = 0; i < result.result.length; i++){
-                            yArray.push(result.result[i].timeRange);
-                            trueArray.push(result.result[i].statistic.havingnum);
-                            calArray.push(result.result[i].statistic.missingnum);
+                            xArray.push(result.result[i].timeRange);
+                            yArray.push(result.result[i].avgtime.duration);
                         }
-
+                        console.log(xArray);
+                        console.log(yArray);
                         myChart.hideLoading();
                         var option = {
-                            title: {
-                                text: date + "真实数据与计算数据统计量对比（日）"
+                            title : {
+                                text: date + '运营时间内旅程时间变化（每10分钟）'
                             },
                             tooltip : {
-                                trigger: 'axis',
-                                axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-                                    type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-                                }
+                                trigger: 'axis'
                             },
                             legend: {
-                                data:['真实数据数目', '计算数据数目'],
-                                x: 'right'
+                                data:[startName + "~" + endName]
+                            },
+                            toolbox: {
+                                show : true,
+                                feature : {
+                                    mark : {show: true},
+                                    dataView : {show: true, readOnly: false},
+                                    magicType : {show: true, type: ['line', 'bar']},
+                                    restore : {show: true},
+                                    saveAsImage : {show: true}
+                                }
                             },
                             calculable : true,
                             xAxis : [
                                 {
-                                    type : 'value'
+                                    type : 'category',
+                                    boundaryGap : false,
+                                    data : xArray
                                 }
                             ],
                             yAxis : [
                                 {
-                                    type : 'category',
-                                    data : yArray
+                                    type : 'value',
+                                    axisLabel : {
+                                        formatter: '{value} second'
+                                    }
                                 }
                             ],
                             series : [
                                 {
-                                    name:'真实数据数目',
-                                    type:'bar',
-                                    stack: '总量',
-                                    itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
-                                    data: trueArray
-                                },
-                                {
-                                    name:'计算数据数目',
-                                    type:'bar',
-                                    stack: '总量',
-                                    itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
-                                    data: calArray
+                                    name:'旅程时间',
+                                    type:'line',
+                                    data:yArray
                                 }
                             ]
                         };
@@ -619,74 +619,72 @@
     function requestByDate() {
         var mycharts = require('echarts').init(document.getElementById("main"));
         mycharts.showLoading();
-        var counts = [];
         var date = document.getElementById("dateInput").value;
         var dateArray = date.split("-");
         date = dateArray[0] + dateArray[1] + dateArray[2];
-        console.log(date);
-
-        var trueArray = [];
-        var calArray = [];
+        var counts = [];
+        var startName = document.getElementById("start").value;
+        var endName = document.getElementById("end").value;
+        var xArray = [];
         var yArray = [];
-
         $.ajax({
             type: 'GET',
-            url: "http://localhost:8080/index/admin/statday",
-            data: "date=" + date,
+            url: "http://localhost:8080/index/admin/avgtimeday",
+            data: "startStationName=" + startName + "&endStationName=" + endName,
             dataType: "json",
             success: function (result) {
-                console.log(result);
+                // console.log(result);
                 if (result) {
-                    counts.push(result.count);
-                    console.log(counts);
 
+                    console.log(result);
                     for(var i = 0; i < result.result.length; i++){
-                        yArray.push(result.result[i].timeRange);
-                        trueArray.push(result.result[i].statistic.havingnum);
-                        calArray.push(result.result[i].statistic.missingnum);
+                        xArray.push(result.result[i].timeRange);
+                        yArray.push(result.result[i].avgtime.duration);
                     }
-
+                    console.log(xArray);
+                    console.log(yArray);
                     mycharts.hideLoading();
                     var option = {
-                        title: {
-                            text: date + "真实数据与计算数据统计量对比（日）"
+                        title : {
+                            text: date + '运营时间内旅程时间变化（每10分钟）'
                         },
                         tooltip : {
-                            trigger: 'axis',
-                            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-                                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-                            }
+                            trigger: 'axis'
                         },
                         legend: {
-                            data:['真实数据数目', '计算数据数目'],
-                            x: 'right'
+                            data:[startName + "~" + endName]
+                        },
+                        toolbox: {
+                            show : true,
+                            feature : {
+                                mark : {show: true},
+                                dataView : {show: true, readOnly: false},
+                                magicType : {show: true, type: ['line', 'bar']},
+                                restore : {show: true},
+                                saveAsImage : {show: true}
+                            }
                         },
                         calculable : true,
                         xAxis : [
                             {
-                                type : 'value'
+                                type : 'category',
+                                boundaryGap : false,
+                                data : xArray
                             }
                         ],
                         yAxis : [
                             {
-                                type : 'category',
-                                data : yArray
+                                type : 'value',
+                                axisLabel : {
+                                    formatter: '{value} second'
+                                }
                             }
                         ],
                         series : [
                             {
-                                name:'真实数据数目',
-                                type:'bar',
-                                stack: '总量',
-                                itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
-                                data: trueArray
-                            },
-                            {
-                                name:'计算数据数目',
-                                type:'bar',
-                                stack: '总量',
-                                itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
-                                data: calArray
+                                name:'旅程时间',
+                                type:'line',
+                                data:yArray
                             }
                         ]
                     };
@@ -699,7 +697,7 @@
             error: function (errorMsg) {
                 alert(errorMsg);
                 console.log(errorMsg);
-                mycharts.hideLoading();
+                myChart.hideLoading();
             }
         })
     }

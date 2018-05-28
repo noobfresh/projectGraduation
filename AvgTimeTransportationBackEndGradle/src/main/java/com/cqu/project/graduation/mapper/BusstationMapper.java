@@ -21,6 +21,8 @@ public interface BusstationMapper {
                                    @Param("endId") int endId,
                                    @Param("lineNo") String lineNo);
 
+    List<Busstation> selectByLineNo(@Param("lineNo") String lineNo);
+
     List<Busstation> selectAll();
 
     int updateByPrimaryKey(Busstation record);

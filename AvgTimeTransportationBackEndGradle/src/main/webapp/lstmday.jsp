@@ -330,8 +330,10 @@
                 <li>
                     <h2 class="obtain">旅程时间<i></i></h2>
                     <div class="secondary">
-                        <h3 id="avgtimeday" onclick="goToOther(this)">全天</h3>
-                        <h3 id="avgtimeweek" onclick="goToOther(this)">一周</h3>
+                        <h3 id="avgtimeday" onclick="goToOther(this)">轨交全天</h3>
+                        <h3 id="avgtimeweek" onclick="goToOther(this)">轨交一周</h3>
+                        <h3 id="busdataday" onclick="goToOther(this)">公交一天</h3>
+                        <h3 id="busdataweek" onclick="goToOther(this)">公交一周</h3>
                     </div>
                 </li>
                 <li>
@@ -411,7 +413,7 @@
                     }
 
                     // 留自己
-                    sec.style.height = 1.0 + "rem";
+                    sec.style.height = 1.5 + "rem";
                     this.getElementsByTagName("i")[0].classList.add("arrowRot");
                     this.classList.remove("obtain");
                     this.classList.add("obFocus");

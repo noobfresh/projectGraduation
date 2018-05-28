@@ -15,4 +15,9 @@ public interface BusdataMapper {
                           @Param("endStation") String endStation,
                           @Param("direction") String direction,
                           @Param("period") String period);
+
+    List<Busdata> selectWithoutPeriod(@Param("lineNo") String lineNo,
+                                      @Param("startStation") String startStation,
+                                      @Param("endStation") String endStation,
+                                      @Param("direction") String direction);
 }

@@ -55,4 +55,10 @@
     and #{endId, jdbcType=INTEGER}
     and line_no = #{lineNo, jdbcType=VARCHAR}
   </select>
+
+  <select id="selectByLineNo" parameterType="map" resultMap="BaseResultMap">
+    select id, line_no, station_name
+    from busstation
+    where line_no = #{lineNo, jdbcType=VARCHAR}
+  </select>
 </mapper>

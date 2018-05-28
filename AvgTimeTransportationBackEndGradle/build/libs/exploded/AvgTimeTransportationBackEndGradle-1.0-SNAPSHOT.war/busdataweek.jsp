@@ -357,7 +357,7 @@
 <div id="showPart" style="float: left;">
     <label for="dateInput" style="margin-left: 50px; margin-top: 50px; margin-bottom: 50px;">
         选择日期：</label>
-    <input type="date" value="2017-09-02" id="dateInput"/>
+    <input type="date" value="2017-09-01" id="dateInput"/>
     <button id="searachBtn" onclick="requestByDate()" style="width: 100px; height: 50px">查询</button>
     <div id="main"
          style="height: 600px; background-color: #000000; width: 900px; margin-left: 50px"></div>

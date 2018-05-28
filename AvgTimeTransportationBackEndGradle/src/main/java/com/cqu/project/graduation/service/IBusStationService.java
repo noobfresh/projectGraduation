@@ -15,4 +15,6 @@ public interface IBusStationService {
     boolean isDirection(String station, String lineNo);
 
     List<Busstation> selectByRange(int startId, int endId, String lineNo);
+
+    List<Busstation> selectByLineNoDirection(String lineNo, String Direction);
 }

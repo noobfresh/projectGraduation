@@ -8,6 +8,8 @@ import com.cqu.project.graduation.mapper.BusdataMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class AvgTimeServiceImpl implements IAvgTimeService{
@@ -32,5 +34,11 @@ public class AvgTimeServiceImpl implements IAvgTimeService{
                                          String endStation, String direction,
                                          String period) {
         return busdataMapper.selectByCondition(lineNo, startStation, endStation, direction, period);
+    }
+
+    @Override
+    public List<Busdata> getBusdataWithoutPeriod(String lineNo, String startStation,
+                                                 String endStation, String direction) {
+        return null;
     }
 }

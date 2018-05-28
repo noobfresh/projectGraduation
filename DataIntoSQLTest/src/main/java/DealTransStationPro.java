@@ -19,20 +19,20 @@ public class DealTransStationPro {
             connection = DriverManager.getConnection(url, user, pass);
             connection.setAutoCommit(false);
 
-//            updateZeroRecords("20170908", connection);
-//            updateZeroRecords("20170915", connection);
-//            updateZeroRecords("20170922", connection);
-//            updateZeroRecords("20170929", connection);
-//            updateZeroRecords("201709", connection);
+            updateZeroRecords("20170908", connection);
+            updateZeroRecords("20170915", connection);
+            updateZeroRecords("20170922", connection);
+            updateZeroRecords("20170929", connection);
+            updateZeroRecords("20170901", connection);
 
-            for(int i = 11; i < 30; i++){
-                if(i == 15 || i == 22 || i == 29){
-                    continue;
-                }
-                updateZeroRecords("201709" + i, connection);
-            }
-            updateZeroRecords("20170902", connection);
-            updateZeroRecords("20170903", connection);
+//            for(int i = 11; i < 30; i++){
+//                if(i == 15 || i == 22 || i == 29){
+//                    continue;
+//                }
+//                updateZeroRecords("201709" + i, connection);
+//            }
+//            updateZeroRecords("20170902", connection);
+//            updateZeroRecords("20170903", connection);
 
             connection.close();
         } catch (Exception e){
