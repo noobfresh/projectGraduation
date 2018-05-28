@@ -559,7 +559,7 @@
                         myChart.hideLoading();
                         var option = {
                             title: {
-                                text: date + "真实数据与计算数据统计量对比（日）"
+                                text: date + "真实数据与计算数据统计量对比（每十分钟）"
                             },
                             tooltip : {
                                 trigger: 'axis',
@@ -649,7 +649,7 @@
                     mycharts.hideLoading();
                     var option = {
                         title: {
-                            text: date + "真实数据与计算数据统计量对比（日）"
+                            text: date + "真实数据与计算数据统计量对比（每十分钟）"
                         },
                         tooltip : {
                             trigger: 'axis',

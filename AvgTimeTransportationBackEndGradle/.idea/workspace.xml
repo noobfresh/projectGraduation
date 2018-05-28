@@ -7,41 +7,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="841710f5-8bab-4d13-9ac0-f9cc45d65697" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/StatServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/busdataday.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/busdataweek.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/controller/CaculteAdminController$TempStructure.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/controller/CaculteAdminController$TempStructure.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/controller/CaculteAdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/controller/CaculteAdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/mybatis/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/mybatis/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/mapper/BusdataMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/mapper/BusdataMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/mapper/BusstationMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/mapper/BusstationMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/service/AvgTimeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/service/AvgTimeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/service/BusStationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/service/BusStationServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/service/IAvgTimeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/service/IAvgTimeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/service/IBusStationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/com/cqu/project/graduation/service/IBusStationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/xml/BusdataMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/xml/BusdataMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/xml/BusstationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/WEB-INF/classes/xml/BusstationMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/busdataday.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/busdataday.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/busdataweek.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/busdataweek.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/statday.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/exploded/AvgTimeTransportationBackEndGradle-1.0-SNAPSHOT.war/statday.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/controller/CaculteAdminController$TempStructure.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/controller/CaculteAdminController$TempStructure.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/controller/CaculteAdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/controller/CaculteAdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/mybatis/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/mybatis/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/mapper/BusdataMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/mapper/BusdataMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/mapper/BusstationMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/mapper/BusstationMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/service/AvgTimeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/service/AvgTimeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/service/BusStationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/service/BusStationServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/service/IAvgTimeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/service/IAvgTimeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/service/IBusStationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/cqu/project/graduation/service/IBusStationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/xml/BusdataMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xml/BusdataMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/xml/BusstationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/xml/BusstationMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculteAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculteAdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/mapper/BusdataMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/mapper/BusdataMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/mapper/BusstationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/mapper/BusstationMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/AvgTimeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/AvgTimeServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/BusStationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/BusStationServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/IAvgTimeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/IAvgTimeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/IBusStationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/IBusStationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/generatorConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/xml/BusdataMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/xml/BusdataMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/xml/BusstationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/xml/BusstationMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/avgtimeday.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/avgtimeday.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/avgtimeweek.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/avgtimeweek.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/lstmday.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/lstmday.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/lstmweek.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/lstmweek.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/statday.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/statday.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/statweek.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/statweek.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataIntoSQLTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DataIntoSQLTest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataIntoSQLTest/out/production/classes/CaculateAllAvgTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DataIntoSQLTest/out/production/classes/CaculateAllAvgTime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataIntoSQLTest/out/production/classes/DealTransStationPro.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DataIntoSQLTest/out/production/classes/DealTransStationPro.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataIntoSQLTest/src/main/java/CaculateAllAvgTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataIntoSQLTest/src/main/java/CaculateAllAvgTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataIntoSQLTest/src/main/java/DealTransStationPro.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataIntoSQLTest/src/main/java/DealTransStationPro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataIntoSQLTest/src/main/java/StatisticEveryDayMissingNum.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DataIntoSQLTest/src/main/java/StatisticEveryDayMissingNum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/busdataday.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/busdataday.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/busdataweek.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/busdataweek.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -108,22 +105,8 @@
       <file leaf-file-name="CaculteAdminController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculteAdminController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="625">
-              <caret line="163" column="25" selection-start-line="163" selection-start-column="25" selection-end-line="163" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#6676#6677#0" expanded="true" />
-                <element signature="e#6722#6723#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AvgTimeServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/AvgTimeServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="40" column="49" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
+            <state relative-caret-position="382">
+              <caret line="185" column="16" selection-start-line="185" selection-start-column="16" selection-end-line="185" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -131,13 +114,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BusStationServiceImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/BusStationServiceImpl.java">
+      <file leaf-file-name="busdataweek.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/busdataweek.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="66" column="12" lean-forward="true" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="12" />
+            <state relative-caret-position="219">
+              <caret line="365" column="27" selection-start-line="365" selection-start-column="27" selection-end-line="365" selection-end-column="27" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#script#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="e#25641#26095#0#HTML" />
+                <element signature="e#26133#26440#0#HTML" />
+                <element signature="e#26479#28042#0#HTML" />
               </folding>
             </state>
           </provider>
@@ -441,21 +428,21 @@
         <option value="$PROJECT_DIR$/src/main/webapp/admin.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/avgtimeday.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/avgtimeweek.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/busdataweek.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/lstmday.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/lstmweek.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/statweek.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/statday.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/busdataday.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/mapper/BusstationMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/xml/BusstationMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/IBusStationService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/mapper/BusdataMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/xml/BusdataMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/IAvgTimeService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculteAdminController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/AvgTimeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/busdataday.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/BusStationServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/mapper/BusdataMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/IAvgTimeService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/AvgTimeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/xml/BusdataMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculteAdminController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/busdataweek.jsp" />
       </list>
     </option>
   </component>
@@ -475,7 +462,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1386" />
@@ -831,15 +818,15 @@
       <workItem from="1526807392666" duration="157000" />
       <workItem from="1527092625705" duration="28140000" />
       <workItem from="1527326364472" duration="49479000" />
-      <workItem from="1527491123844" duration="9782000" />
+      <workItem from="1527491123844" duration="22230000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116551000" />
+    <option name="totallyTimeSpent" value="128999000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="0" />
@@ -853,7 +840,7 @@
       <window_info id="Structure" order="0" sideWeight="0.5024793" side_tool="true" weight="0.25869894" />
       <window_info anchor="right" id="Ant Build" order="0" />
       <window_info id="UI Designer" order="0" />
-      <window_info anchor="bottom" id="Debug" order="0" weight="0.56033057" />
+      <window_info anchor="bottom" id="Debug" order="0" weight="0.6016529" />
       <window_info anchor="bottom" id="TODO" order="0" />
       <window_info anchor="bottom" id="Messages" order="1" weight="0.6446281" />
       <window_info anchor="right" id="Palette&#9;" order="0" />
@@ -861,10 +848,10 @@
       <window_info anchor="bottom" id="Java Enterprise" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49924356" weight="0.63140494" />
+      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49924356" visible="true" weight="0.63140494" />
       <window_info anchor="bottom" id="Spring" order="0" />
       <window_info anchor="bottom" id="Terminal" order="0" />
-      <window_info active="true" content_ui="combo" x="516" y="61" width="333" height="605" id="Project" order="0" sideWeight="0.49752066" visible="true" weight="0.2624811" />
+      <window_info content_ui="combo" x="516" y="61" width="333" height="605" id="Project" order="0" sideWeight="0.49752066" weight="0.2624811" />
       <window_info id="Web" order="0" side_tool="true" />
       <window_info anchor="right" id="Gradle" order="0" weight="0.32980332" />
       <window_info anchor="right" id="Theme Preview" order="0" />
@@ -921,25 +908,17 @@
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculteAdminController.java</url>
+          <line>175</line>
+          <properties />
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="16" />
+      <option name="time" value="25" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/TestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/entity/Avgtime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mybatis.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
@@ -1014,13 +993,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1375">
           <caret line="85" column="27" selection-start-line="85" selection-start-column="27" selection-end-line="85" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/entity/Busstation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1181,13 +1153,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/busdataweek.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="415" column="42" selection-start-line="415" selection-start-column="42" selection-end-line="415" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/lstmday.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -1209,20 +1174,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/statday.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="651" column="61" selection-start-line="651" selection-start-column="61" selection-end-line="651" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/busdataday.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="363" column="60" selection-start-line="363" selection-start-column="60" selection-end-line="363" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/xml/BusstationMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
@@ -1237,23 +1188,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/IBusStationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="18" column="78" selection-start-line="18" selection-start-column="78" selection-end-line="18" selection-end-column="78" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/xml/BusdataMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="45" column="50" selection-start-line="45" selection-start-column="50" selection-end-line="45" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculateTimeAndroidController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1675">
@@ -1265,48 +1199,114 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculteAdminController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/entity/Busstation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="163" column="25" selection-start-line="163" selection-start-column="25" selection-end-line="163" selection-end-column="25" />
+        <state relative-caret-position="50">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6676#6677#0" expanded="true" />
-            <element signature="e#6722#6723#0" expanded="true" />
+            <element signature="e#181#182#0" expanded="true" />
+            <element signature="e#206#207#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/mapper/BusdataMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/xml/AvgtimeMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="18" column="37" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="37" />
-        </state>
+        <state relative-caret-position="-734" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/IAvgTimeService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/IBusStationService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="15" column="41" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/AvgTimeServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="40" column="49" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
+        <state relative-caret-position="450">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="475" column="17" selection-start-line="475" selection-start-column="17" selection-end-line="475" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/statday.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="639" column="42" selection-start-line="639" selection-start-column="42" selection-end-line="639" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/BusStationServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="66" column="12" lean-forward="true" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="12" />
+        <state relative-caret-position="82">
+          <caret line="79" column="31" lean-forward="true" selection-start-line="79" selection-start-column="31" selection-end-line="79" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/IAvgTimeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="17" column="65" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/mapper/BusdataMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/service/AvgTimeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="40" column="105" selection-start-line="40" selection-start-column="105" selection-end-line="40" selection-end-column="105" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/xml/BusdataMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cqu/project/graduation/controller/CaculteAdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="185" column="16" selection-start-line="185" selection-start-column="16" selection-end-line="185" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/busdataday.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1134">
+          <caret line="649" column="32" selection-start-line="649" selection-start-column="32" selection-end-line="649" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/busdataweek.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="365" column="27" selection-start-line="365" selection-start-column="27" selection-end-line="365" selection-end-column="27" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#script#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="e#25641#26095#0#HTML" />
+            <element signature="e#26133#26440#0#HTML" />
+            <element signature="e#26479#28042#0#HTML" />
           </folding>
         </state>
       </provider>

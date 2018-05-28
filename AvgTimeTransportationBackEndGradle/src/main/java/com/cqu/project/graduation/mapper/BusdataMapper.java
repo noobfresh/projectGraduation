@@ -16,8 +16,16 @@ public interface BusdataMapper {
                           @Param("direction") String direction,
                           @Param("period") String period);
 
+    Busdata selectByTable(@Param("lineNo") String lineNo,
+                              @Param("startStation") String startStation,
+                              @Param("endStation") String endStation,
+                              @Param("direction") String direction,
+                              @Param("period") String period,
+                              @Param("tableName") String tableName);
+
     List<Busdata> selectWithoutPeriod(@Param("lineNo") String lineNo,
                                       @Param("startStation") String startStation,
                                       @Param("endStation") String endStation,
-                                      @Param("direction") String direction);
+                                      @Param("direction") String direction,
+                                      @Param("tableName") String tableName);
 }

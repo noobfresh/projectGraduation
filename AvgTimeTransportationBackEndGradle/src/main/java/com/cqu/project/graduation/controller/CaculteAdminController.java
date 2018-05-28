@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -140,14 +141,14 @@ public class CaculteAdminController {
         List<TempStructure> morningData = new ArrayList<>();
         List<TempStructure> eveningData = new ArrayList<>();
         List<TempStructure> otherData = new ArrayList<>();
-        String tableName = "busdata" + date;
+        String tableName = "busdata" + date.substring(4);
         //判断方向 到站点表取出对应的站点列表
         List<Busstation> busstations = busStationService.selectByLineNoDirection(lineNo, direction);
         for(int i = 0; i < busstations.size() - 1; i++){
             String startStation = busstations.get(i).getStationName();
             String endStation = busstations.get(i + 1).getStationName();
             List<Busdata> busdatas = avgTimeService.getBusdataWithoutPeriod(lineNo,
-                    startStation, endStation, direction);
+                    startStation, endStation, direction, tableName);
             for(Busdata temp : busdatas){
                 if(temp.getPeriod().equals("morning")){
                     morningData.add(new TempStructure(temp));
@@ -162,6 +163,34 @@ public class CaculteAdminController {
         map.put("morning", morningData);
         map.put("evening", eveningData);
         map.put("other", otherData);
+        return map;
+    }
+
+    @RequestMapping("busdataweek")
+    @ResponseBody
+    public Map busdataWeek(String startDate, String endDate, String period, String lineNo, String direction){
+        Map<String, Object> map = new HashMap<>();
+
+        //判断方向 到站点表取出对应的站点列表
+        List<Busstation> busstations = busStationService.selectByLineNoDirection(lineNo, direction);
+        int startIndex = Integer.valueOf(startDate.substring(6));
+        int endIndex = Integer.valueOf(endDate.substring(6));
+
+        List<List<TempStructure>> finalResults = new ArrayList<>();
+        for(int i = startIndex; i < endIndex + 1; i++){
+            String tableName = "busdata05" + TimeGeneratorUtil.convertLess10Num(i);
+            List<TempStructure> busdatas = new ArrayList<>();
+            for(int j = 0; j < busstations.size() - 1; j++){
+                String startStation = busstations.get(j).getStationName();
+                String endStation = busstations.get(j + 1).getStationName();
+                busdatas.add(new TempStructure("201405" + TimeGeneratorUtil.convertLess10Num(i),
+                        avgTimeService.getBusdataByTableName(lineNo,
+                        startStation, endStation, direction, period, tableName)));
+            }
+            finalResults.add(busdatas);
+        }
+
+        map.put("result", finalResults);
         return map;
     }
 
@@ -182,6 +211,11 @@ public class CaculteAdminController {
         }
 
         public TempStructure(Busdata busdata) {
+            this.busdata = busdata;
+        }
+
+        public TempStructure(String timeRange, Busdata busdata) {
+            this.timeRange = timeRange;
             this.busdata = busdata;
         }
 

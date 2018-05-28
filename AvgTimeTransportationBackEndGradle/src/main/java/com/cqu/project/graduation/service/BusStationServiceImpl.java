@@ -6,10 +6,12 @@ import com.cqu.project.graduation.mapper.BusstationMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
-public class BusStationServiceImpl implements IBusStationService {
+public class BusStationServiceImpl implements IBusStationService, Comparator<Busstation> {
 
     private BusstationMapper busstationMapper;
 
@@ -61,16 +63,39 @@ public class BusStationServiceImpl implements IBusStationService {
     @Override
     public List<Busstation> selectByLineNoDirection(String lineNo, String direction) {
         List<Busstation> list = busstationMapper.selectByLineNo(lineNo);
+        int bound = list.size();
+        list.sort(this);
         int middleIndex =0;
         //其实我回避了一种情况，当正向和反向的起点站终点站不同的时候
         for(int i = 0; i < list.size() + 1; i++){
-            
+            if(list.get(i).getStationName().equals(list.get(i + 1).getStationName())){
+                middleIndex = i;
+                break;
+            }
         }
+
         if(direction.equals("R")){
-
+            //正方向的话
+            for(int i = middleIndex + 1; i < bound; i++){
+                list.remove(middleIndex + 1);
+            }
         } else {
-
+            //反方向的话
+            for(int i = 0; i < middleIndex + 1; i++){
+                list.remove(0);
+            }
         }
-        return null;
+        return list;
+    }
+
+    @Override
+    public int compare(Busstation o1, Busstation o2) {
+        if(Integer.valueOf(o1.getId()) > Integer.valueOf(o2.getId())){
+            return 1;
+        } else if(Integer.valueOf(o1.getId()).equals(Integer.valueOf(o2.getId()))){
+            return 0;
+        } else {
+            return -1;
+        }
     }
 }

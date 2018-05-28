@@ -13,6 +13,10 @@ public interface IAvgTimeService {
     Busdata getBusdataByCondition(String lineNo, String startStation,
                                   String endStation, String direction,
                                   String period);
+    Busdata getBusdataByTableName(String lineNo, String startStation,
+                                  String endStation, String direction,
+                                  String period, String tableName);
     List<Busdata> getBusdataWithoutPeriod(String lineNo, String startStation,
-                                          String endStation, String direction);
+                                          String endStation, String direction,
+                                          String tableName);
 }

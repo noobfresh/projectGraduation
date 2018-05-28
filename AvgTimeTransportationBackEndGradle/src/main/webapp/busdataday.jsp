@@ -364,7 +364,7 @@
     <input type="text" id="direction" required="R(正方向)/F(反方向)">
     <button id="searachBtn" onclick="requestByDate()" style="width: 100px; height: 50px">查询</button>
     <div id="main"
-         style="height: 400px; background-color: #000000; width: 1000px; margin-left: 50px"></div>
+         style="height: 500px; background-color: #000000; width: 1000px; margin-left: 50px"></div>
 </div>
 <script type="text/javascript">
     window.onload = function () {
@@ -531,40 +531,44 @@
             var myChart = ec.init(document.getElementById('main'));
 
             myChart.showLoading();
+            var lineNo = "108";
             var date = document.getElementById("dateInput").value;
+            var direction = "R";
             var dateArray = date.split("-");
             date = dateArray[0] + dateArray[1] + dateArray[2];
-            var counts = [];
-            var startName = "大学城";
-            var endName = "沙坪坝";
             var xArray = [];
-            var yArray = [];
+            var morning = [];
+            var evening = [];
+            var other = [];
             $.ajax({
                 type: 'GET',
-                url: "http://localhost:8080/index/admin/avgtimeday",
-                data: "startStationName=" + startName + "&endStationName=" + endName,
+                url: "http://localhost:8080/index/admin/busdataday",
+                data: "date=" + date + "&lineNo=" + lineNo + "&direction=" + direction,
                 dataType: "json",
                 success: function (result) {
                     // console.log(result);
                     if (result) {
 
                         console.log(result);
-                        for(var i = 0; i < result.result.length; i++){
-                            xArray.push(result.result[i].timeRange);
-                            yArray.push(result.result[i].avgtime.duration);
+                        for(var i = 0; i < result.other.length; i++){
+                            xArray.push(result.other[i].busdata.startStation + "~"
+                                + result.other[i].busdata.endStation);
+
+                            morning.push(result.morning[i].busdata.duration);
+                            evening.push(result.evening[i].busdata.duration);
+                            other.push(result.other[i].busdata.duration);
+
                         }
-                        console.log(xArray);
-                        console.log(yArray);
                         myChart.hideLoading();
                         var option = {
                             title : {
-                                text: date + '运营时间内旅程时间变化（每10分钟）'
+                                text: date + " " + lineNo + '路公交数据'
                             },
                             tooltip : {
                                 trigger: 'axis'
                             },
                             legend: {
-                                data:[startName + "~" + endName]
+                                data:['早高峰（7-9）','晚高峰（17-19）', '其他时间']
                             },
                             toolbox: {
                                 show : true,
@@ -577,10 +581,21 @@
                                 }
                             },
                             calculable : true,
+                            grid: {
+                                y2: 140
+                            },
                             xAxis : [
                                 {
                                     type : 'category',
                                     boundaryGap : false,
+                                    axisLabel: {
+                                        interval: 0,
+                                        // formatter:function(value)
+                                        // {
+                                        //     return value.split("").join("\n");
+                                        // }
+                                        rotate: -30
+                                    },
                                     data : xArray
                                 }
                             ],
@@ -594,9 +609,19 @@
                             ],
                             series : [
                                 {
-                                    name:'旅程时间',
+                                    name:'早高峰（7-9）',
                                     type:'line',
-                                    data:yArray
+                                    data: morning
+                                },
+                                {
+                                    name:'晚高峰（17-19）',
+                                    type:'line',
+                                    data: evening
+                                },
+                                {
+                                    name:'其他时间',
+                                    type:'line',
+                                    data: other
                                 }
                             ]
                         };
@@ -619,40 +644,44 @@
     function requestByDate() {
         var mycharts = require('echarts').init(document.getElementById("main"));
         mycharts.showLoading();
+        var lineNo = document.getElementById("busInput").value;
         var date = document.getElementById("dateInput").value;
+        var direction = document.getElementById("direction").value;
         var dateArray = date.split("-");
         date = dateArray[0] + dateArray[1] + dateArray[2];
-        var counts = [];
-        var startName = document.getElementById("start").value;
-        var endName = document.getElementById("end").value;
         var xArray = [];
-        var yArray = [];
+        var morning = [];
+        var evening = [];
+        var other = [];
         $.ajax({
             type: 'GET',
-            url: "http://localhost:8080/index/admin/avgtimeday",
-            data: "startStationName=" + startName + "&endStationName=" + endName,
+            url: "http://localhost:8080/index/admin/busdataday",
+            data: "date=" + date + "&lineNo=" + lineNo + "&direction=" + direction,
             dataType: "json",
             success: function (result) {
                 // console.log(result);
                 if (result) {
 
                     console.log(result);
-                    for(var i = 0; i < result.result.length; i++){
-                        xArray.push(result.result[i].timeRange);
-                        yArray.push(result.result[i].avgtime.duration);
+                    for(var i = 0; i < result.other.length; i++){
+                        xArray.push(result.other[i].busdata.startStation + "~"
+                            + result.other[i].busdata.endStation);
+
+                        morning.push(result.morning[i].busdata.duration);
+                        evening.push(result.evening[i].busdata.duration);
+                        other.push(result.other[i].busdata.duration);
+
                     }
-                    console.log(xArray);
-                    console.log(yArray);
                     mycharts.hideLoading();
                     var option = {
                         title : {
-                            text: date + '运营时间内旅程时间变化（每10分钟）'
+                            text: date + " " + lineNo + '路公交数据'
                         },
                         tooltip : {
                             trigger: 'axis'
                         },
                         legend: {
-                            data:[startName + "~" + endName]
+                            data:['早高峰（7-9）','晚高峰（17-19）', '其他时间']
                         },
                         toolbox: {
                             show : true,
@@ -665,10 +694,21 @@
                             }
                         },
                         calculable : true,
+                        grid: {
+                            y2: 140
+                        },
                         xAxis : [
                             {
                                 type : 'category',
                                 boundaryGap : false,
+                                axisLabel: {
+                                    interval: 0,
+                                    // formatter:function(value)
+                                    // {
+                                    //     return value.split("").join("\n");
+                                    // }
+                                    rotate: -30
+                                },
                                 data : xArray
                             }
                         ],
@@ -682,9 +722,19 @@
                         ],
                         series : [
                             {
-                                name:'旅程时间',
+                                name:'早高峰（7-9）',
                                 type:'line',
-                                data:yArray
+                                data: morning
+                            },
+                            {
+                                name:'晚高峰（17-19）',
+                                type:'line',
+                                data: evening
+                            },
+                            {
+                                name:'其他时间',
+                                type:'line',
+                                data: other
                             }
                         ]
                     };
@@ -697,7 +747,7 @@
             error: function (errorMsg) {
                 alert(errorMsg);
                 console.log(errorMsg);
-                myChart.hideLoading();
+                mycharts.hideLoading();
             }
         })
     }

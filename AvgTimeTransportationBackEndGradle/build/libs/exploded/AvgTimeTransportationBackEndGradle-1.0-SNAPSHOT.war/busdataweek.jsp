@@ -355,12 +355,19 @@
     </div>
 </div>
 <div id="showPart" style="float: left;">
-    <label for="dateInput" style="margin-left: 50px; margin-top: 50px; margin-bottom: 50px;">
+    <label for="dateInput1" style="margin-left: 50px; margin-top: 50px; margin-bottom: 50px;">
         选择日期：</label>
-    <input type="date" value="2017-09-01" id="dateInput"/>
+    <input type="date" value="2014-05-05" id="dateInput1"/>
+    <input type="date" value="2014-05-11" id="dateInput2"/>
+    <label for="busInput">公交线路</label>
+    <input type="text" id="busInput" required="请输入线路号" style="width: 50px;">
+    <label for="direction">方向</label>
+    <input type="text" id="direction" required="R(正方向)/F(反方向)" style="width: 50px;">
+    <label for="period">时间段</label>
+    <input type="text" id="period" required="时间段">
     <button id="searachBtn" onclick="requestByDate()" style="width: 100px; height: 50px">查询</button>
     <div id="main"
-         style="height: 600px; background-color: #000000; width: 900px; margin-left: 50px"></div>
+         style="height: 500px; background-color: #000000; width: 1024px; margin-left: 50px"></div>
 </div>
 <script type="text/javascript">
     window.onload = function () {
@@ -504,7 +511,6 @@
         showAndHide(elem);
         console.log(elem.id);
         window.location.href = "http://localhost:8080/index/" + elem.id + ".jsp";
-
     }
 </script>
 </body>
@@ -522,81 +528,126 @@
     require(
         [
             'echarts',
-            'echarts/chart/bar'
+            'echarts/chart/line'
         ],
         function getOd(ec) {
             var myChart = ec.init(document.getElementById('main'));
 
             myChart.showLoading();
-
-            var counts = [];
-            var date = document.getElementById("dateInput").value;
-            var dateArray = date.split("-");
-            date = dateArray[0] + dateArray[1] + dateArray[2];
-            console.log(date);
-
-            var trueArray = [];
-            var calArray = [];
-            var yArray = [];
-
+            var lineNo = "108";
+            var date1 = document.getElementById("dateInput1").value;
+            var date2 = document.getElementById("dateInput2").value;
+            var direction = "R";
+            var dateArray = date1.split("-");
+            date1 = dateArray[0] + dateArray[1] + dateArray[2];
+            dateArray = date2.split("-");
+            date2 = dateArray[0] + dateArray[1] + dateArray[2];
+            var period = "morning";
+            var xArray = [];
+            var data1 = [];
+            var data2 = [];
+            var data3 = [];
+            var data4 = [];
+            var data5 = [];
+            var data6 = [];
+            var data7 = [];
+            var lengend = [];
             $.ajax({
                 type: 'GET',
-                url: "http://localhost:8080/index/admin/statday",
-                data: "date=" + date,
+                url: "http://localhost:8080/index/admin/busdataweek",
+                data: "startDate=" + date1 + "&endDate=" + date2 + "&period="
+                + period + "&lineNo=" + lineNo + "&direction=" + direction,
                 dataType: "json",
                 success: function (result) {
-                    console.log(result);
+                    // console.log(result);
                     if (result) {
-                        counts.push(result.count);
-                        console.log(counts);
 
+                        console.log(result);
                         for(var i = 0; i < result.result.length; i++){
-                            yArray.push(result.result[i].timeRange);
-                            trueArray.push(result.result[i].statistic.havingnum);
-                            calArray.push(result.result[i].statistic.missingnum);
+                            lengend.push(result.result[i][0].timeRange);
+                        }
+                        console.log(lengend);
+                        for(var i = 0; i < result.result[0].length; i++){
+                            xArray.push(result.result[0][i].busdata.startStation + "~" + result.result[0][i].busdata.endStation);
+                            data1.push(result.result[0][i].busdata.duration);
+                            data2.push(result.result[1][i].busdata.duration);
+                            data3.push(result.result[2][i].busdata.duration);
+                            data4.push(result.result[3][i].busdata.duration);
+                            data5.push(result.result[4][i].busdata.duration);
+                            data6.push(result.result[5][i].busdata.duration);
+                            data7.push(result.result[6][i].busdata.duration);
                         }
 
                         myChart.hideLoading();
                         var option = {
-                            title: {
-                                text: date + "真实数据与计算数据统计量对比（日）"
+                            title : {
+                                text: date1 + "~" + date2 + " " + lineNo + '路公交数据'
                             },
                             tooltip : {
-                                trigger: 'axis',
-                                axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-                                    type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-                                }
+                                trigger: 'axis'
                             },
                             legend: {
-                                data:['真实数据数目', '计算数据数目'],
+                                data: lengend,
                                 x: 'right'
                             },
                             calculable : true,
+                            grid: {
+                                y2: 140
+                            },
                             xAxis : [
                                 {
-                                    type : 'value'
+                                    type : 'category',
+                                    boundaryGap : false,
+                                    axisLabel: {
+                                        interval: 0,
+                                        rotate: -30
+                                    },
+                                    data : xArray
                                 }
                             ],
                             yAxis : [
                                 {
-                                    type : 'category',
-                                    data : yArray
+                                    type : 'value',
+                                    axisLabel : {
+                                        formatter: '{value} second'
+                                    }
                                 }
                             ],
                             series : [
                                 {
-                                    name:'真实数据数目',
-                                    type:'bar',
-                                    stack: '总量',
-                                    itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
-                                    data: trueArray
+                                    name:lengend[0],
+                                    type:'line',
+                                    data: data1
                                 },
                                 {
-                                    name:'计算数据数目',
-                                    type:'bar',
-                                    stack: '总量',
-                                    itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
-                                    data: calArray
+                                    name:lengend[1],
+                                    type:'line',
+                                    data: data2
+                                },
+                                {
+                                    name:lengend[2],
+                                    type:'line',
+                                    data: data3
+                                },
+                                {
+                                    name:lengend[3],
+                                    type:'line',
+                                    data: data4
+                                },
+                                {
+                                    name:lengend[4],
+                                    type:'line',
+                                    data: data5
+                                },
+                                {
+                                    name:lengend[5],
+                                    type:'line',
+                                    data: data6
+                                },
+                                {
+                                    name:lengend[6],
+                                    type:'line',
+                                    data: data7
                                 }
                             ]
                         };
@@ -611,7 +662,7 @@
                     console.log(errorMsg);
                     myChart.hideLoading();
                 }
-            })
+            });
         }
     );
 
@@ -619,74 +670,120 @@
     function requestByDate() {
         var mycharts = require('echarts').init(document.getElementById("main"));
         mycharts.showLoading();
-        var counts = [];
-        var date = document.getElementById("dateInput").value;
-        var dateArray = date.split("-");
-        date = dateArray[0] + dateArray[1] + dateArray[2];
-        console.log(date);
-
-        var trueArray = [];
-        var calArray = [];
-        var yArray = [];
-
+        var lineNo = document.getElementById("busInput").value;
+        var date1 = document.getElementById("dateInput1").value;
+        var date2 = document.getElementById("dateInput2").value;
+        var direction = document.getElementById("direction").value;
+        var dateArray = date1.split("-");
+        date1 = dateArray[0] + dateArray[1] + dateArray[2];
+        dateArray = date2.split("-");
+        date2 = dateArray[0] + dateArray[1] + dateArray[2];
+        var period = document.getElementById("period").value;
+        var xArray = [];
+        var data1 = [];
+        var data2 = [];
+        var data3 = [];
+        var data4 = [];
+        var data5 = [];
+        var data6 = [];
+        var data7 = [];
+        var lengend = [];
         $.ajax({
             type: 'GET',
-            url: "http://localhost:8080/index/admin/statday",
-            data: "date=" + date,
+            url: "http://localhost:8080/index/admin/busdataweek",
+            data: "startDate=" + date1 + "&endDate=" + date2 + "&period="
+            + period + "&lineNo=" + lineNo + "&direction=" + direction,
             dataType: "json",
             success: function (result) {
-                console.log(result);
+                // console.log(result);
                 if (result) {
-                    counts.push(result.count);
-                    console.log(counts);
 
+                    console.log(result);
                     for(var i = 0; i < result.result.length; i++){
-                        yArray.push(result.result[i].timeRange);
-                        trueArray.push(result.result[i].statistic.havingnum);
-                        calArray.push(result.result[i].statistic.missingnum);
+                        lengend.push(result.result[i][0].timeRange);
+                    }
+                    console.log(lengend);
+                    for(var i = 0; i < result.result[0].length; i++){
+                        xArray.push(result.result[0][i].busdata.startStation + "~" + result.result[0][i].busdata.endStation);
+                        data1.push(result.result[0][i].busdata.duration);
+                        data2.push(result.result[1][i].busdata.duration);
+                        data3.push(result.result[2][i].busdata.duration);
+                        data4.push(result.result[3][i].busdata.duration);
+                        data5.push(result.result[4][i].busdata.duration);
+                        data6.push(result.result[5][i].busdata.duration);
+                        data7.push(result.result[6][i].busdata.duration);
                     }
 
                     mycharts.hideLoading();
                     var option = {
-                        title: {
-                            text: date + "真实数据与计算数据统计量对比（日）"
+                        title : {
+                            text: date1 + "~" + date2 + " " + lineNo + '路公交数据'
                         },
                         tooltip : {
-                            trigger: 'axis',
-                            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-                                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-                            }
+                            trigger: 'axis'
                         },
                         legend: {
-                            data:['真实数据数目', '计算数据数目'],
+                            data: lengend,
                             x: 'right'
                         },
                         calculable : true,
+                        grid: {
+                            y2: 140
+                        },
                         xAxis : [
                             {
-                                type : 'value'
+                                type : 'category',
+                                boundaryGap : false,
+                                axisLabel: {
+                                    interval: 0,
+                                    rotate: -30
+                                },
+                                data : xArray
                             }
                         ],
                         yAxis : [
                             {
-                                type : 'category',
-                                data : yArray
+                                type : 'value',
+                                axisLabel : {
+                                    formatter: '{value} second'
+                                }
                             }
                         ],
                         series : [
                             {
-                                name:'真实数据数目',
-                                type:'bar',
-                                stack: '总量',
-                                itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
-                                data: trueArray
+                                name:lengend[0],
+                                type:'line',
+                                data: data1
                             },
                             {
-                                name:'计算数据数目',
-                                type:'bar',
-                                stack: '总量',
-                                itemStyle : { normal: {label : {show: true, position: 'insideRight'}}},
-                                data: calArray
+                                name:lengend[1],
+                                type:'line',
+                                data: data2
+                            },
+                            {
+                                name:lengend[2],
+                                type:'line',
+                                data: data3
+                            },
+                            {
+                                name:lengend[3],
+                                type:'line',
+                                data: data4
+                            },
+                            {
+                                name:lengend[4],
+                                type:'line',
+                                data: data5
+                            },
+                            {
+                                name:lengend[5],
+                                type:'line',
+                                data: data6
+                            },
+                            {
+                                name:lengend[6],
+                                type:'line',
+                                data: data7
                             }
                         ]
                     };
@@ -701,7 +798,7 @@
                 console.log(errorMsg);
                 mycharts.hideLoading();
             }
-        })
+        });
     }
 </script>
 </html>

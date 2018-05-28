@@ -37,8 +37,14 @@ public class AvgTimeServiceImpl implements IAvgTimeService{
     }
 
     @Override
+    public Busdata getBusdataByTableName(String lineNo, String startStation, String endStation, String direction, String period, String tableName) {
+        return busdataMapper.selectByTable(lineNo, startStation, endStation, direction, period, tableName);
+    }
+
+    @Override
     public List<Busdata> getBusdataWithoutPeriod(String lineNo, String startStation,
-                                                 String endStation, String direction) {
-        return null;
+                                                 String endStation, String direction,
+                                                 String tableName) {
+        return busdataMapper.selectWithoutPeriod(lineNo, startStation, endStation, direction, tableName);
     }
 }

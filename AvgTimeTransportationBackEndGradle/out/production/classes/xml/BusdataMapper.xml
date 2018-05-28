@@ -34,4 +34,27 @@
     and direction = #{direction, jdbcType=VARCHAR}
     and period = #{period, jdbcType=VARCHAR}
   </select>
+
+  <select id="selectByTable" parameterType="map" resultMap="BaseResultMap">
+    select line_no, `date`, start_station,
+      end_station, direction, duration,
+      period
+    from ${tableName}
+    where line_no = #{lineNo, jdbcType=VARCHAR}
+    and start_station = #{startStation, jdbcType=VARCHAR}
+    and end_station = #{endStation, jdbcType=VARCHAR}
+    and direction = #{direction, jdbcType=VARCHAR}
+    and period = #{period, jdbcType=VARCHAR}
+  </select>
+
+  <select id="selectWithoutPeriod" parameterType="map" resultMap="BaseResultMap">
+    select line_no, `date`, start_station,
+      end_station, direction, duration,
+      period
+    from ${tableName}
+    where line_no = #{lineNo, jdbcType=VARCHAR}
+    and start_station = #{startStation, jdbcType=VARCHAR}
+    and end_station = #{endStation, jdbcType=VARCHAR}
+    and direction = #{direction, jdbcType=VARCHAR}
+  </select>
 </mapper>
