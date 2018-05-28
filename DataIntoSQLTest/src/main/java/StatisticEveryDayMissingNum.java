@@ -20,7 +20,7 @@ public class StatisticEveryDayMissingNum {
             Statement statement = connection.createStatement();
             String updatesql = "INSERT INTO statistic VALUES(?,?,?)";
             PreparedStatement preparedStatement = connection.prepareStatement(updatesql);
-            for(int i = 0; i < 30; i++){
+            /*for(int i = 0; i < 30; i++){
                 String tableName = "avgtime201709" + CsvFileInit.getNumbers(i+1);
                 String sql1 = "SELECT COUNT(*) FROM " + tableName +" WHERE DURATION <> 0";
                 String sql2 = "SELECT COUNT(*) FROM " + tableName +" WHERE DURATION = 0";
@@ -42,6 +42,34 @@ public class StatisticEveryDayMissingNum {
                 preparedStatement.setInt(2, countInvalid);
                 preparedStatement.setInt(3, countVaild);
                 preparedStatement.addBatch();
+            }*/
+
+            String startTime = "0600";
+            while (!startTime.equals("0000")){
+                String endTime = CreateTablesTenMinsAvgTime.timeIncrement(startTime);
+                String tableName = "avgtime20170902" + startTime + endTime;
+
+                String sql1 = "SELECT COUNT(*) FROM " + tableName +" WHERE DURATION <> 0";
+                String sql2 = "SELECT COUNT(*) FROM " + tableName +" WHERE DURATION = 0";
+
+                ResultSet resultSet1 = statement.executeQuery(sql1);
+                int countVaild = 0;
+                if(resultSet1.next()){
+                    countVaild = resultSet1.getInt(1);
+                }
+                resultSet1.close();
+                ResultSet resultSet2 = statement.executeQuery(sql2);
+                int countInvalid = 0;
+                if(resultSet2.next()){
+                    countInvalid = resultSet2.getInt(1);
+                }
+                resultSet2.close();
+
+                preparedStatement.setString(1, tableName);
+                preparedStatement.setInt(2, countInvalid);
+                preparedStatement.setInt(3, countVaild);
+                preparedStatement.addBatch();
+                startTime = endTime;
             }
             preparedStatement.executeBatch();
             connection.commit();

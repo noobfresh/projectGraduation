@@ -95,7 +95,8 @@ public class FastenCaculateAvgTime {
 //                    System.out.println(temp.toString());
 //                }
                 //更新一波
-                String updateSql = "UPDATE avgTime20170901 SET DURATION = ? WHERE START_STATION = ? AND END_STATION = ?";
+                String updateSql = "UPDATE avgTime20170901 SET DURATION = ? " +
+                        "WHERE START_STATION = ? AND END_STATION = ?";
                 PreparedStatement preparedStatement = connection.prepareStatement(updateSql);
                 for(AvgTimeData temp : avgTimeDatas.values()){
                     preparedStatement.setInt(1, (int)temp.getDuration());

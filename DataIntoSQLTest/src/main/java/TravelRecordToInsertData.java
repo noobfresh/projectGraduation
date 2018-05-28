@@ -27,9 +27,9 @@ public class TravelRecordToInsertData {
             String tableName = null;
             String startTime = "0600";
             while (!startTime.equals("0000")){
-                //
-                String endTime = CreateTables30MinsAvgTime.timeIncrement(startTime);
-                tableName = "avgtime" + startTime + endTime;
+                //注意这个增量
+                String endTime = CreateTablesTenMinsAvgTime.timeIncrement(startTime);
+                tableName = "avgtime20170902" + startTime + endTime;
                 int intStartTime = Integer.valueOf(startTime) * 100;
                 int intEndTime = Integer.valueOf(endTime) * 100;
                 //特殊处理下
@@ -43,7 +43,7 @@ public class TravelRecordToInsertData {
                         " START_STATION, " +
                         " END_STATION " +
                         "FROM " +
-                        " od20170901 " +
+                        " od20170902 " +
                         "WHERE " +
                         " CAST(START_TIME AS SIGNED INTEGER)  >= "+ intStartTime +" " +
                         "AND  " +

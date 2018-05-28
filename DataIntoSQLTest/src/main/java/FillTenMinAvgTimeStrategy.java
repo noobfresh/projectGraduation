@@ -19,10 +19,15 @@ public class FillTenMinAvgTimeStrategy {
 
             String startTime = "0600" +
                     "";
+            // 有一个致命的问题没有解决：当前思路是每次先扫描一张表中时间空缺的记录，
+            // 然后选取该表前三张和后三张表同一位置的记录，然后做平均，然后更新进表。
+            // 问题在于：前一张表通过上述思路更新的记录会影响后面的表在相同位置但是时间空缺的记录。（有必要论证一波）
+            // 解决思路：暂时没想到，没想到好的（有感觉其实就算出现上面的情况也无所谓）
             while (!startTime.equals("0000")){
                 long startMillis = System.currentTimeMillis();
                 String endTime = CreateTablesTenMinsAvgTime.timeIncrement(startTime);
-                String tableName = "avgtime" + startTime + endTime;
+                //
+                String tableName = "avgtime20170902" + startTime + endTime;
                 System.out.println(tableName);
                 String queryRawDataSQL = "SELECT " +
                         " START_STATION, END_STATION " +
@@ -58,7 +63,7 @@ public class FillTenMinAvgTimeStrategy {
                             break;
                         }
                         //
-                        String tempTableName = "avgtime" + tempEndTime + tempStartTime;
+                        String tempTableName = "avgtime20170902" + tempEndTime + tempStartTime;
                         String tempQuerySQL = "SELECT " +
                                 " DURATION " +
                                 "FROM  " +
@@ -82,7 +87,7 @@ public class FillTenMinAvgTimeStrategy {
                         if(tempEndTime.equals("0010")){
                             break;
                         }
-                        String tempTableName = "avgtime" + tempStartTime + tempEndTime;
+                        String tempTableName = "avgtime20170902" + tempStartTime + tempEndTime;
 //                        System.out.println(tempTableName);
                         String tempQuerySQL = "SELECT " +
                                 " DURATION " +
@@ -124,7 +129,8 @@ public class FillTenMinAvgTimeStrategy {
             while (!startTime.equals("0000")){
                 long startMillis = System.currentTimeMillis();
                 String endTime = CreateTablesTenMinsAvgTime.timeIncrement(startTime);
-                String tableName = "avgtime" + startTime + endTime;
+                //注意
+                String tableName = "avgtime20170902" + startTime + endTime;
 
                 String queryRawDataSQL = "SELECT " +
                         " START_STATION, END_STATION " +
@@ -146,10 +152,11 @@ public class FillTenMinAvgTimeStrategy {
                     String rawStartStation = resultSet.getString(1);
                     String rawEndStation = resultSet.getString(2);
 
+                    //
                     String queryFromDaySQL =  "SELECT " +
                             " DURATION " +
                             "FROM  " +
-                            " `avgtime20170901` " +
+                            " `avgtime20170902` " +
                             "WHERE START_STATION = '" + rawStartStation +"'  " +
                             "AND END_STATION = '" + rawEndStation + "'";
                     ResultSet tempResultSet = statement1.executeQuery(queryFromDaySQL);
