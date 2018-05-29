@@ -19,11 +19,11 @@ public class DealTransStationPro {
             connection = DriverManager.getConnection(url, user, pass);
             connection.setAutoCommit(false);
 
-            updateZeroRecords("20170908", connection);
-            updateZeroRecords("20170915", connection);
-            updateZeroRecords("20170922", connection);
-            updateZeroRecords("20170929", connection);
-            updateZeroRecords("20170901", connection);
+//            updateZeroRecords("20170908", connection);
+//            updateZeroRecords("20170915", connection);
+//            updateZeroRecords("20170922", connection);
+//            updateZeroRecords("20170929", connection);
+//            updateZeroRecords("20170901", connection);
 
 //            for(int i = 11; i < 30; i++){
 //                if(i == 15 || i == 22 || i == 29){
@@ -33,6 +33,18 @@ public class DealTransStationPro {
 //            }
 //            updateZeroRecords("20170902", connection);
 //            updateZeroRecords("20170903", connection);
+
+            String startTime = "0600";
+            for(int i = 8; i < 30; i += 7){
+                String date = "201709" + CsvFileInit.getNumbers(i);
+                while (!startTime.equals("0000")){
+                    String endTime = CreateTablesTenMinsAvgTime.timeIncrement(startTime);
+                    String param = date + startTime + endTime;
+                    updateZeroRecords(param, connection);
+
+                    startTime = endTime;
+                }
+            }
 
             connection.close();
         } catch (Exception e){

@@ -65,7 +65,62 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="CreateTablesTenMinsAvgTime.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/CreateTablesTenMinsAvgTime.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="33">
+              <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InsertTenMinsTablesData.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/InsertTenMinsTablesData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8">
+              <caret line="38" column="51" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TravelRecordToInsertData.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/TravelRecordToInsertData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1458">
+              <caret line="80" column="56" lean-forward="true" selection-start-line="80" selection-start-column="56" selection-end-line="80" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DealTransStationPro.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/DealTransStationPro.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8">
+              <caret line="42" column="55" selection-start-line="42" selection-start-column="55" selection-end-line="42" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StatisticEveryDayMissingNum.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/StatisticEveryDayMissingNum.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8">
+              <caret line="50" column="81" selection-start-line="50" selection-start-column="81" selection-end-line="50" selection-end-column="81" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FillTenMinAvgTimeStrategy.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/FillTenMinAvgTimeStrategy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1631">
+              <caret line="66" column="43" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -428,15 +483,15 @@
         <option value="$PROJECT_DIR$/src/main/java/statisticEveryDayMissingNum.java" />
         <option value="$PROJECT_DIR$/src/main/java/DeleteNonUseAvgtime.java" />
         <option value="$PROJECT_DIR$/src/main/java/FillDayAvgTimeStrategy.java" />
-        <option value="$PROJECT_DIR$/src/main/java/CreateTablesTenMinsAvgTime.java" />
-        <option value="$PROJECT_DIR$/src/main/java/InsertTenMinsTablesData.java" />
         <option value="$PROJECT_DIR$/src/main/java/CaculateOneMonthAvgData.java" />
         <option value="$PROJECT_DIR$/src/main/java/FastenCaculateAvgTime.java" />
-        <option value="$PROJECT_DIR$/src/main/java/TravelRecordToInsertData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/FillTenMinAvgTimeStrategy.java" />
         <option value="$PROJECT_DIR$/src/main/java/CaculateAllAvgTime.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CreateTablesTenMinsAvgTime.java" />
+        <option value="$PROJECT_DIR$/src/main/java/InsertTenMinsTablesData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/TravelRecordToInsertData.java" />
         <option value="$PROJECT_DIR$/src/main/java/DealTransStationPro.java" />
         <option value="$PROJECT_DIR$/src/main/java/StatisticEveryDayMissingNum.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FillTenMinAvgTimeStrategy.java" />
       </list>
     </option>
   </component>
@@ -468,7 +523,6 @@
     <panes>
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -498,6 +552,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -530,14 +585,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.StatisticEveryDayMissingNum">
+  <component name="RunManager" selected="Application.FillTenMinAvgTimeStrategy">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-    </configuration>
-    <configuration name="CaculateAllAvgTime" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="CaculateAllAvgTime" />
-      <module name="DataIntoSQLTest_main" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
     <configuration name="DealTransStationPro" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DealTransStationPro" />
@@ -546,6 +596,11 @@
     </configuration>
     <configuration name="FillTenMinAvgTimeStrategy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FillTenMinAvgTimeStrategy" />
+      <module name="DataIntoSQLTest_main" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="InsertTenMinsTablesData" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="InsertTenMinsTablesData" />
       <module name="DataIntoSQLTest_main" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -616,18 +671,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.StatisticEveryDayMissingNum" />
+      <item itemvalue="Application.DealTransStationPro" />
+      <item itemvalue="Application.InsertTenMinsTablesData" />
       <item itemvalue="Application.TravelRecordToInsertData" />
       <item itemvalue="Application.FillTenMinAvgTimeStrategy" />
-      <item itemvalue="Application.CaculateAllAvgTime" />
-      <item itemvalue="Application.DealTransStationPro" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FillTenMinAvgTimeStrategy" />
         <item itemvalue="Application.StatisticEveryDayMissingNum" />
         <item itemvalue="Application.DealTransStationPro" />
-        <item itemvalue="Application.CaculateAllAvgTime" />
-        <item itemvalue="Application.FillTenMinAvgTimeStrategy" />
         <item itemvalue="Application.TravelRecordToInsertData" />
+        <item itemvalue="Application.InsertTenMinsTablesData" />
       </list>
     </recent_temporary>
   </component>
@@ -684,11 +739,12 @@
       <workItem from="1527434660904" duration="10925000" />
       <workItem from="1527491092378" duration="21000" />
       <workItem from="1527497121393" duration="659000" />
+      <workItem from="1527524535098" duration="6913000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="286667000" />
+    <option name="totallyTimeSpent" value="293580000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -700,7 +756,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="bottom" id="TODO" order="9" weight="0.32838285" />
@@ -711,12 +768,12 @@
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5015129" side_tool="true" weight="0.34488449" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.32980332" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49848714" weight="0.48019803" />
+      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49848714" weight="0.8745875" />
       <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.32838285" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.25567323" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.25945538" />
       <window_info anchor="right" id="Database" order="5" weight="0.32980332" />
       <window_info anchor="right" id="Gradle" order="2" weight="0.32980332" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.3419062" />
@@ -760,7 +817,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/DealTransStationPro.java</url>
-          <line>79</line>
+          <line>91</line>
           <properties />
           <option name="timeStamp" value="34" />
         </line-breakpoint>
@@ -978,13 +1035,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/InsertDataToAvgTimeTables.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="61" column="12" selection-start-line="61" selection-start-column="12" selection-end-line="68" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SelectCompareEvery10MinsCounts.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="950">
@@ -1003,13 +1053,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-469">
           <caret line="52" column="24" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/InsertTenMinsTablesData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="925">
-          <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1115,48 +1158,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TravelRecordToInsertData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FillTenMinAvgTimeStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CreateTablesTenMinsAvgTime.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="55" column="25" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
+        <state relative-caret-position="33">
+          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/StatisticEveryDayMissingNum.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/InsertDataToAvgTimeTables.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="25" column="65" lean-forward="true" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DealTransStationPro.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="47" column="31" lean-forward="true" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
+        <state relative-caret-position="-519">
+          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CaculateAllAvgTime.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
+        <state relative-caret-position="-1637">
           <caret line="27" column="41" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/InsertTenMinsTablesData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8">
+          <caret line="38" column="51" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TravelRecordToInsertData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1458">
+          <caret line="80" column="56" lean-forward="true" selection-start-line="80" selection-start-column="56" selection-end-line="80" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DealTransStationPro.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8">
+          <caret line="42" column="55" selection-start-line="42" selection-start-column="55" selection-end-line="42" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/StatisticEveryDayMissingNum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8">
+          <caret line="50" column="81" selection-start-line="50" selection-start-column="81" selection-end-line="50" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FillTenMinAvgTimeStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1631">
+          <caret line="66" column="43" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
         </state>
       </provider>
     </entry>

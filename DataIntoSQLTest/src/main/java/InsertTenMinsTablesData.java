@@ -31,16 +31,18 @@ public class InsertTenMinsTablesData {
             String tableName = "";
 
 
-            String startTime = "0600";
-            while (!startTime.equals("0000")){
-                //
-                String endTime = CreateTablesTenMinsAvgTime.timeIncrement(startTime);
-                tableName = "avgTime20170902" + startTime + endTime;
+            for(int i = 15; i < 30; i+= 7){
+                String startTime = "0600";
+                while (!startTime.equals("0000")){
+                    //
+                    String endTime = CreateTablesTenMinsAvgTime.timeIncrement(startTime);
+                    tableName = "avgTime201709" + i + startTime + endTime;
 
-                InsertRecord(tableName, connection, keyList);
+                    InsertRecord(tableName, connection, keyList);
 
-                System.out.println(startTime);
-                startTime = endTime;
+                    System.out.println(startTime);
+                    startTime = endTime;
+                }
             }
 
             connection.close();

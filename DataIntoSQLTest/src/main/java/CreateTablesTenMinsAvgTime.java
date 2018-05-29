@@ -22,24 +22,26 @@ public class CreateTablesTenMinsAvgTime {
 
             String tableName = "";
 
-            Statement statement = connection.createStatement();
-            String startTime = "0600";
-            while (!startTime.equals("0000")){
-                String endTime = timeIncrement(startTime);
-                tableName = "avgTime20170902" + startTime + endTime;
-                String createTableSQL = "CREATE TABLE `"+ tableName +"` ( " +
-                        "  `START_STATION` varchar(20) NOT NULL, " +
-                        "  `END_STATION` varchar(20) NOT NULL, " +
-                        "  `DIRECTION` varchar(10) DEFAULT NULL, " +
-                        "  `DURATION` int(11) DEFAULT NULL, " +
-                        "  `DISTANCE` float DEFAULT NULL, " +
-                        "  `TIME` varchar(20) DEFAULT NULL, " +
-                        "  `ISBUS` varchar(10) DEFAULT NULL, " +
-                        "  PRIMARY KEY (`START_STATION`,`END_STATION`) " +
-                        ") ENGINE=InnoDB DEFAULT CHARSET=utf8";
-                statement.execute(createTableSQL);
-                System.out.println(startTime);
-                startTime = endTime;
+            for(int i = 29; i < 30; i += 7){
+                Statement statement = connection.createStatement();
+                String startTime = "0600";
+                while (!startTime.equals("0000")){
+                    String endTime = timeIncrement(startTime);
+                    tableName = "avgTime201709" + i + startTime + endTime;
+                    String createTableSQL = "CREATE TABLE `"+ tableName +"` ( " +
+                            "  `START_STATION` varchar(20) NOT NULL, " +
+                            "  `END_STATION` varchar(20) NOT NULL, " +
+                            "  `DIRECTION` varchar(10) DEFAULT NULL, " +
+                            "  `DURATION` int(11) DEFAULT NULL, " +
+                            "  `DISTANCE` float DEFAULT NULL, " +
+                            "  `TIME` varchar(20) DEFAULT NULL, " +
+                            "  `ISBUS` varchar(10) DEFAULT NULL, " +
+                            "  PRIMARY KEY (`START_STATION`,`END_STATION`) " +
+                            ") ENGINE=InnoDB DEFAULT CHARSET=utf8";
+                    statement.execute(createTableSQL);
+                    System.out.println(startTime);
+                    startTime = endTime;
+                }
             }
 
             connection.close();
