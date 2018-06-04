@@ -65,57 +65,45 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="CreateTablesTenMinsAvgTime.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CreateTablesTenMinsAvgTime.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="OuputAvgOdData.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/OuputAvgOdData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33">
-              <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+            <state relative-caret-position="300">
+              <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InsertTenMinsTablesData.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/InsertTenMinsTablesData.java">
+      <file leaf-file-name="OutputBusData.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/OutputBusData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8">
-              <caret line="38" column="51" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
+            <state relative-caret-position="-200">
+              <caret line="10" column="41" lean-forward="true" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TravelRecordToInsertData.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/TravelRecordToInsertData.java">
+      <file leaf-file-name="InsertPredictAvgTimeWeek.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/InsertPredictAvgTimeWeek.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1458">
-              <caret line="80" column="56" lean-forward="true" selection-start-line="80" selection-start-column="56" selection-end-line="80" selection-end-column="56" />
+            <state relative-caret-position="250">
+              <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="29" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DealTransStationPro.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/DealTransStationPro.java">
+      <file leaf-file-name="InsertPredicBusDay.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/InsertPredicBusDay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8">
-              <caret line="42" column="55" selection-start-line="42" selection-start-column="55" selection-end-line="42" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StatisticEveryDayMissingNum.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/StatisticEveryDayMissingNum.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8">
-              <caret line="50" column="81" selection-start-line="50" selection-start-column="81" selection-end-line="50" selection-end-column="81" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FillTenMinAvgTimeStrategy.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/FillTenMinAvgTimeStrategy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1631">
-              <caret line="66" column="43" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
+            <state relative-caret-position="271">
+              <caret line="61" column="61" lean-forward="true" selection-start-line="61" selection-start-column="61" selection-end-line="61" selection-end-column="61" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -137,13 +125,12 @@
       <find>MongoClient</find>
       <find>Sys</find>
       <find>increment</find>
-      <find>\n</find>
-      <find>\t</find>
       <find>\N</find>
       <find>startTime</find>
+      <find>\t</find>
+      <find>\n</find>
     </findStrings>
     <replaceStrings>
-      <replace />
       <replace />
       <replace />
     </replaceStrings>
@@ -472,17 +459,13 @@
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/CreateBusDataTables.java" />
         <option value="$PROJECT_DIR$/src/main/java/DecodeBusJsonData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/OnlyForTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/FillMonthAvgTimeStrategy.java" />
         <option value="$PROJECT_DIR$/src/main/java/AlterAvgTimeEngine.java" />
         <option value="$PROJECT_DIR$/src/main/java/InsertRailwayStation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/OuputAvgOdData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/InsertBusStation.java" />
         <option value="$PROJECT_DIR$/src/main/java/AlterBusDataEngine.java" />
         <option value="$PROJECT_DIR$/src/main/java/InsertDataToAvgTimeTables.java" />
         <option value="$PROJECT_DIR$/src/main/java/statisticEveryDayMissingNum.java" />
         <option value="$PROJECT_DIR$/src/main/java/DeleteNonUseAvgtime.java" />
-        <option value="$PROJECT_DIR$/src/main/java/FillDayAvgTimeStrategy.java" />
         <option value="$PROJECT_DIR$/src/main/java/CaculateOneMonthAvgData.java" />
         <option value="$PROJECT_DIR$/src/main/java/FastenCaculateAvgTime.java" />
         <option value="$PROJECT_DIR$/src/main/java/CaculateAllAvgTime.java" />
@@ -492,6 +475,14 @@
         <option value="$PROJECT_DIR$/src/main/java/DealTransStationPro.java" />
         <option value="$PROJECT_DIR$/src/main/java/StatisticEveryDayMissingNum.java" />
         <option value="$PROJECT_DIR$/src/main/java/FillTenMinAvgTimeStrategy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/OnlyForTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CreatePredictAvgTimeTable.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FillDayAvgTimeStrategy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/InsertBusStation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/OutputBusData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/OuputAvgOdData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/InsertPredictAvgTimeWeek.java" />
+        <option value="$PROJECT_DIR$/src/main/java/InsertPredicBusDay.java" />
       </list>
     </option>
   </component>
@@ -521,8 +512,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -552,7 +544,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -585,32 +576,32 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.FillTenMinAvgTimeStrategy">
+  <component name="RunManager" selected="Application.InsertPredicBusDay">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
-    <configuration name="DealTransStationPro" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DealTransStationPro" />
+    <configuration name="InsertBusStation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="InsertBusStation" />
       <module name="DataIntoSQLTest_main" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="FillTenMinAvgTimeStrategy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="FillTenMinAvgTimeStrategy" />
+    <configuration name="InsertPredicBusDay" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="InsertPredicBusDay" />
       <module name="DataIntoSQLTest_main" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="InsertTenMinsTablesData" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="InsertTenMinsTablesData" />
+    <configuration name="InsertPredictAvgTimeWeek" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="InsertPredictAvgTimeWeek" />
       <module name="DataIntoSQLTest_main" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="StatisticEveryDayMissingNum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="StatisticEveryDayMissingNum" />
+    <configuration name="OuputAvgOdData" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="OuputAvgOdData" />
       <module name="DataIntoSQLTest_main" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="TravelRecordToInsertData" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TravelRecordToInsertData" />
+    <configuration name="OutputBusData" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="OutputBusData" />
       <module name="DataIntoSQLTest_main" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -670,19 +661,19 @@
       <method />
     </configuration>
     <list>
-      <item itemvalue="Application.StatisticEveryDayMissingNum" />
-      <item itemvalue="Application.DealTransStationPro" />
-      <item itemvalue="Application.InsertTenMinsTablesData" />
-      <item itemvalue="Application.TravelRecordToInsertData" />
-      <item itemvalue="Application.FillTenMinAvgTimeStrategy" />
+      <item itemvalue="Application.OuputAvgOdData" />
+      <item itemvalue="Application.OutputBusData" />
+      <item itemvalue="Application.InsertBusStation" />
+      <item itemvalue="Application.InsertPredictAvgTimeWeek" />
+      <item itemvalue="Application.InsertPredicBusDay" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.FillTenMinAvgTimeStrategy" />
-        <item itemvalue="Application.StatisticEveryDayMissingNum" />
-        <item itemvalue="Application.DealTransStationPro" />
-        <item itemvalue="Application.TravelRecordToInsertData" />
-        <item itemvalue="Application.InsertTenMinsTablesData" />
+        <item itemvalue="Application.InsertPredicBusDay" />
+        <item itemvalue="Application.InsertPredictAvgTimeWeek" />
+        <item itemvalue="Application.OuputAvgOdData" />
+        <item itemvalue="Application.InsertBusStation" />
+        <item itemvalue="Application.OutputBusData" />
       </list>
     </recent_temporary>
   </component>
@@ -740,11 +731,16 @@
       <workItem from="1527491092378" duration="21000" />
       <workItem from="1527497121393" duration="659000" />
       <workItem from="1527524535098" duration="6913000" />
+      <workItem from="1527597040687" duration="3910000" />
+      <workItem from="1527751097575" duration="5729000" />
+      <workItem from="1527905931013" duration="53000" />
+      <workItem from="1528001749627" duration="13639000" />
+      <workItem from="1528046949744" duration="3482000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="293580000" />
+    <option name="totallyTimeSpent" value="320393000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -756,8 +752,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="bottom" id="TODO" order="9" weight="0.32838285" />
@@ -768,20 +763,20 @@
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5015129" side_tool="true" weight="0.34488449" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.32980332" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49848714" weight="0.8745875" />
       <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49848714" weight="0.9372937" />
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.32838285" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.25945538" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.27912253" />
       <window_info anchor="right" id="Database" order="5" weight="0.32980332" />
       <window_info anchor="right" id="Gradle" order="2" weight="0.32980332" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.3419062" />
       <window_info anchor="right" id="Ant Build" order="3" />
       <window_info id="UI Designer" order="1" />
       <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.32838285" />
       <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.32838285" />
       <window_info anchor="right" id="Hierarchy" order="8" weight="0.32980332" />
       <window_info anchor="bottom" id="Database Console" order="10" weight="0.32838285" />
       <window_info anchor="bottom" id="Build" order="6" weight="0.32838285" />
@@ -850,48 +845,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/MainTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="33" column="105" selection-start-line="32" selection-start-column="42" selection-end-line="33" selection-end-column="105" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/mongodb-driver-sync/3.7.0/6bf0a8e532df69874441595bf7f74c7ece8a49fb/mongodb-driver-sync-3.7.0-sources.jar!/com/mongodb/client/MongoClientImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="20" column="30" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/mongodb-driver-sync/3.7.0/6bf0a8e532df69874441595bf7f74c7ece8a49fb/mongodb-driver-sync-3.7.0-sources.jar!/com/mongodb/client/MongoClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="38" column="23" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/mongo-java-driver/3.2.2/9e364591f7c95d8dc642a90e9632cf3cb8b66ea7/mongo-java-driver-3.2.2-sources.jar!/com/mongodb/client/MongoCursor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/mongo-java-driver/3.2.2/9e364591f7c95d8dc642a90e9632cf3cb8b66ea7/mongo-java-driver-3.2.2-sources.jar!/com/mongodb/client/FindIterable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2507">
-          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/mongo-java-driver/3.2.2/9e364591f7c95d8dc642a90e9632cf3cb8b66ea7/mongo-java-driver-3.2.2-sources.jar!/org/bson/Document.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="253" column="18" selection-start-line="253" selection-start-column="18" selection-end-line="253" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/mongo-java-driver/3.2.2/9e364591f7c95d8dc642a90e9632cf3cb8b66ea7/mongo-java-driver-3.2.2-sources.jar!/com/mongodb/client/MongoCollection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5050">
@@ -937,13 +890,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/OnlyForTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="18" column="106" selection-start-line="18" selection-start-column="106" selection-end-line="18" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -979,24 +925,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/OuputAvgOdData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/InsertRailwayStation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
           <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/InsertBusStation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="28" column="74" selection-start-line="28" selection-start-column="74" selection-end-line="28" selection-end-column="74" />
         </state>
       </provider>
     </entry>
@@ -1018,20 +950,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-600">
           <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FillMonthAvgTimeStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2392">
-          <caret line="113" column="18" selection-start-line="113" selection-start-column="16" selection-end-line="114" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FillDayAvgTimeStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -1060,20 +978,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="656">
           <caret line="43" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CaculateAvgTime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-708">
-          <caret line="64" column="55" selection-start-line="64" selection-start-column="55" selection-end-line="64" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CaculateOneMonthAvgData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
-          <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1116,34 +1020,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DeleteWrongOD3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-19">
-          <caret line="20" column="34" lean-forward="true" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DeleteWrongODData1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DeleteWrongODData2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DeleteWrongODData3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/FastenCaculateAvgTime.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4700">
@@ -1160,7 +1036,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CreateTablesTenMinsAvgTime.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
+        <state relative-caret-position="525">
           <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
         </state>
       </provider>
@@ -1184,36 +1060,164 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/InsertTenMinsTablesData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8">
+        <state relative-caret-position="900">
           <caret line="38" column="51" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/TravelRecordToInsertData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1458">
-          <caret line="80" column="56" lean-forward="true" selection-start-line="80" selection-start-column="56" selection-end-line="80" selection-end-column="56" />
+        <state relative-caret-position="1875">
+          <caret line="80" column="56" selection-start-line="80" selection-start-column="56" selection-end-line="80" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DealTransStationPro.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8">
+        <state relative-caret-position="1050">
           <caret line="42" column="55" selection-start-line="42" selection-start-column="55" selection-end-line="42" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/StatisticEveryDayMissingNum.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8">
+        <state relative-caret-position="1250">
           <caret line="50" column="81" selection-start-line="50" selection-start-column="81" selection-end-line="50" selection-end-column="81" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/FillTenMinAvgTimeStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1631">
+        <state relative-caret-position="506">
           <caret line="66" column="43" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/OnlyForTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" column="116" selection-start-line="14" selection-start-column="116" selection-end-line="14" selection-end-column="116" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ODFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="47" column="46" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DeleteWrongOD3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-275">
+          <caret line="20" column="34" lean-forward="true" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DeleteWrongODData3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2050">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DeleteWrongODData1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1769">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DeleteWrongODData2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1525">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FillMonthAvgTimeStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-695">
+          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CaculateOneMonthAvgData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2200">
+          <caret line="102" column="5" lean-forward="true" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CaculateAvgTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="76" selection-end-column="5" />
+          <folding>
+            <element signature="method#main#0;class#CaculateAvgTime#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CreatePredictAvgTimeTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="866">
+          <caret line="52" column="13" lean-forward="true" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FillDayAvgTimeStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/InsertBusStation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/OuputAvgOdData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/OutputBusData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-200">
+          <caret line="10" column="41" lean-forward="true" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/lang/Float.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="414" column="24" selection-start-line="414" selection-start-column="24" selection-end-line="414" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/InsertPredictAvgTimeWeek.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="29" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/InsertPredicBusDay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="61" column="61" lean-forward="true" selection-start-line="61" selection-start-column="61" selection-end-line="61" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

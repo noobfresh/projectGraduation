@@ -339,8 +339,10 @@
                     <li>
                         <h2 class="obtain">LSTM<i></i></h2>
                         <div class="secondary">
-                            <h3 id="lstmday" onclick="goToOther(this)">全天</h3>
-                            <h3 id="lstmweek" onclick="goToOther(this)">一周</h3>
+                            <h3 id="lstmday" onclick="goToOther(this)">轨交全天</h3>
+                            <h3 id="lstmweek" onclick="goToOther(this)">轨交一周</h3>
+                            <h3 id="lstmbusday" onclick="goToOther(this)">公交一天</h3>
+                            <h3 id="lstmbusweek" onclick="goToOther(this)">公交一周</h3>
                         </div>
                     </li>
                     <li>

@@ -4,20 +4,16 @@ public class OnlyForTest {
 
     public static void main(String[] args){
 
-        String test = "In this paper we proposed an efficient and scalable method for predicting travel time " +
-                "with arbitrary routes in road network. Though there is much research for predicting " +
-                "travel time in road networks, but there exists little research for travel time prediction " +
-                "considering arbitrary routes. Naïve Bayesian Classifier is a well known statistical classifier. " +
-                "The advantage of naïve Bayesian classification is that it requires a small amount of " +
-                "training data to estimate the parameters necessary for classification. Despite its simplicity, " +
-                "naïve Bayesian classification can often outperform more sophisticated classification " +
-                "methods. Our proposed algorithm also demonstrated feasibility of naïve Bayesian classification " +
-                "in traffic data analysis. Two different kinds of travel time prediction methods " +
-                "were presented and tested using two types of data sets, with impressive results. As our " +
-                "future work, we will extend our system considering not only day time but also week " +
-                "days. Thus a user can ask what will be approximate travel time for a particular route " +
-                "during rush hour on weekly holidays. In addition, we will make a performance evaluation " +
-                "of our system with various methods including ARIMA[8]. ";
+        String test = "Research on space–time modelling and forecasting has focused on integrating space–time autocorrelation " +
+                "into statistical models to increase the accuracy of forecasting. These models include space–time " +
+                "autoregressive integrated moving average (STARIMA) and its various extensions. However, they are " +
+                "inadequate for the cases when the correlation between data is dynamic and heterogeneous, such as " +
+                "traffic network data. The aim of the paper is to integrate spatial and temporal autocorrelations of road " +
+                "traffic network by developing a novel space–time delay neural network (STDNN) model that capture the " +
+                "autocorrelation locally and dynamically. Validation of the space–time delay neural network is carried out " +
+                "using real data from London road traffic network with 22 links by comparing benchmark models such as " +
+                "Naïve, ARIMA, and STARIMA models. Study results show that STDNN outperforms the Naïve, ARIMA, and " +
+                "STARIMA models in prediction accuracy and has considerable advantages in travel time prediction.";
         System.out.println(test);
     }
 }

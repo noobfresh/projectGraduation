@@ -314,14 +314,14 @@
     <div id="ensconce">
         <h2>
             <img src="${pageContext.request.contextPath}/img/show.png" alt="">
-            国内各地景点
+            菜单
         </h2>
     </div>
 
     <!--显示菜单-->
     <div id="open">
         <div class="navH">
-            国内各地景点
+            菜单
             <span><img class="obscure"
                        src="${pageContext.request.contextPath}/img/obscure.png" alt=""></span>
         </div>
@@ -339,8 +339,10 @@
                 <li>
                     <h2 class="obtain">LSTM<i></i></h2>
                     <div class="secondary">
-                        <h3 id="lstmday" onclick="goToOther(this)">全天</h3>
-                        <h3 id="lstmweek" onclick="goToOther(this)">一周</h3>
+                        <h3 id="lstmday" onclick="goToOther(this)">轨交全天</h3>
+                        <h3 id="lstmweek" onclick="goToOther(this)">轨交一周</h3>
+                        <h3 id="lstmbusday" onclick="goToOther(this)">公交一天</h3>
+                        <h3 id="lstmbusweek" onclick="goToOther(this)">公交一周</h3>
                     </div>
                 </li>
                 <li>
@@ -358,9 +360,11 @@
     <label for="dateInput" style="margin-left: 50px; margin-top: 50px; margin-bottom: 50px;">
         选择日期：</label>
     <input type="date" value="2017-09-01" id="dateInput"/>
+    <label for="start">起点：</label><input type="text" style="width: 100px; margin-left: 50px" id="start" placeholder="起点站" value="大学城"/>
+    <label for="start">终点：</label><input type="text" style="width: 100px; margin-left: 50px" id="end" placeholder="终点站" value="沙坪坝"/>
     <button id="searachBtn" onclick="requestByDate()" style="width: 100px; height: 50px">查询</button>
     <div id="main"
-         style="height: 400px; background-color: #000000; width: 900px; margin-left: 50px"></div>
+         style="height: 400px; background-color: #000000; width: 1000px; margin-left: 50px"></div>
 </div>
 <script type="text/javascript">
     window.onload = function () {
@@ -504,7 +508,6 @@
         showAndHide(elem);
         console.log(elem.id);
         window.location.href = "http://localhost:8080/index/" + elem.id + ".jsp";
-
     }
 </script>
 </body>
@@ -522,52 +525,83 @@
     require(
         [
             'echarts',
-            'echarts/chart/pie'
+            'echarts/chart/line'
         ],
         function getOd(ec) {
             var myChart = ec.init(document.getElementById('main'));
 
             myChart.showLoading();
-
-            var counts = [];
             var date = document.getElementById("dateInput").value;
             var dateArray = date.split("-");
             date = dateArray[0] + dateArray[1] + dateArray[2];
-            console.log(date);
+            var counts = [];
+            var startName = "大学城";
+            var endName = "沙坪坝";
+            var xArray = [];
+            var true_data = [];
+            var predic_data = [];
             $.ajax({
                 type: 'GET',
-                url: "http://localhost:8080/index/admin/countDayODs",
-                data: "date=" + date,
+                url: "http://localhost:8080/index/admin/lstmday",
+                data: "date=" + date + "&startStationName=" + startName + "&endStationName=" + endName,
                 dataType: "json",
                 success: function (result) {
-                    console.log(result);
+                    // console.log(result);
                     if (result) {
-                        counts.push(result.count);
-                        console.log(counts);
+
+                        console.log(result);
+                        for(var i = 0; i < result.result.length; i++){
+                            xArray.push(result.result[i].timeRange);
+                            true_data.push(result.result[i].predictAvgtime.duration);
+                            predic_data.push(result.result[i].predictAvgtime.predictDuration);
+                        }
                         myChart.hideLoading();
                         var option = {
-                            title: {
-                                text: date + '预测准确率（天）',
-                                x: 'center'
+                            title : {
+                                text: date + '日旅程时间预测与对比（每10分钟）'
                             },
-                            tooltip: {
-                                trigger: 'item',
-                                formatter: "{a} <br/>{b} : {c} ({d}%)"
+                            tooltip : {
+                                trigger: 'axis'
                             },
                             legend: {
-                                orient: 'vertial',
-                                x: 'left',
-                                data: [date]
+                                data:['真实值', '预测值']
                             },
-                            series: [
+                            toolbox: {
+                                show : true,
+                                feature : {
+                                    mark : {show: true},
+                                    dataView : {show: true, readOnly: false},
+                                    magicType : {show: true, type: ['line', 'bar']},
+                                    restore : {show: true},
+                                    saveAsImage : {show: true}
+                                }
+                            },
+                            calculable : true,
+                            xAxis : [
                                 {
-                                    type: 'pie',
-                                    name: '数量',
-                                    radius: '55%',
-                                    center: ['50%', '60%'],
-                                    data: [
-                                        {name: date, value: result.count}
-                                    ]
+                                    type : 'category',
+                                    boundaryGap : false,
+                                    data : xArray
+                                }
+                            ],
+                            yAxis : [
+                                {
+                                    type : 'value',
+                                    axisLabel : {
+                                        formatter: '{value} second'
+                                    }
+                                }
+                            ],
+                            series : [
+                                {
+                                    name:'真实值',
+                                    type:'line',
+                                    data:true_data
+                                },
+                                {
+                                    name:'预测值',
+                                    type:'line',
+                                    data:predic_data
                                 }
                             ]
                         };
@@ -588,60 +622,92 @@
 
 
     function requestByDate() {
-        var mycharts = require('echarts').init(document.getElementById("main"));
-        mycharts.showLoading();
-        var counts = [];
+        var myChart = require('echarts').init(document.getElementById("main"));
+        myChart.showLoading();
         var date = document.getElementById("dateInput").value;
         var dateArray = date.split("-");
         date = dateArray[0] + dateArray[1] + dateArray[2];
-        console.log(date);
+        var counts = [];
+        var startName = document.getElementById("start").value;
+        var endName = document.getElementById("end").value;
+        var xArray = [];
+        var true_data = [];
+        var predic_data = [];
         $.ajax({
             type: 'GET',
-            url: "http://localhost:8080/index/admin/countDayODs",
-            data: "date=" + date,
+            url: "http://localhost:8080/index/admin/lstmday",
+            data: "date=" + date + "&startStationName=" + startName + "&endStationName=" + endName,
             dataType: "json",
             success: function (result) {
-                console.log(result);
+                // console.log(result);
                 if (result) {
-                    counts.push(result.count);
-                    console.log(counts);
-                    mycharts.hideLoading();
+
+                    console.log(result);
+                    for(var i = 0; i < result.result.length; i++){
+                        xArray.push(result.result[i].timeRange);
+                        true_data.push(result.result[i].predictAvgtime.duration);
+                        predic_data.push(result.result[i].predictAvgtime.predictDuration);
+                    }
+                    myChart.hideLoading();
                     var option = {
-                        title: {
-                            text: date + '预测准确率（天）',
-                            x: 'center'
+                        title : {
+                            text: date + '日旅程时间预测与对比（每10分钟）'
                         },
-                        tooltip: {
-                            trigger: 'item',
-                            formatter: "{a} <br/>{b} : {c} ({d}%)"
+                        tooltip : {
+                            trigger: 'axis'
                         },
                         legend: {
-                            orient: 'vertial',
-                            x: 'left',
-                            data: [date]
+                            data:['真实值', '预测值']
                         },
-                        series: [
+                        toolbox: {
+                            show : true,
+                            feature : {
+                                mark : {show: true},
+                                dataView : {show: true, readOnly: false},
+                                magicType : {show: true, type: ['line', 'bar']},
+                                restore : {show: true},
+                                saveAsImage : {show: true}
+                            }
+                        },
+                        calculable : true,
+                        xAxis : [
                             {
-                                type: 'pie',
-                                name: '数量',
-                                radius: '55%',
-                                center: ['50%', '60%'],
-                                data: [
-                                    {name: date, value: result.count}
-                                ]
+                                type : 'category',
+                                boundaryGap : false,
+                                data : xArray
+                            }
+                        ],
+                        yAxis : [
+                            {
+                                type : 'value',
+                                axisLabel : {
+                                    formatter: '{value} second'
+                                }
+                            }
+                        ],
+                        series : [
+                            {
+                                name:'真实值',
+                                type:'line',
+                                data:true_data
+                            },
+                            {
+                                name:'预测值',
+                                type:'line',
+                                data:predic_data
                             }
                         ]
                     };
 
-                    mycharts.setOption(option);
-                    mycharts.hideLoading();
+                    myChart.setOption(option);
+                    myChart.hideLoading();
                 }
 
             },
             error: function (errorMsg) {
                 alert(errorMsg);
                 console.log(errorMsg);
-                mycharts.hideLoading();
+                myChart.hideLoading();
             }
         })
     }

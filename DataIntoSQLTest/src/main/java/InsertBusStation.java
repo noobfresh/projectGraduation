@@ -1,10 +1,7 @@
 import com.opencsv.CSVReader;
 
 import java.io.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class InsertBusStation {
 
@@ -41,6 +38,7 @@ public class InsertBusStation {
             preparedStatement.executeBatch();
             connection.commit();
             preparedStatement.close();
+
 
             connection.close();
         }catch (Exception e){

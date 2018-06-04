@@ -24,18 +24,21 @@ public class CaculteAdminController {
     private IAvgTimeService avgTimeService;
     private IStatService statService;
     private IBusStationService busStationService;
+    private IPredictService predictService;
 
     @Autowired
     public CaculteAdminController(ICaculatAdminService caculatAdminService,
                                   IRailwayStationService railwayStationService,
                                   IAvgTimeService avgTimeService,
                                   IStatService statService,
-                                  IBusStationService busStationService) {
+                                  IBusStationService busStationService,
+                                  IPredictService predictService) {
         this.caculatAdminService = caculatAdminService;
         this.railwayStationService = railwayStationService;
         this.avgTimeService = avgTimeService;
         this.statService = statService;
         this.busStationService = busStationService;
+        this.predictService = predictService;
     }
 
     @RequestMapping("/countDayODs")
@@ -69,7 +72,7 @@ public class CaculteAdminController {
         List<TempStructure> list = new ArrayList<>();
         while (!startTime.equals("0000")){
             String endTime = TimeGeneratorUtil.timeIncrement(startTime);
-            String tableName = "avgtime" + startTime + endTime;
+            String tableName = "avgtime20170901" + startTime + endTime;
             Avgtime time = avgTimeService.getAvgTimeByTest(start.getId(), end.getId(), tableName);
             list.add(new TempStructure(time, startTime + "~" + endTime));
             startTime = endTime;
@@ -168,7 +171,8 @@ public class CaculteAdminController {
 
     @RequestMapping("busdataweek")
     @ResponseBody
-    public Map busdataWeek(String startDate, String endDate, String period, String lineNo, String direction){
+    public Map busdataWeek(String startDate, String endDate,
+                           String period, String lineNo, String direction){
         Map<String, Object> map = new HashMap<>();
 
         //判断方向 到站点表取出对应的站点列表
@@ -194,11 +198,113 @@ public class CaculteAdminController {
         return map;
     }
 
+
+    @RequestMapping("lstmday")
+    @ResponseBody
+    public Map lstmDay(String date, String startStationName, String endStationName){
+        Map<String, Object> map = new HashMap<>();
+        date = "20170922";
+        Railwaystation start = railwayStationService.selectByName(startStationName);
+        Railwaystation end = railwayStationService.selectByName(endStationName);
+        List<TempStructure> list = new ArrayList<>();
+        String startTime = "0600";
+        while (!startTime.equals("0000")){
+            String endTime = TimeGeneratorUtil.timeIncrement(startTime);
+            String tableName = "predict_avgtime_" + startTime + endTime;
+            //导入时候少了开头的0尴尬了
+            PredictAvgtime temp = predictService.selectByPrimary(start.getId().substring(1),
+                    end.getId().substring(1), tableName);
+            list.add(new TempStructure(startTime + "~" + endTime,temp
+                    ));
+            startTime = endTime;
+        }
+        map.put("result", list);
+        return map;
+    }
+
+    @RequestMapping("lstmweek")
+    @ResponseBody
+    public Map lstmWeek(String startDate, String endDate, String startStationName, String endStationName){
+        Map<String, Object> map = new HashMap<>();
+        startDate = "20170922";
+        endDate = "20170928";
+        Railwaystation start = railwayStationService.selectByName(startStationName);
+        Railwaystation end = railwayStationService.selectByName(endStationName);
+        List<TempStructure> list = new ArrayList<>();
+
+        map.put("result", predictService.selectByTimeRange(startDate, endDate,
+                start.getId().substring(1), end.getId().substring(1)));
+        return map;
+    }
+
+    @RequestMapping("lstmbusday")
+    @ResponseBody
+    public Map lstmBusDay(String date, String lineNo, String period, String direction){
+        if(period.equals("早")){
+            period = "morning";
+        } else if(period.equals("晚")){
+            period = "evening";
+        } else {
+            period = "other";
+        }
+        Map<String, Object> map = new HashMap<>();
+        date = "0526";
+        List<Busstation> busstations = busStationService.selectByLineNoDirection(lineNo, "R");
+        List<TempStructure> list = new ArrayList<>();
+        for(int i = 0; i < busstations.size() - 1; i++){
+            String startStation = busstations.get(i).getStationName();
+            String endStation = busstations.get(i + 1).getStationName();
+            PredictBusDay temp = predictService.selectByPrimaryBus(lineNo, startStation, endStation, date, period);
+            list.add(new TempStructure(date, temp));
+        }
+
+        map.put("result", list);
+        return map;
+    }
+
+
+    @RequestMapping("lstmbusweek")
+    @ResponseBody
+    public Map lstmBusWeek(String startDate, String endDate, String lineNo, String period, String direction,
+                           String startStation, String endStation){
+        Map<String, Object> map = new HashMap<>();
+        startDate = "0526";
+        endDate = "0531";
+        List<Busstation> busstations = busStationService.selectByLineNoDirection(lineNo, "R");
+        List<TempStructure> list = new ArrayList<>();
+//        for(int i = 0; i < busstations.size() - 1; i++){
+//            String startStation = busstations.get(i).getStationName();
+//            String endStation = busstations.get(i + 1).getStationName();
+//            PredictBusDay temp = predictService.selectByPrimaryBus(lineNo, startStation, endStation, date, period);
+//            list.add(new TempStructure(date, temp));
+//        }
+
+
+        map.put("result", predictService.selecByTimeRange(startDate, endDate,
+                startStation, endStation, lineNo));
+        return map;
+    }
+
     class TempStructure{
         public Avgtime avgtime;
         public String timeRange;
         public Statistic statistic;
         public Busdata busdata;
+        public PredictAvgtime predictAvgtime;
+        public PredictAvgtimeWeek predictAvgtimeWeek;
+        public PredictBusDay predictBusDay;
+        public PredictBusWeek predictBusWeek;
+
+
+        public TempStructure(String timeRange, PredictBusDay predictBusDay) {
+            this.timeRange = timeRange;
+            this.predictBusDay = predictBusDay;
+        }
+
+        public TempStructure(String timeRange, PredictAvgtime predictAvgtime) {
+            this.timeRange = timeRange;
+            this.predictAvgtime = predictAvgtime;
+        }
 
         public TempStructure(Avgtime avgtime, String timeRange) {
             this.avgtime = avgtime;

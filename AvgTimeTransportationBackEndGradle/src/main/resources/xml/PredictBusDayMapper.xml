@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cqu.project.graduation.mapper.PredictBusDayMapper">
+  <resultMap id="BaseResultMap" type="com.cqu.project.graduation.entity.PredictBusDay">
+    <id column="line_no" jdbcType="VARCHAR" property="lineNo" />
+    <id column="start_station" jdbcType="VARCHAR" property="startStation" />
+    <id column="end_station" jdbcType="VARCHAR" property="endStation" />
+    <id column="date" jdbcType="VARCHAR" property="date" />
+    <id column="peroid" jdbcType="VARCHAR" property="peroid" />
+    <result column="true_duration" jdbcType="INTEGER" property="trueDuration" />
+    <result column="predict_duration" jdbcType="INTEGER" property="predictDuration" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    delete from predict_bus_day
+    where line_no = #{lineNo,jdbcType=VARCHAR}
+      and start_station = #{startStation,jdbcType=VARCHAR}
+      and end_station = #{endStation,jdbcType=VARCHAR}
+      and date = #{date,jdbcType=VARCHAR}
+      and peroid = #{peroid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cqu.project.graduation.entity.PredictBusDay">
+    insert into predict_bus_day (line_no, start_station, end_station, 
+      date, peroid, true_duration, 
+      predict_duration)
+    values (#{lineNo,jdbcType=VARCHAR}, #{startStation,jdbcType=VARCHAR}, #{endStation,jdbcType=VARCHAR}, 
+      #{date,jdbcType=VARCHAR}, #{peroid,jdbcType=VARCHAR}, #{trueDuration,jdbcType=INTEGER}, 
+      #{predictDuration,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.cqu.project.graduation.entity.PredictBusDay">
+    update predict_bus_day
+    set true_duration = #{trueDuration,jdbcType=INTEGER},
+      predict_duration = #{predictDuration,jdbcType=INTEGER}
+    where line_no = #{lineNo,jdbcType=VARCHAR}
+      and start_station = #{startStation,jdbcType=VARCHAR}
+      and end_station = #{endStation,jdbcType=VARCHAR}
+      and date = #{date,jdbcType=VARCHAR}
+      and peroid = #{peroid,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
+    select line_no, start_station, end_station, date, peroid, true_duration, predict_duration
+    from predict_bus_day
+    where line_no = #{lineNo,jdbcType=VARCHAR}
+      and start_station = #{startStation,jdbcType=VARCHAR}
+      and end_station = #{endStation,jdbcType=VARCHAR}
+      and date = #{date,jdbcType=VARCHAR}
+      and peroid = #{peroid,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select line_no, start_station, end_station, date, peroid, true_duration, predict_duration
+    from predict_bus_day
+  </select>
+</mapper>

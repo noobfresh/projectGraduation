@@ -18,10 +18,10 @@ public class FillDayAvgTimeStrategy {
             connection.setAutoCommit(false);
 
             //注意循环条件
-            for(int i = 1; i < 11; i ++){
-                if(i == 15 || i == 22 || i == 29){
-                    continue;
-                }
+            for(int i = 1; i < 31; i ++){
+//                if(i == 15 || i == 22 || i == 29){
+//                    continue;
+//                }
                 String tableName = "avgtime201709" + CsvFileInit.getNumbers(i);
                 String rawDataSQL = "SELECT " +
                         " START_STATION, END_STATION, DURATION " +

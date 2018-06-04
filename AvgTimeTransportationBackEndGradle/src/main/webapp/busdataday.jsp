@@ -339,8 +339,10 @@
                 <li>
                     <h2 class="obtain">LSTM<i></i></h2>
                     <div class="secondary">
-                        <h3 id="lstmday" onclick="goToOther(this)">全天</h3>
-                        <h3 id="lstmweek" onclick="goToOther(this)">一周</h3>
+                        <h3 id="lstmday" onclick="goToOther(this)">轨交全天</h3>
+                        <h3 id="lstmweek" onclick="goToOther(this)">轨交一周</h3>
+                        <h3 id="lstmbusday" onclick="goToOther(this)">公交一天</h3>
+                        <h3 id="lstmbusweek" onclick="goToOther(this)">公交一周</h3>
                     </div>
                 </li>
                 <li>
@@ -362,6 +364,7 @@
     <input type="text" id="busInput" required="请输入线路号">
     <label for="direction">方向</label>
     <input type="text" id="direction" required="R(正方向)/F(反方向)">
+
     <button id="searachBtn" onclick="requestByDate()" style="width: 100px; height: 50px">查询</button>
     <div id="main"
          style="height: 500px; background-color: #000000; width: 1000px; margin-left: 50px"></div>

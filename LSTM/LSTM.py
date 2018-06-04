@@ -53,6 +53,6 @@ X = X * 10000
 dataframe = pd.DataFrame({'1':X[:,0],'2':X[:,1],'3':X[:,2],'true':y,'predict_value':y_predict})
 
 #将DataFrame存储为csv,index表示是否显示行名，default=True
-dataframe.to_csv("test.csv",index=False,sep=',')
+dataframe.to_csv("轨交号.csv",index=False,sep=',')
 
 

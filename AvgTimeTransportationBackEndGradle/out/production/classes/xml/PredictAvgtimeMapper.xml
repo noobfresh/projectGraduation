@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cqu.project.graduation.mapper.PredictAvgtimeMapper">
+  <resultMap id="BaseResultMap" type="com.cqu.project.graduation.entity.PredictAvgtime">
+    <id column="START_STATION" jdbcType="VARCHAR" property="startStation" />
+    <id column="END_STATION" jdbcType="VARCHAR" property="endStation" />
+    <result column="DURATION" jdbcType="INTEGER" property="duration" />
+    <result column="TIME" jdbcType="VARCHAR" property="time" />
+    <result column="PREDICT_DURATION" jdbcType="INTEGER" property="predictDuration" />
+    <result column="DATE" jdbcType="VARCHAR" property="date" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    delete from predict_avgtime
+    where START_STATION = #{startStation,jdbcType=VARCHAR}
+      and END_STATION = #{endStation,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cqu.project.graduation.entity.PredictAvgtime">
+    insert into predict_avgtime (START_STATION, END_STATION, DURATION, 
+      TIME, PREDICT_DURATION, DATE
+      )
+    values (#{startStation,jdbcType=VARCHAR}, #{endStation,jdbcType=VARCHAR}, #{duration,jdbcType=INTEGER}, 
+      #{time,jdbcType=VARCHAR}, #{predictDuration,jdbcType=INTEGER}, #{date,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.cqu.project.graduation.entity.PredictAvgtime">
+    update predict_avgtime
+    set DURATION = #{duration,jdbcType=INTEGER},
+      TIME = #{time,jdbcType=VARCHAR},
+      PREDICT_DURATION = #{predictDuration,jdbcType=INTEGER},
+      DATE = #{date,jdbcType=VARCHAR}
+    where START_STATION = #{startStation,jdbcType=VARCHAR}
+      and END_STATION = #{endStation,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
+    select START_STATION, END_STATION, DURATION, TIME, PREDICT_DURATION, DATE
+    from ${tableName}
+    where START_STATION = #{startStation,jdbcType=VARCHAR}
+      and END_STATION = #{endStation,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select START_STATION, END_STATION, DURATION, TIME, PREDICT_DURATION, DATE
+    from predict_avgtime
+  </select>
+</mapper>
