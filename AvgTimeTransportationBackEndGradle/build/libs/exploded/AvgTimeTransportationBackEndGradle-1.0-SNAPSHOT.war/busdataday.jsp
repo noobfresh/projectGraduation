@@ -361,9 +361,9 @@
         选择日期：</label>
     <input type="date" value="2014-05-05" id="dateInput"/>
     <label for="busInput">公交线路</label>
-    <input type="text" id="busInput" required="请输入线路号">
+    <input type="text" id="busInput" required="请输入线路号" value="108">
     <label for="direction">方向</label>
-    <input type="text" id="direction" required="R(正方向)/F(反方向)">
+    <input type="text" id="direction" required="R(正方向)/F(反方向)" value="R">
 
     <button id="searachBtn" onclick="requestByDate()" style="width: 100px; height: 50px">查询</button>
     <div id="main"

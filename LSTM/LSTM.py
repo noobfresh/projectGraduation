@@ -41,7 +41,7 @@ model.add(Dense(1))
 
 model.compile(optimizer=Adam(lr=0.0005), loss='mse',  metrics=[R_Square])
 
-model.fit(X_train, y_train, epochs=5, verbose=1, validation_data=(X_test, y_test))
+model.fit(X_train, y_train, epochs=20, verbose=1, validation_data=(X_test, y_test))
 X = X.reshape(-1,1,3)
 y_predict = model.predict(X)
 y_predict = y_predict * 10000

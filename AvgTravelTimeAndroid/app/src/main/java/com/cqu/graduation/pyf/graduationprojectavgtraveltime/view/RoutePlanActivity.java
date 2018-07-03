@@ -392,6 +392,9 @@ public class RoutePlanActivity extends AppCompatActivity implements View.OnClick
             public void onResponse(Call<AvgTime> call, Response<AvgTime> response) {
                 //只替换轨交的平均旅程时间,即请求之后有值的
                 Log.d(TAG, "onResponse: From RailWay ");
+//                if(!response.isSuccessful()){
+//                    return;
+//                }
                 if(response.body().getDuration() != 0) {
                     Log.d(TAG, "onResponse: duration = " + response.body().getDuration());
                     //确保前后一致
@@ -425,11 +428,13 @@ public class RoutePlanActivity extends AppCompatActivity implements View.OnClick
         IRequestAvgTime requestAvgTime = retrofit.create(IRequestAvgTime.class);
         Call<BusData> call = requestAvgTime.getBusCall(lineNo, startStation, endStation,
                 weekday, startTime, startDirection);
-
         call.enqueue(new Callback<BusData>() {
             @Override
             public void onResponse(Call<BusData> call, Response<BusData> response) {
                 Log.d(TAG, "onResponse: From Bus");
+//                if(!response.isSuccessful()){
+//                    return;
+//                }
                 if(response.body().getDuration() != 0){
                     Log.d(TAG, "onResponse: duration = " + response.body().getDuration());
                     mBusRouteResult.getPaths().get(pathIndex)

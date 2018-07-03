@@ -362,9 +362,9 @@
     <input type="date" value="2017-09-04" id="dateInput1"/>
     <input type="date" value="2017-09-10" id="dateInput2"/>
     <label for="start">起点：</label><input type="text"
-                                         style="width: 100px; margin-left: 50px" id="start" placeholder="起点站"/>
+                                         style="width: 100px; margin-left: 50px" id="start" placeholder="起点站" value="大学城"/>
     <label for="start">终点：</label><input type="text"
-                                         style="width: 100px; margin-left: 50px" id="end" placeholder="终点站"/>
+                                         style="width: 100px; margin-left: 50px" id="end" placeholder="终点站" value="沙坪坝"/>
     <button id="searachBtn" onclick="requestByDate()" style="width: 100px; height: 50px">查询</button>
     <div id="main"
          style="height: 400px; background-color: #000000; width: 900px; margin-left: 50px"></div>
@@ -600,7 +600,7 @@
                             ],
                             series : [
                                 {
-                                    name:'旅程时间',
+                                    name:startName + "~" + endName,
                                     type:'line',
                                     data:yArray
                                 }

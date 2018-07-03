@@ -360,8 +360,10 @@
     <label for="dateInput" style="margin-left: 50px; margin-top: 50px; margin-bottom: 50px;">
         选择日期：</label>
     <input type="date" value="2017-09-01" id="dateInput"/>
-    <label for="start">起点：</label><input type="text" style="width: 100px; margin-left: 50px" id="start" placeholder="起点站"/>
-    <label for="start">终点：</label><input type="text" style="width: 100px; margin-left: 50px" id="end" placeholder="终点站"/>
+    <label for="start">起点：</label><input type="text" style="width: 100px; margin-left: 50px" id="start" placeholder="起点站"
+value="大学城"/>
+    <label for="start">终点：</label><input type="text" style="width: 100px; margin-left: 50px" id="end" placeholder="终点站"
+value="沙坪坝"/>
     <button id="searachBtn" onclick="requestByDate()" style="width: 100px; height: 50px">查询</button>
     <div id="main"
          style="height: 400px; background-color: #000000; width: 1000px; margin-left: 50px"></div>

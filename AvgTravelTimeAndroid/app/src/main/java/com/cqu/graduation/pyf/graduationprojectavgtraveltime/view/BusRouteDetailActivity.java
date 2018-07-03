@@ -62,7 +62,7 @@ public class BusRouteDetailActivity extends AppCompatActivity implements AMap.On
         mDesBusRoute = (TextView) findViewById(R.id.secondline);
         String dur = AMapUtil.getFriendlyTime((int) mBuspath.getDuration());
         String dis = AMapUtil.getFriendlyLength((int) mBuspath.getDistance());
-        mTitleBusRoute.setText(dur + "(" + dis + ")");
+        mTitleBusRoute.setText(AMapUtil.getBusPathTitle(mBuspath) + "\n" + dur + "(" + dis + ")");
         int taxiCost = (int) mBusRouteResult.getTaxiCost();
         mDesBusRoute.setText("打车约"+taxiCost+"元");
         mDesBusRoute.setVisibility(View.VISIBLE);

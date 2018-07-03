@@ -52,7 +52,7 @@ public class CaculateTimeAndroidController {
             int startTimeInt = Integer.valueOf(startTime);
 
             if(startTimeInt >= 600 && startTimeInt <= 2359){
-                String tableName = "avgtime" + startTime + TimeGeneratorUtil.timeIncrement(startTime);
+                String tableName = "avgtime20170901" + startTime + TimeGeneratorUtil.timeIncrement(startTime);
                 //传进来的站点是中文，需要查两次，转换一波
                 Railwaystation start = railwayStationService.selectByName(startStation);
                 Railwaystation end = railwayStationService.selectByName(endStation);
@@ -86,7 +86,7 @@ public class CaculateTimeAndroidController {
     @RequestMapping("/busCaculate")
     @ResponseBody
     public Map<String, String> busAvgTimeCaculte(String lineNo, String startStation,
-                                                 String endStation, int weekday,
+                                                 String endStation, String weekday,
                                                  String startTime, String startDirection){
         Map<String, String > map = new HashMap<>();
 

@@ -362,11 +362,11 @@
     <input type="date" value="2014-05-05" id="dateInput1"/>
     <input type="date" value="2014-05-11" id="dateInput2"/>
     <label for="busInput">公交线路</label>
-    <input type="text" id="busInput" required="请输入线路号" style="width: 50px;">
+    <input type="text" id="busInput" required="请输入线路号" style="width: 50px;" value="108">
     <label for="direction">方向</label>
-    <input type="text" id="direction" required="R(正方向)/F(反方向)" style="width: 50px;">
+    <input type="text" id="direction" required="R(正方向)/F(反方向)" style="width: 50px;" value="R">
     <label for="period">时间段</label>
-    <input type="text" id="period" required="时间段">
+    <input type="text" id="period" required="时间段" value="morning">
     <button id="searachBtn" onclick="requestByDate()" style="width: 100px; height: 50px">查询</button>
     <div id="main"
          style="height: 500px; background-color: #000000; width: 1024px; margin-left: 50px"></div>
